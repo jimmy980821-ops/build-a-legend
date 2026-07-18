@@ -12,6 +12,9 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /BUILD-A-LEGEND/);
   assert.match(page, /localStorage/);
   assert.match(page, /navigator\.share/);
+  assert.match(page, /13 項能力/);
+  assert.match(page, /隨機抽取球隊/);
+  assert.match(page, /NBA2K_DATA/);
   assert.match(page, /prefers-reduced-motion|screen-enter/);
   assert.match(layout, /zh-Hant/);
   assert.doesNotMatch(layout + page, /codex-preview|SkeletonPreview|Starter Project/);

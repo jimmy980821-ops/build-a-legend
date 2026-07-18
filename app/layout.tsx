@@ -4,19 +4,19 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-  description: "轉動命運，奪取六大能力，打造專屬夢幻球星。手機瀏覽器直接開玩。",
+  description: "先抽球隊、再選球員，奪取 13 項能力，打造專屬夢幻球星。手機瀏覽器直接開玩。",
   applicationName: "BUILD-A-LEGEND",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-    description: "轉動命運，奪取六大能力，打造專屬夢幻球星。",
+    description: "抽球隊、選球員、奪取 13 項能力，完成你的傳奇球員卡。",
     type: "website",
     images: [{ url: "/og.png", width: 1672, height: 941, alt: "BUILD-A-LEGEND 遊戲預覽" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-    description: "六輪抽取、打造球星、模擬新秀賽季。",
+    description: "30 支球隊、13 項能力，打造球星並模擬新秀賽季。",
     images: ["/og.png"],
   },
 };
