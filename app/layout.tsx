@@ -11,13 +11,13 @@ export const metadata: Metadata = {
     title: "BUILD-A-LEGEND｜打造你的夢幻球星",
     description: "抽球隊、選球員、奪取 13 項能力，完成你的傳奇球員卡。",
     type: "website",
-    images: [{ url: "/og.png", width: 1672, height: 941, alt: "BUILD-A-LEGEND 遊戲預覽" }],
+    images: [{ url: "/og-13-attributes.png", width: 1672, height: 941, alt: "BUILD-A-LEGEND 遊戲預覽" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "BUILD-A-LEGEND｜打造你的夢幻球星",
     description: "30 支球隊、13 項能力，打造球星並模擬新秀賽季。",
-    images: ["/og.png"],
+    images: ["/og-13-attributes.png"],
   },
 };
 
