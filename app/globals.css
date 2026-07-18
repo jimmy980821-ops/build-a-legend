@@ -103,6 +103,7 @@ h2 { font-size:30px; line-height:1.12; letter-spacing:-1.4px; margin:7px 0 10px;
 .action-pair { display:grid;grid-template-columns:1fr 1.45fr;gap:9px; }
 .secondary-button { background:#191c21;border:1px solid #2c3036;color:#c7c7c8;padding:0 14px; }
 .secondary-button.wide { width:100%; }
+.resume-button { margin-top:9px;display:flex;align-items:center;justify-content:space-between;text-align:left;padding:0 18px; }.resume-button b{color:var(--orange);font-size:12px}
 .primary-button.compact { padding:0 16px; }
 .microcopy { text-align:center;color:#55595f;font-size:10px;margin:11px 0; }
 .result-screen { padding-top:14px;text-align:center; }

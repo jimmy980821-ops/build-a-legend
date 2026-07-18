@@ -14,6 +14,8 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /navigator\.share/);
   assert.match(page, /13 項能力/);
   assert.match(page, /隨機抽取球隊/);
+  assert.match(page, /繼續上次進度/);
+  assert.match(page, /setResumeScreen\(data\.screen\)/);
   assert.match(page, /NBA2K_DATA/);
   assert.match(page, /prefers-reduced-motion|screen-enter/);
   assert.match(layout, /zh-Hant/);

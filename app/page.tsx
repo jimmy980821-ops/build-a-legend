@@ -54,6 +54,7 @@ export default function Home() {
   const [usedPlayers, setUsedPlayers] = useState<string[]>([]);
   const [career, setCareer] = useState(false);
   const [toast, setToast] = useState("");
+  const [resumeScreen, setResumeScreen] = useState<"position" | "build" | "result" | null>(null);
 
   const lockedCount = Object.keys(picked).length;
   const overall = useMemo(() => {
@@ -67,7 +68,7 @@ export default function Home() {
     try {
       const data = JSON.parse(saved);
       if (data.screen && data.screen !== "home") {
-        setScreen(data.screen); setPosition(data.position); setName(data.name || "我的傳奇");
+        setResumeScreen(data.screen); setPosition(data.position); setName(data.name || "我的傳奇");
         setPicked(data.picked || {}); setRerolls(data.rerolls ?? 3); setUsedPlayers(data.usedPlayers || []);
       }
     } catch { localStorage.removeItem("build-a-legend-save-v2"); }
@@ -82,7 +83,13 @@ export default function Home() {
   function resetGame() {
     setScreen("position"); setPicked({}); setTeamCode(null); setReelCode("NBA"); setRoster([]);
     setSelectedPlayer(null); setRerolls(3); setUsedPlayers([]); setCareer(false);
+    setResumeScreen(null);
     localStorage.removeItem("build-a-legend-save-v2");
+  }
+
+  function goHome() {
+    if (screen !== "home") setResumeScreen(screen);
+    setScreen("home");
   }
 
   function getRoster(code: string, omit: string[] = []) {
@@ -131,7 +138,7 @@ export default function Home() {
   return (
     <main className="app-shell">
       <header className="topbar">
-        <button className="wordmark" onClick={() => setScreen("home")} aria-label="回到首頁">BUILD-A-<i>LEGEND</i></button>
+        <button className="wordmark" onClick={goHome} aria-label="回到首頁">BUILD-A-<i>LEGEND</i></button>
         {screen !== "home" && <button className="icon-button" onClick={resetGame} aria-label="重新開始">↻</button>}
       </header>
 
@@ -140,7 +147,8 @@ export default function Home() {
         <h1>打造你的<br /><em>夢幻球星</em></h1>
         <p className="lead">先抽球隊、再選球員，從他的 13 項能力中奪取一項。集滿整張能力表，打造真正的聯盟傳奇。</p>
         <div className="hero-card" aria-hidden="true"><div className="hero-no">99</div><div className="hero-pos">?</div><div className="hero-orbit orbit-one" /><div className="hero-orbit orbit-two" /><div className="hero-ball">🏀</div><div className="hero-name">YOUR<br />LEGEND</div><div className="scanline" /></div>
-        <button className="primary-button" onClick={() => setScreen("position")}><span>開始建模</span><b>→</b></button>
+        <button className="primary-button" onClick={resetGame}><span>開始全新建模</span><b>→</b></button>
+        {resumeScreen && <button className="secondary-button wide resume-button" onClick={() => setScreen(resumeScreen)}><span>繼續上次進度</span><b>{lockedCount}/13 →</b></button>}
         <div className="feature-row"><span>30 支球隊</span><span>13 項能力</span><span>自動保存</span></div>
       </section>}
 
