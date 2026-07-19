@@ -169,10 +169,22 @@ export default function Home() {
       season?`本季榮譽：${allHonors.length?allHonors.join("、"):"無"}`:null,
     ].filter((line):line is string=>Boolean(line));
     const text=lines.join("\n");
+    const fullText=`${text}\n${location.href}`;
+    const shareData={title:`${name||"我的傳奇"}｜${overall} OVR`,text,url:location.href};
+    const copyFallback=async()=>{
+      let copied=false;
+      try{if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(fullText);copied=true;}}catch{}
+      if(!copied){
+        const field=document.createElement("textarea");field.value=fullText;field.setAttribute("readonly","");field.style.position="fixed";field.style.opacity="0";document.body.appendChild(field);field.select();
+        try{copied=document.execCommand("copy");}catch{}finally{document.body.removeChild(field);}
+      }
+      setToast(copied?"此瀏覽器不支援分享，完整資料已複製":"此瀏覽器無法分享，請改用系統瀏覽器開啟");
+    };
     try{
-      if(navigator.share){await navigator.share({title:`${name||"我的傳奇"}｜${overall} OVR`,text,url:location.href});setToast("分享完成");}
-      else{await navigator.clipboard.writeText(`${text}\n${location.href}`);setToast("完整球員資料已複製");}
-    }catch{}
+      const canNativeShare=typeof navigator.share==="function"&&(!navigator.canShare||navigator.canShare(shareData));
+      if(canNativeShare){await navigator.share(shareData);setToast("分享完成");}
+      else await copyFallback();
+    }catch(error){if(!(error instanceof DOMException&&error.name==="AbortError"))await copyFallback();}
     window.setTimeout(()=>setToast(""),1800);
   }
 

@@ -19,7 +19,11 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /statLine\("常規賽",season\.stats\)/);
   assert.match(page, /statLine\("季後賽",playoffs\.stats\)/);
   assert.match(page, /本季榮譽：/);
-  assert.match(page, /完整球員資料已複製/);
+  assert.match(page, /完整資料已複製/);
+  assert.match(page, /navigator\.canShare/);
+  assert.match(page, /error\.name==="AbortError"/);
+  assert.match(page, /document\.execCommand\("copy"\)/);
+  assert.match(page, /此瀏覽器不支援分享，完整資料已複製/);
   assert.match(page, /20 項能力/);
   assert.match(page, /label: "造犯規"/);
   assert.match(page, /label: "罰球"/);
