@@ -11134,7 +11134,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mo Bamba",
-      "cname": "Mo Bamba",
+      "cname": "穆罕默德-班巴",
       "pos": "C",
       "height": "6'5'",
       "type": "Rim-Reaping Stretch Five",
