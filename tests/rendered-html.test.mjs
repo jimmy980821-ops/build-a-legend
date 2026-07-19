@@ -17,10 +17,8 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /繼續上次進度/);
   assert.match(page, /setResumeScreen\(data\.screen\)/);
   assert.match(page, /NBA2K_DATA/);
-  assert.match(page, /同位置 13 項屬性最高的 3 位球員/);
+  assert.match(page, /同位置最相似的 3 位球員/);
   assert.match(page, /player\.pos\.split\(" \/ "\)\.includes\(selectedPosition\)/);
-  assert.match(page, /attributeAverage/);
-  assert.match(page, /b\.attributeAverage-a\.attributeAverage/);
   assert.match(layout, /favicon-basketball\.png/);
   assert.match(page, /加入球隊並模擬 82 場/);
   assert.match(page, /年度第一隊/);
