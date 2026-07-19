@@ -1,5 +1,7 @@
 type Style = "射手" | "得分手" | "控場者" | "攻防一體" | "全能" | "禁區核心" | "護框者" | "衝擊籃框";
 type Seed = readonly [name: string, cname: string, pos: string, ovr: number, style: Style];
+type RatingKey = "threePT" | "MID" | "FIN" | "DNK" | "FT" | "FOUL" | "HAN" | "PAS" | "PASSIQ" | "PDEF" | "IDEF" | "STL" | "BLK" | "OREB" | "REB" | "ATH" | "STR" | "HSTL" | "DUR" | "CLU";
+type Ratings = Record<RatingKey, number>;
 
 const profiles: Record<Style, readonly number[]> = {
   射手: [98,92,88,68,96,88,74,52,40,54,88,55,97],
@@ -17,11 +19,72 @@ const styleNames: Record<Style, string> = {
   全能:"全能傳奇",禁區核心:"禁區進攻核心",護框者:"禁區守護者",衝擊籃框:"衝擊籃框核心",
 };
 
+// NBA 2K26 的 All-Time / All-Decade 能力值校準。其餘球員仍以位置與球風
+// 產生基礎值，但不再讓同一球風的球員擁有完全相同的關鍵能力。
+// Hakeem 的阻攻額外設為 99，反映他是 NBA 官方生涯阻攻王。
+const legendOverrides: Record<string, Partial<Ratings>> = {
+  "Michael Jordan": { threePT:83, MID:98, FIN:99, DNK:95, FT:83, FOUL:87, HAN:93, PAS:92, PASSIQ:99, PDEF:98, IDEF:79, STL:86, BLK:50, OREB:52, REB:63, ATH:96, STR:71, HSTL:98, DUR:99, CLU:99 },
+  "Kobe Bryant": { threePT:85, MID:98, FIN:98, DNK:95, FT:85, FOUL:92, HAN:92, PAS:95, PASSIQ:95, PDEF:99, IDEF:63, STL:67, BLK:51, OREB:51, REB:59, ATH:93, STR:70, HSTL:85, DUR:83, CLU:99 },
+  "Hakeem Olajuwon": { threePT:71, MID:89, FIN:99, DNK:75, FT:78, FOUL:98, HAN:66, PAS:68, PASSIQ:87, PDEF:57, IDEF:99, STL:65, BLK:99, OREB:95, REB:98, ATH:77, STR:92, HSTL:79, DUR:92, CLU:98 },
+  "Kareem Abdul-Jabbar": { threePT:36, MID:82, FIN:98, DNK:85, FT:76, FOUL:90, HAN:60, PAS:52, PASSIQ:82, PDEF:56, IDEF:93, STL:88, BLK:95, OREB:98, REB:98, ATH:88, STR:98, HSTL:98, DUR:95, CLU:98 },
+  "Stephen Curry": { threePT:99, MID:97, FIN:96, DNK:36, FT:99, FOUL:88, HAN:99, PAS:95, PASSIQ:98, PDEF:78, IDEF:51, STL:85, BLK:35, OREB:45, REB:67, ATH:94, STR:55, HSTL:96, DUR:94, CLU:99 },
+  "Magic Johnson": { threePT:87, MID:94, FIN:98, DNK:75, FT:91, FOUL:92, HAN:98, PAS:99, PASSIQ:99, PDEF:88, IDEF:72, STL:90, BLK:55, OREB:74, REB:83, ATH:94, STR:84, HSTL:96, DUR:98, CLU:99 },
+  "Larry Bird": { threePT:99, MID:98, FIN:98, DNK:45, FT:98, FOUL:91, HAN:92, PAS:98, PASSIQ:99, PDEF:90, IDEF:82, STL:92, BLK:55, OREB:79, REB:91, ATH:82, STR:79, HSTL:98, DUR:94, CLU:99 },
+  "LeBron James": { threePT:86, MID:92, FIN:99, DNK:95, FT:80, FOUL:96, HAN:97, PAS:99, PASSIQ:99, PDEF:96, IDEF:88, STL:90, BLK:82, OREB:72, REB:89, ATH:99, STR:99, HSTL:98, DUR:99, CLU:99 },
+  "Wilt Chamberlain": { threePT:45, MID:82, FIN:99, DNK:85, FT:55, FOUL:98, HAN:70, PAS:84, PASSIQ:91, PDEF:70, IDEF:99, STL:70, BLK:99, OREB:99, REB:99, ATH:99, STR:99, HSTL:99, DUR:99, CLU:98 },
+  "Bill Russell": { threePT:40, MID:72, FIN:94, DNK:85, FT:61, FOUL:83, HAN:70, PAS:88, PASSIQ:96, PDEF:78, IDEF:99, STL:82, BLK:99, OREB:99, REB:99, ATH:96, STR:94, HSTL:99, DUR:99, CLU:98 },
+  "Shaquille O'Neal": { threePT:26, MID:55, FIN:99, DNK:98, FT:52, FOUL:99, HAN:72, PAS:75, PASSIQ:86, PDEF:55, IDEF:97, STL:64, BLK:96, OREB:99, REB:98, ATH:95, STR:99, HSTL:98, DUR:97, CLU:98 },
+  "Tim Duncan": { threePT:75, MID:92, FIN:98, DNK:65, FT:81, FOUL:91, HAN:75, PAS:88, PASSIQ:96, PDEF:78, IDEF:99, STL:74, BLK:98, OREB:96, REB:99, ATH:85, STR:96, HSTL:98, DUR:99, CLU:99 },
+  "Kevin Garnett": { threePT:69, MID:96, FIN:96, DNK:92, FT:85, FOUL:91, HAN:82, PAS:92, PASSIQ:97, PDEF:94, IDEF:98, STL:88, BLK:96, OREB:94, REB:99, ATH:96, STR:91, HSTL:99, DUR:98, CLU:97 },
+  "Dirk Nowitzki": { threePT:96, MID:99, FIN:97, DNK:50, FT:98, FOUL:93, HAN:88, PAS:82, PASSIQ:94, PDEF:68, IDEF:75, STL:55, BLK:68, OREB:77, REB:91, ATH:78, STR:82, HSTL:91, DUR:98, CLU:99 },
+  "Kevin Durant": { threePT:95, MID:99, FIN:98, DNK:85, FT:96, FOUL:94, HAN:96, PAS:91, PASSIQ:96, PDEF:87, IDEF:80, STL:78, BLK:78, OREB:62, REB:82, ATH:94, STR:72, HSTL:91, DUR:90, CLU:99 },
+  "Dikembe Mutombo": { IDEF:99, BLK:99, OREB:96, REB:99, STR:97, HSTL:99 },
+  "Ben Wallace": { PDEF:80, IDEF:99, STL:84, BLK:99, OREB:98, REB:99, STR:99, HSTL:99 },
+  "Dwight Howard": { FIN:96, DNK:99, IDEF:98, BLK:98, OREB:98, REB:99, ATH:98, STR:98, HSTL:98 },
+  "David Robinson": { MID:88, FIN:98, DNK:95, IDEF:99, STL:82, BLK:99, OREB:96, REB:99, ATH:98, STR:97, HSTL:99 },
+  "Patrick Ewing": { MID:91, FIN:97, IDEF:98, BLK:97, OREB:95, REB:98, STR:97, HSTL:98 },
+  "Alonzo Mourning": { IDEF:99, BLK:99, OREB:95, REB:97, STR:98, HSTL:99 },
+  "Artis Gilmore": { FIN:98, IDEF:98, BLK:97, OREB:99, REB:99, STR:99 },
+  "Moses Malone": { FIN:98, OREB:99, REB:99, STR:98, HSTL:99, DUR:98 },
+  "Dennis Rodman": { OREB:99, REB:99, PDEF:96, IDEF:96, HSTL:99, DUR:99, STR:96 },
+  "Rudy Gobert": { IDEF:99, BLK:99, OREB:95, REB:99, STR:96, HSTL:98 },
+  "Anthony Davis": { MID:88, FIN:98, DNK:92, PDEF:91, IDEF:99, STL:85, BLK:99, REB:97, ATH:96 },
+  "Joel Embiid": { MID:94, FIN:99, FT:90, FOUL:99, IDEF:98, BLK:96, REB:98, STR:99 },
+  "Scottie Pippen": { HAN:92, PAS:94, PASSIQ:97, PDEF:99, IDEF:86, STL:98, ATH:97, HSTL:99 },
+  "Kawhi Leonard": { MID:98, FIN:96, PDEF:99, IDEF:88, STL:99, STR:95, CLU:98 },
+  "Gary Payton": { HAN:94, PAS:96, PASSIQ:98, PDEF:99, STL:99, HSTL:99, CLU:97 },
+  "John Stockton": { threePT:93, FT:95, HAN:97, PAS:99, PASSIQ:99, PDEF:94, STL:99, DUR:99, CLU:98 },
+  "Chris Paul": { MID:98, FT:96, HAN:99, PAS:99, PASSIQ:99, PDEF:96, STL:99, CLU:99 },
+  "Steve Nash": { threePT:97, MID:98, FT:99, HAN:98, PAS:99, PASSIQ:99, CLU:98 },
+  "Jason Kidd": { HAN:94, PAS:99, PASSIQ:99, PDEF:97, STL:97, REB:88, DUR:98 },
+  "Oscar Robertson": { MID:97, FIN:98, HAN:97, PAS:98, PASSIQ:99, REB:86, STR:94, CLU:99 },
+  "Allen Iverson": { MID:97, FIN:98, FT:91, FOUL:98, HAN:99, STL:91, ATH:99, CLU:98 },
+  "Dwyane Wade": { MID:94, FIN:99, DNK:95, FOUL:98, HAN:96, PDEF:96, STL:96, BLK:80, ATH:98, CLU:99 },
+  "Carmelo Anthony": { MID:98, FIN:98, FT:88, FOUL:95, HAN:94, STR:91, CLU:98 },
+  "DeMar DeRozan": { MID:99, FIN:98, FT:91, FOUL:96, HAN:94, CLU:97 },
+  "Jerry West": { MID:98, FT:96, HAN:96, PAS:97, PASSIQ:98, PDEF:96, STL:95, CLU:99 },
+  "Ray Allen": { threePT:99, MID:96, FT:98, CLU:99, DUR:98 },
+  "Klay Thompson": { threePT:99, MID:94, PDEF:97, HSTL:95, CLU:98 },
+  "Reggie Miller": { threePT:99, MID:96, FT:99, FOUL:95, DUR:98, CLU:99 },
+  "Pete Maravich": { threePT:96, MID:98, HAN:99, PAS:97, PASSIQ:98, CLU:97 },
+};
+
 function clamp(value: number) { return Math.max(40, Math.min(99, Math.round(value))); }
 function player([name,cname,pos,ovr,style]:Seed) {
   const delta=(ovr-94)*.72;
   const ratings=profiles[style].map(value=>clamp(value+delta));
-  return {name,cname,pos,height:"—",type:styleNames[style],ovr,threePT:ratings[0],MID:ratings[1],FIN:ratings[2],DNK:ratings[3],HAN:ratings[4],PAS:ratings[5],PDEF:ratings[6],IDEF:ratings[7],BLK:ratings[8],REB:ratings[9],ATH:ratings[10],STR:ratings[11],CLU:ratings[12]};
+  const base: Ratings = {
+    threePT:ratings[0],MID:ratings[1],FIN:ratings[2],DNK:ratings[3],
+    FT:clamp(ratings[1]*.55+ratings[0]*.35+ratings[12]*.1),
+    FOUL:clamp(ratings[2]*.5+ratings[3]*.25+ratings[10]*.15+ratings[11]*.1),
+    HAN:ratings[4],PAS:ratings[5],PASSIQ:clamp(ratings[5]*.7+ratings[4]*.2+ratings[12]*.1),
+    PDEF:ratings[6],IDEF:ratings[7],STL:clamp(ratings[6]*.65+ratings[10]*.2+ratings[4]*.15),BLK:ratings[8],
+    OREB:clamp(ratings[9]*.65+ratings[11]*.2+ratings[10]*.15),REB:ratings[9],ATH:ratings[10],STR:ratings[11],
+    HSTL:clamp(ratings[10]*.4+ratings[6]*.25+ratings[9]*.2+ratings[12]*.15),
+    DUR:clamp(ratings[10]*.35+ratings[11]*.25+ratings[12]*.2+14),CLU:ratings[12],
+  };
+  const finalRatings={...base,...legendOverrides[name]};
+  return {name,cname,pos,height:"—",type:`${styleNames[style]} · 2K校準`,ovr,...finalRatings};
 }
 function roster(seeds: readonly Seed[]) { return seeds.map(player); }
 

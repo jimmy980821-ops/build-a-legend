@@ -34,6 +34,12 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /const starter=overall>=STARTER_OVR/);
   assert.match(page, /85 OVR 以上為先發/);
   assert.match(allTimeData, /Michael Jordan/);
+  assert.match(allTimeData, /"Michael Jordan": \{ threePT:83, MID:98/);
+  assert.match(allTimeData, /"Kobe Bryant": \{ threePT:85, MID:98/);
+  assert.match(allTimeData, /"Hakeem Olajuwon": \{[^\n]*BLK:99/);
+  assert.match(allTimeData, /"Kareem Abdul-Jabbar": \{[^\n]*BLK:95/);
+  assert.match(allTimeData, /legendOverrides\[name\]/);
+  assert.match(allTimeData, /2K校準/);
   assert.match(allTimeData, /史蒂芬-柯瑞/);
   assert.match(allTimeData, /Magic Johnson/);
   assert.match(page, /player\.cname\|\|player\.name/);
