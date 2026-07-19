@@ -156,7 +156,25 @@ export default function Home() {
     const honors:string[]=[];if(series[2]?.won)honors.push(`${conference}冠軍`,`分區冠軍賽 MVP`);if(series[3]?.won)honors.push("NBA 總冠軍","FMVP");
     setPlayoffs({stats,series,honors});setScreen("playoffs");
   }
-  async function shareResult(){const text=`我打造了 ${overall} OVR 的 ${positionCode[position]}「${name}」，集滿 ${attributes.length} 項能力！`;try{if(navigator.share)await navigator.share({title:"BUILD-A-LEGEND",text,url:location.href});else{await navigator.clipboard.writeText(`${text} ${location.href}`);setToast("戰績已複製");}}catch{}window.setTimeout(()=>setToast(""),1800);}
+  async function shareResult(){
+    const statLine=(label:string,stats:StatLine)=>`${label}：${stats.games} 場｜${stats.pts.toFixed(1)} PTS｜${stats.reb.toFixed(1)} REB｜${stats.ast.toFixed(1)} AST｜${stats.stl.toFixed(1)} STL｜${stats.blk.toFixed(1)} BLK｜${stats.fg.toFixed(1)} FG%｜${stats.three.toFixed(1)} 3P%`;
+    const abilityLine=attributes.map(a=>`${a.short} ${picked[a.key]?.value??"—"}`).join("・");
+    const lines=[
+      "🏀 BUILD-A-LEGEND",
+      `${name||"我的傳奇"}｜${overall} OVR｜${positionCode[position]}｜${leagueMode==="all-time"?"ALL-TIME 傳奇聯盟":"現役聯盟"}`,
+      `20 項能力：${abilityLine}`,
+      season&&careerTeam?`球隊：${teamNames[careerTeam]}｜戰績 ${season.wins}-${season.losses}｜分區第 ${season.seed}｜${season.starter?"先發":"替補"}`:null,
+      season?statLine("常規賽",season.stats):null,
+      playoffs?statLine("季後賽",playoffs.stats):null,
+      season?`本季榮譽：${allHonors.length?allHonors.join("、"):"無"}`:null,
+    ].filter((line):line is string=>Boolean(line));
+    const text=lines.join("\n");
+    try{
+      if(navigator.share){await navigator.share({title:`${name||"我的傳奇"}｜${overall} OVR`,text,url:location.href});setToast("分享完成");}
+      else{await navigator.clipboard.writeText(`${text}\n${location.href}`);setToast("完整球員資料已複製");}
+    }catch{}
+    window.setTimeout(()=>setToast(""),1800);
+  }
 
   const allHonors=season?[...season.teams,...season.ballots.filter(a=>a.won).map(a=>a.name),...(playoffs?.honors||[])]:[];
 
