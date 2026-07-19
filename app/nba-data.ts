@@ -4,7 +4,7 @@ export const NBA2K_DATA = {
   "ATL": [
     {
       "name": "Jalen Johnson",
-      "cname": "杰伦-约翰逊",
+      "cname": "杰倫-約翰遜",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Mid-Post Playmaking Cleaner",
@@ -26,7 +26,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nickeil Alexander-Walker",
-      "cname": "亚历山大-沃克",
+      "cname": "亞歷山大-沃克",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "3 & D Two Guard",
@@ -48,7 +48,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dyson Daniels",
-      "cname": "戴森-丹尼尔斯",
+      "cname": "戴森-丹尼爾斯",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Defensive Playmaker",
@@ -70,7 +70,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "CJ McCollum",
-      "cname": "CJ-麦科勒姆",
+      "cname": "CJ-麥科勒姆",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Crafty Iso Sniper",
@@ -92,7 +92,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Onyeka Okongwu",
-      "cname": "奥涅卡-奥孔古",
+      "cname": "奧涅卡-奧孔古",
       "pos": "C",
       "height": "6'10'",
       "type": "3-Level Scorer",
@@ -114,7 +114,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jock Landale",
-      "cname": "乔克-兰代尔",
+      "cname": "喬克-蘭代爾",
       "pos": "C",
       "height": "6'11'",
       "type": "Post-Scoring Stretch Crasher",
@@ -136,7 +136,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Zaccharie Risacher",
-      "cname": "扎卡里-里萨谢",
+      "cname": "扎卡里-裡薩謝",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "Crafty 3 & D Creator",
@@ -180,7 +180,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Corey Kispert",
-      "cname": "科里-基斯珀特",
+      "cname": "科裡-基斯珀特",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Crafty Sharpshooter",
@@ -202,7 +202,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Buddy Hield",
-      "cname": "巴迪-希尔德",
+      "cname": "巴迪-希爾德",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "3PT-Sniping Creator",
@@ -224,7 +224,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Asa Newell",
-      "cname": "阿萨-纽厄尔",
+      "cname": "阿薩-紐厄爾",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Stretch Rim Wrecker",
@@ -268,7 +268,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tony Bradley",
-      "cname": "托尼-布拉德利",
+      "cname": "託尼-布拉德利",
       "pos": "C",
       "height": "6'10'",
       "type": "Crafty Post-Scoring Crasher",
@@ -290,7 +290,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Gabe Vincent",
-      "cname": "盖布-文森特",
+      "cname": "蓋布-文森特",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Playmaking 3PT Creator",
@@ -334,7 +334,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keaton Wallace",
-      "cname": "基顿-华莱士",
+      "cname": "基頓-華萊士",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Ball-Hawking 3PT Shot Hunter",
@@ -378,7 +378,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keshon Gilbert",
-      "cname": "凯雄-吉尔伯特",
+      "cname": "凱雄-吉爾伯特",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "2-Way Combo Guard",
@@ -403,7 +403,7 @@ export const NBA2K_DATA = {
   "BKN": [
     {
       "name": "Michael Porter Jr.",
-      "cname": "小迈克尔-波特",
+      "cname": "小邁克爾-波特",
       "pos": "SF / PF",
       "height": "6'10'",
       "type": "3PT-Sniping Cleaner",
@@ -425,7 +425,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Julius Randle",
-      "cname": "朱利叶斯-兰德尔",
+      "cname": "朱利葉斯-蘭德爾",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Physical Post Creator",
@@ -447,7 +447,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ziaire Williams",
-      "cname": "宰伊尔-威廉姆斯",
+      "cname": "宰伊爾-威廉姆斯",
       "pos": "SF / SG",
       "height": "6'9'",
       "type": "Ball-Hawking Blow-By Ace",
@@ -469,7 +469,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Day’Ron Sharpe",
-      "cname": "戴龙-夏普",
+      "cname": "戴龍-夏普",
       "pos": "C",
       "height": "6'9'",
       "type": "Ball Snatcher",
@@ -491,7 +491,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Egor Demin",
-      "cname": "叶戈尔-德明",
+      "cname": "葉戈爾-德明",
       "pos": "SG / PG",
       "height": "6'8'",
       "type": "Crafty Inside-Out Combo Guard",
@@ -513,7 +513,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Minott",
-      "cname": "乔什-米诺特",
+      "cname": "喬什-米諾特",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Ball-Hawking Stretch Four",
@@ -535,7 +535,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Moritz Wagner",
-      "cname": "莫里茨-瓦格纳",
+      "cname": "莫里茨-瓦格納",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Stretch Five Cleaner",
@@ -557,7 +557,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Danny Wolf",
-      "cname": "丹尼-沃尔夫",
+      "cname": "丹尼-沃爾夫",
       "pos": "PF / SF",
       "height": "6'11'",
       "type": "Break-Starting Stretch Four",
@@ -601,7 +601,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nolan Traore",
-      "cname": "诺兰-特拉奥雷",
+      "cname": "諾蘭-特拉奧雷",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Speedy Blow-By Ace",
@@ -623,7 +623,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Noah Clowney",
-      "cname": "诺厄-克洛尼",
+      "cname": "諾厄-克洛尼",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Stretch Rim Wrecker",
@@ -645,7 +645,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Terance Mann",
-      "cname": "特伦斯-曼",
+      "cname": "特倫斯-曼",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Crafty 3-Level Dime-Dropper",
@@ -667,7 +667,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ochai Agbaji",
-      "cname": "奥查伊-阿巴吉",
+      "cname": "奧查伊-阿巴吉",
       "pos": "SF / PF",
       "height": "6'5'",
       "type": "Mid-Range Menace",
@@ -689,7 +689,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ben Saraf",
-      "cname": "本-萨拉夫",
+      "cname": "本-薩拉夫",
       "pos": "PG / SG",
       "height": "6'6'",
       "type": "Point-Fading Wizard",
@@ -711,7 +711,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Wilson",
-      "cname": "杰伦-威尔逊",
+      "cname": "杰倫-威爾遜",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "Athletic Stretch Four",
@@ -733,7 +733,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Drake Powell",
-      "cname": "德雷克-鲍威尔",
+      "cname": "德雷克-鮑威爾",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "High-Flying Wing Runner",
@@ -755,7 +755,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Chaney Johnson",
-      "cname": "钱尼-约翰逊",
+      "cname": "錢尼-約翰遜",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "High-Flying Putback Pro",
@@ -799,7 +799,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Malachi Smith",
-      "cname": "玛拉基-史密斯",
+      "cname": "瑪拉基-史密斯",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Ball-Hawking Sharpshooter",
@@ -821,7 +821,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "E.J. Liddell",
-      "cname": "E.J.-利德尔",
+      "cname": "E.J.-利德爾",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "Shot-Erasing Mid-Range Scorer",
@@ -868,7 +868,7 @@ export const NBA2K_DATA = {
   "BOS": [
     {
       "name": "Jayson Tatum",
-      "cname": "杰森-塔图姆",
+      "cname": "傑森-塔圖姆",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "2-Way Crafty Slashing Cleaner",
@@ -890,7 +890,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Derrick White",
-      "cname": "德里克-怀特",
+      "cname": "德里克-懷特",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "2-Way Middy Playmaker",
@@ -912,7 +912,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Paul George",
-      "cname": "保罗-乔治",
+      "cname": "保羅-喬治",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Ball-Hawking PlayShot",
@@ -934,7 +934,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Payton Pritchard",
-      "cname": "佩顿-普里查德",
+      "cname": "佩頓-普里查德",
       "pos": "PG",
       "height": "6'1'",
       "type": "Crafty Sharpshooter",
@@ -956,7 +956,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Neemias Queta",
-      "cname": "内米亚斯-克塔",
+      "cname": "內米亞斯-克塔",
       "pos": "C",
       "height": "7'0'",
       "type": "Shot-Erasing Putback Pro",
@@ -978,7 +978,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mitchell Robinson",
-      "cname": "米切尔-罗宾逊",
+      "cname": "米切爾-羅賓遜",
       "pos": "C",
       "height": "7'0'",
       "type": "Lob Threat Board Enforcer",
@@ -1000,7 +1000,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Luka Garza",
-      "cname": "卢卡-加尔扎",
+      "cname": "盧卡-加爾扎",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Crafty Stretch Five Crasher",
@@ -1022,7 +1022,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Sam Hauser",
-      "cname": "萨姆-豪瑟",
+      "cname": "薩姆-豪瑟",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty Sharpshooter",
@@ -1044,7 +1044,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mike Conley",
-      "cname": "迈克-康利",
+      "cname": "邁克-康利",
       "pos": "PG",
       "height": "6'1'",
       "type": "2-Way Blow-By Ace",
@@ -1066,7 +1066,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Walsh",
-      "cname": "乔丹-沃尔什",
+      "cname": "喬丹-沃爾什",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "2-Way Stretch Four",
@@ -1088,7 +1088,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Baylor Scheierman",
-      "cname": "贝勒-沙伊尔曼",
+      "cname": "貝勒-沙伊爾曼",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Wing-Running Sharpshooter",
@@ -1110,7 +1110,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Hugo Gonzalez",
-      "cname": "乌戈-冈萨雷斯",
+      "cname": "烏戈-岡薩雷斯",
       "pos": "SF / PG",
       "height": "6'6'",
       "type": "2-Way Sharpshooter",
@@ -1132,7 +1132,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dalano Banton",
-      "cname": "达拉诺-班顿",
+      "cname": "達拉諾-班頓",
       "pos": "PG / SG",
       "height": "6'8'",
       "type": "Shot-Erasing Power Finisher",
@@ -1154,7 +1154,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ron Harper Jr.",
-      "cname": "小罗恩-哈珀",
+      "cname": "小羅恩-哈珀",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Iso Sniper",
@@ -1176,7 +1176,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Amari Williams",
-      "cname": "阿马里-威廉姆斯",
+      "cname": "阿馬裡-威廉姆斯",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Slashing Point Center",
@@ -1198,7 +1198,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "John Tonje",
-      "cname": "约翰-汤杰",
+      "cname": "約翰-湯傑",
       "pos": "SF / SG",
       "height": "6'4'",
       "type": "Crafty 3-Level Scorer",
@@ -1220,7 +1220,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Max Shulga",
-      "cname": "马克斯-舒尔加",
+      "cname": "馬克斯-舒爾加",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Ball-Hawking Sharpshooter",
@@ -1245,7 +1245,7 @@ export const NBA2K_DATA = {
   "CHA": [
     {
       "name": "Brandon Miller",
-      "cname": "布兰登-米勒",
+      "cname": "布蘭登-米勒",
       "pos": "SG / SF",
       "height": "6'7'",
       "type": "Inside-Out High-Flying Slasher",
@@ -1267,7 +1267,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kon Knueppel",
-      "cname": "康-克努佩尔",
+      "cname": "康-克努佩爾",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3PT-Sniping Dimer",
@@ -1289,7 +1289,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Naz Reid",
-      "cname": "纳兹-里德",
+      "cname": "納茲-裡德",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Stretch Five Layup Bully",
@@ -1311,7 +1311,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Coby White",
-      "cname": "科比-怀特",
+      "cname": "科比-懷特",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "3PT-Sniping Creator",
@@ -1333,7 +1333,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Grayson Allen",
-      "cname": "格雷森-阿伦",
+      "cname": "格雷森-阿倫",
       "pos": "SG / SF",
       "height": "6'3'",
       "type": "Iso Sniper",
@@ -1355,7 +1355,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Moussa Diabate",
-      "cname": "穆萨-迪亚巴特",
+      "cname": "穆薩-迪亞巴特",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Rim-Rocking Putback Pro",
@@ -1377,7 +1377,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ryan Kalkbrenner",
-      "cname": "瑞安-卡尔克布伦纳",
+      "cname": "瑞安-卡爾克布倫納",
       "pos": "C",
       "height": "7'1'",
       "type": "Shot-Erasing Putback Pro",
@@ -1399,7 +1399,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Royce O’Neale",
-      "cname": "罗伊斯-奥尼尔",
+      "cname": "羅伊斯-奧尼爾",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "2-Way Stretch Four",
@@ -1421,7 +1421,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Grant Williams",
-      "cname": "格兰特-威廉姆斯",
+      "cname": "格蘭特-威廉姆斯",
       "pos": "PF / C",
       "height": "6'7'",
       "type": "Crafty Stretch Four",
@@ -1443,7 +1443,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tidjane Salaun",
-      "cname": "蒂贾内-萨隆",
+      "cname": "蒂賈內-薩隆",
       "pos": "PF / SF",
       "height": "6'10'",
       "type": "Stretch Four Cleaner",
@@ -1487,7 +1487,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Sion James",
-      "cname": "锡安-詹姆斯",
+      "cname": "錫安-詹姆斯",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Catch & Shoot 3PT Sniper",
@@ -1531,7 +1531,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Pat Connaughton",
-      "cname": "帕特-康诺顿",
+      "cname": "帕特-康諾頓",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Bouncy High Flyer",
@@ -1553,7 +1553,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Xavier Tillman",
-      "cname": "泽维尔-蒂尔曼",
+      "cname": "澤維爾-蒂爾曼",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "2-Way Crafty Paint Finisher",
@@ -1575,7 +1575,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "PJ Hall",
-      "cname": "PJ-霍尔",
+      "cname": "PJ-霍爾",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Stretch Five Crasher",
@@ -1597,7 +1597,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Liam McNeeley",
-      "cname": "利亚姆-麦克尼利",
+      "cname": "利亞姆-麥克尼利",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "3PT-Creating Point Forward",
@@ -1619,7 +1619,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Antonio Reeves",
-      "cname": "安东尼奥-里夫斯",
+      "cname": "安東尼奧-裡夫斯",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Crafty 3PT Sniper",
@@ -1644,7 +1644,7 @@ export const NBA2K_DATA = {
   "CHI": [
     {
       "name": "Norman Powell",
-      "cname": "诺曼-鲍威尔",
+      "cname": "諾曼-鮑威爾",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Crafty 3PT Sniper",
@@ -1666,7 +1666,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Giddey",
-      "cname": "乔什-吉迪",
+      "cname": "喬什-吉迪",
       "pos": "PG / SG",
       "height": "6'8'",
       "type": "Crafty Playmaking Cleaner",
@@ -1688,7 +1688,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Matas Buzelis",
-      "cname": "马塔斯-布泽利斯",
+      "cname": "馬塔斯-布澤利斯",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Shot-Erasing 3-Level Creator",
@@ -1710,7 +1710,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nic Claxton",
-      "cname": "尼古拉斯-克拉克斯顿",
+      "cname": "尼古拉斯-克拉克斯頓",
       "pos": "C",
       "height": "6'11'",
       "type": "Lockdown Defender",
@@ -1732,7 +1732,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tre Jones",
-      "cname": "特雷-琼斯",
+      "cname": "特雷-瓊斯",
       "pos": "PG",
       "height": "6'1'",
       "type": "Crafty Mid-Range Menace",
@@ -1754,7 +1754,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Smith",
-      "cname": "杰伦-史密斯",
+      "cname": "杰倫-史密斯",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Stretch Lob Threat Cleaner",
@@ -1798,7 +1798,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaac Okoro",
-      "cname": "艾萨克-奥科罗",
+      "cname": "艾薩克-奧科羅",
       "pos": "SF / SG",
       "height": "6'4'",
       "type": "2-Way 3PT Sniper",
@@ -1820,7 +1820,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Leonard Miller",
-      "cname": "伦纳德-米勒",
+      "cname": "倫納德-米勒",
       "pos": "PF / SF",
       "height": "6'10'",
       "type": "Versatile Paint Finisher",
@@ -1864,7 +1864,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nick Richards",
-      "cname": "尼克-理查兹",
+      "cname": "尼克-理查茲",
       "pos": "C",
       "height": "6'11'",
       "type": "Rim-Reaping Mid-Range Scorer",
@@ -1886,7 +1886,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rob Dillingham",
-      "cname": "罗布-迪林厄姆",
+      "cname": "羅布-迪林厄姆",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Speedy Blow-By Ace",
@@ -1908,7 +1908,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Yuki Kawamura",
-      "cname": "河村勇辉",
+      "cname": "河村勇輝",
       "pos": "PG",
       "height": "5'8'",
       "type": "Table Setter",
@@ -1930,7 +1930,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Noa Essengue",
-      "cname": "诺阿-埃森格",
+      "cname": "諾阿-埃森格",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Rim-Running Rim Rocker",
@@ -1952,7 +1952,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mac McClung",
-      "cname": "麦克-麦克朗",
+      "cname": "麥克-麥克朗",
       "pos": "SG / PG",
       "height": "6'2'",
       "type": "Slashing Combo Guard",
@@ -1974,7 +1974,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Lachlan Olbrich",
-      "cname": "拉克伦-奥尔布里奇",
+      "cname": "拉克倫-奧爾布里奇",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Glass Visionary",
@@ -1999,7 +1999,7 @@ export const NBA2K_DATA = {
   "CLE": [
     {
       "name": "Donovan Mitchell",
-      "cname": "多诺万-米切尔",
+      "cname": "多諾萬-米切爾",
       "pos": "SG / PG",
       "height": "6'2'",
       "type": "Mid-Range Slasher",
@@ -2043,7 +2043,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jarrett Allen",
-      "cname": "贾勒特-阿伦",
+      "cname": "賈勒特-阿倫",
       "pos": "C",
       "height": "6'9'",
       "type": "2-Way Crafty Paint Prodigy",
@@ -2065,7 +2065,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Max Strus",
-      "cname": "马克斯-斯特鲁斯",
+      "cname": "馬克斯-斯特魯斯",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Sharpshooting Cleaner",
@@ -2087,7 +2087,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Sam Merrill",
-      "cname": "萨姆-梅里尔",
+      "cname": "薩姆-梅里爾",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Dime-Dropping 3PT Gunner",
@@ -2109,7 +2109,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dennis Schroder",
-      "cname": "丹尼斯-施罗德",
+      "cname": "丹尼斯-施羅德",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "Speedy Blow-By Ace",
@@ -2131,7 +2131,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaylon Tyson",
-      "cname": "杰伦-泰森",
+      "cname": "杰倫-泰森",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "3PT-Sniping Creator",
@@ -2153,7 +2153,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Thomas Bryant",
-      "cname": "托马斯-布莱恩特",
+      "cname": "托馬斯-布萊恩特",
       "pos": "C",
       "height": "6'9'",
       "type": "Crafty Stretch Five",
@@ -2197,7 +2197,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nae’Qwan Tomlin",
-      "cname": "纳伊夸恩-汤姆林",
+      "cname": "納伊誇恩-湯姆林",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Putback Dual-Finishing Eraser",
@@ -2219,7 +2219,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tyrese Proctor",
-      "cname": "泰雷斯-普罗克特",
+      "cname": "泰雷斯-普羅克特",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Point-Fading Wizard",
@@ -2241,7 +2241,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Olivier Sarr",
-      "cname": "奥利维耶-萨尔",
+      "cname": "奧利維耶-薩爾",
       "pos": "C",
       "height": "6'10'",
       "type": "Shot-Erasing Mid-Paint Scorer",
@@ -2263,7 +2263,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tristan Enaruna",
-      "cname": "特里斯坦-埃纳鲁纳",
+      "cname": "特里斯坦-埃納魯納",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Blow-By High Flyer",
@@ -2285,7 +2285,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Riley Minix",
-      "cname": "赖利-米尼克斯",
+      "cname": "賴利-米尼克斯",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Ball-Hawking Stretch Four",
@@ -2310,7 +2310,7 @@ export const NBA2K_DATA = {
   "DAL": [
     {
       "name": "Kyrie Irving",
-      "cname": "凯里-欧文",
+      "cname": "凱里-歐文",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Crafty Iso Savant",
@@ -2332,7 +2332,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Cooper Flagg",
-      "cname": "库珀-弗拉格",
+      "cname": "庫珀-弗拉格",
       "pos": "SF / PG",
       "height": "6'9'",
       "type": "2-Way Mid-Paint Scorer",
@@ -2354,7 +2354,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Naji Marshall",
-      "cname": "纳吉-马歇尔",
+      "cname": "納吉-馬歇爾",
       "pos": "SF / PG",
       "height": "6'6'",
       "type": "Diming Crafty Layup Artist",
@@ -2376,7 +2376,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Santi Aldama",
-      "cname": "桑蒂-阿尔达马",
+      "cname": "桑蒂-阿爾達馬",
       "pos": "PF / C",
       "height": "7'0'",
       "type": "Crafty Stretch Four",
@@ -2398,7 +2398,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "P.J. Washington",
-      "cname": "PJ-华盛顿",
+      "cname": "PJ-華盛頓",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "2-Way Rim Rocker",
@@ -2420,7 +2420,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Daniel Gafford",
-      "cname": "丹尼尔-加福德",
+      "cname": "丹尼爾-加福德",
       "pos": "C",
       "height": "6'10'",
       "type": "2-Way Rim-Running Lob Threat",
@@ -2442,7 +2442,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dereck Lively II",
-      "cname": "德雷克-莱夫利二世",
+      "cname": "德雷克-萊夫利二世",
       "pos": "C",
       "height": "7'1'",
       "type": "2-Way Versatile Paint Finisher",
@@ -2464,7 +2464,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Klay Thompson",
-      "cname": "克莱-汤普森",
+      "cname": "克萊-湯普森",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Physical 3 & D Sniper",
@@ -2486,7 +2486,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Max Christie",
-      "cname": "马克斯-克里斯蒂",
+      "cname": "馬克斯-克里斯蒂",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "3 & D Two Guard",
@@ -2508,7 +2508,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Caleb Martin",
-      "cname": "凯莱布-马丁",
+      "cname": "凱萊布-馬丁",
       "pos": "PF / SF",
       "height": "6'5'",
       "type": "2-Way Crafty Stretch Four",
@@ -2530,7 +2530,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ryan Nembhard",
-      "cname": "瑞安-内姆哈德",
+      "cname": "瑞安-內姆哈德",
       "pos": "PG",
       "height": "5'11'",
       "type": "Playmaking 3PT Creator",
@@ -2552,7 +2552,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dwight Powell",
-      "cname": "德怀特-鲍威尔",
+      "cname": "德懷特-鮑威爾",
       "pos": "C",
       "height": "6'10'",
       "type": "Crafty Post-Scoring Stretch",
@@ -2574,7 +2574,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Moussa Cisse",
-      "cname": "穆萨-西塞",
+      "cname": "穆薩-西塞",
       "pos": "C",
       "height": "6'11'",
       "type": "Putback Rim-Rocking Eraser",
@@ -2596,7 +2596,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "John Poulakidas",
-      "cname": "约翰-普拉基达斯",
+      "cname": "約翰-普拉基達斯",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Physical Sharpshooter",
@@ -2643,7 +2643,7 @@ export const NBA2K_DATA = {
   "DEN": [
     {
       "name": "Nikola Jokic",
-      "cname": "尼古拉-约基奇",
+      "cname": "尼古拉-約基奇",
       "pos": "C",
       "height": "6'11'",
       "type": "Triple-Double Threat",
@@ -2665,7 +2665,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamal Murray",
-      "cname": "贾马尔-默里",
+      "cname": "賈馬爾-默裡",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Iso Savant",
@@ -2687,7 +2687,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Aaron Gordon",
-      "cname": "阿龙-戈登",
+      "cname": "阿龍-戈登",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "2-Way Rim-Wrecking Stretch",
@@ -2709,7 +2709,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Peyton Watson",
-      "cname": "佩顿-沃特森",
+      "cname": "佩頓-沃特森",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Shot-Erasing Sharpshooter",
@@ -2731,7 +2731,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Christian Braun",
-      "cname": "克里斯蒂安-布劳恩",
+      "cname": "克里斯蒂安-布勞恩",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Versatile Paint Finisher",
@@ -2753,7 +2753,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Cameron Johnson",
-      "cname": "卡梅伦-约翰逊",
+      "cname": "卡梅倫-約翰遜",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "3PT Layup Artist",
@@ -2775,7 +2775,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tim Hardaway Jr.",
-      "cname": "小蒂姆-哈达威",
+      "cname": "小蒂姆-哈達威",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Crafty 3-Level Scorer",
@@ -2797,7 +2797,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Marvin Bagley III",
-      "cname": "马文-巴格利三世",
+      "cname": "馬文-巴格利三世",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Stretch Five Crasher",
@@ -2819,7 +2819,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Julian Strawther",
-      "cname": "朱利安-斯特劳瑟",
+      "cname": "朱利安-斯特勞瑟",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "3PT-Sniping Creator",
@@ -2841,7 +2841,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bruce Brown",
-      "cname": "布鲁斯-布朗",
+      "cname": "布魯斯-布朗",
       "pos": "SF / PG",
       "height": "6'4'",
       "type": "3PT-Creating Point Forward",
@@ -2863,7 +2863,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Zeke Nnaji",
-      "cname": "齐克-纳吉",
+      "cname": "齊克-納吉",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Rim Runner",
@@ -2885,7 +2885,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tyus Jones",
-      "cname": "泰厄斯-琼斯",
+      "cname": "泰厄斯-瓊斯",
       "pos": "PG",
       "height": "6'1'",
       "type": "Crafty Table Setter",
@@ -2907,7 +2907,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Pickett",
-      "cname": "杰伦-皮克特",
+      "cname": "杰倫-皮克特",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Physical 3PT Sniper",
@@ -2929,7 +2929,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "DaRon Holmes II",
-      "cname": "达隆-霍姆斯二世",
+      "cname": "達隆-霍姆斯二世",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Athletic Stretch Five",
@@ -2973,7 +2973,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Spencer Jones",
-      "cname": "斯潘塞-琼斯",
+      "cname": "斯潘塞-瓊斯",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Crafty Stretch Four",
@@ -2995,7 +2995,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "David Roddy",
-      "cname": "戴维-罗迪",
+      "cname": "戴維-羅迪",
       "pos": "PF / SF",
       "height": "6'4'",
       "type": "Crafty 3-Level Scoring Cleaner",
@@ -3017,7 +3017,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Curtis Jones",
-      "cname": "柯蒂斯-琼斯",
+      "cname": "柯蒂斯-瓊斯",
       "pos": "SG / PG",
       "height": "6'3'",
       "type": "Iso Sniper",
@@ -3042,7 +3042,7 @@ export const NBA2K_DATA = {
   "DET": [
     {
       "name": "Cade Cunningham",
-      "cname": "凯德-坎宁安",
+      "cname": "凱德-坎寧安",
       "pos": "PG / SG",
       "height": "6'6'",
       "type": "2-Way Crafty 3-Level Playmaker",
@@ -3064,7 +3064,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ausar Thompson",
-      "cname": "奥萨尔-汤普森",
+      "cname": "奧薩爾-湯普森",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "2-Way Blow-By High Flyer",
@@ -3086,7 +3086,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Duren",
-      "cname": "杰伦-杜伦",
+      "cname": "杰倫-杜倫",
       "pos": "C",
       "height": "6'10'",
       "type": "Board-Enforcing Power Finisher",
@@ -3108,7 +3108,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "John Collins",
-      "cname": "约翰-科林斯",
+      "cname": "約翰-科林斯",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Stretch Rim Wrecker",
@@ -3130,7 +3130,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Daniss Jenkins",
-      "cname": "达尼斯-詹金斯",
+      "cname": "達尼斯-詹金斯",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Iso Sniper",
@@ -3152,7 +3152,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Duncan Robinson",
-      "cname": "邓肯-罗宾逊",
+      "cname": "鄧肯-羅賓遜",
       "pos": "SG / SF",
       "height": "6'7'",
       "type": "Crafty Sharpshooter",
@@ -3174,7 +3174,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Paul Reed",
-      "cname": "保罗-里德",
+      "cname": "保羅-裡德",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Disruptive Crafty Putback Pro",
@@ -3196,7 +3196,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Joe",
-      "cname": "以赛亚-乔",
+      "cname": "以賽亞-喬",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Crafty 3-Level Scorer",
@@ -3218,7 +3218,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Javonte Green",
-      "cname": "贾冯特-格林",
+      "cname": "賈馮特-格林",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Ball-Hawking High Flyer",
@@ -3240,7 +3240,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ronald Holland II",
-      "cname": "罗纳德-霍兰德二世",
+      "cname": "羅納德-霍蘭德二世",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "2-Way Blow-By Laymaker",
@@ -3262,7 +3262,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kevin Huerter",
-      "cname": "凯文-赫尔特",
+      "cname": "凱文-赫爾特",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Crafty Laymaker",
@@ -3284,7 +3284,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Marcus Sasser",
-      "cname": "马库斯-萨瑟",
+      "cname": "馬庫斯-薩瑟",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "3PT Shot Hunter",
@@ -3350,7 +3350,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaac Jones",
-      "cname": "艾萨克-琼斯",
+      "cname": "艾薩克-瓊斯",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Shot-Erasing Putback Pro",
@@ -3372,7 +3372,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Wendell Moore Jr.",
-      "cname": "小温德尔-摩尔",
+      "cname": "小溫德爾-摩爾",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "High-Flying 3PT Sniper",
@@ -3394,7 +3394,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Chaz Lanier",
-      "cname": "查兹-拉尼尔",
+      "cname": "查茲-拉尼爾",
       "pos": "SG / SF",
       "height": "6'3'",
       "type": "Speedy Blow-By Ace",
@@ -3416,7 +3416,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tolu Smith",
-      "cname": "托卢-史密斯",
+      "cname": "託盧-史密斯",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Board-Hunting Post Scorer",
@@ -3441,7 +3441,7 @@ export const NBA2K_DATA = {
   "GSW": [
     {
       "name": "Stephen Curry",
-      "cname": "斯蒂芬-库里",
+      "cname": "斯蒂芬-庫裡",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Crafty Offensive Engine",
@@ -3485,7 +3485,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kristaps Porzingis",
-      "cname": "克里斯塔普斯-波尔津吉斯",
+      "cname": "克里斯塔普斯-波爾津吉斯",
       "pos": "C / PF",
       "height": "7'2'",
       "type": "Stretch Lob Threat",
@@ -3507,7 +3507,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Brandin Podziemski",
-      "cname": "布兰丁-波杰姆斯基",
+      "cname": "布蘭丁-波傑姆斯基",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Crafty 3PT Sniper",
@@ -3573,7 +3573,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "De’Anthony Melton",
-      "cname": "德安东尼-梅尔顿",
+      "cname": "德安東尼-梅爾頓",
       "pos": "SG / PG",
       "height": "6'2'",
       "type": "2-Way Tempo Pusher",
@@ -3595,7 +3595,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Al Horford",
-      "cname": "艾尔-霍福德",
+      "cname": "艾爾-霍福德",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Diming Pick & Popper",
@@ -3617,7 +3617,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Gary Payton II",
-      "cname": "加里-佩顿二世",
+      "cname": "加里-佩頓二世",
       "pos": "SF / PF",
       "height": "6'2'",
       "type": "2-Way Blow-By Laymaker",
@@ -3661,7 +3661,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Will Richard",
-      "cname": "威尔-理查德",
+      "cname": "威爾-理查德",
       "pos": "SG / SF",
       "height": "6'3'",
       "type": "Ball-Hawking Sharpshooter",
@@ -3683,7 +3683,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Seth Curry",
-      "cname": "塞思-库里",
+      "cname": "塞思-庫裡",
       "pos": "SG / PG",
       "height": "6'1'",
       "type": "Crafty 3-Level Scorer",
@@ -3705,7 +3705,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nate Williams",
-      "cname": "内特-威廉姆斯",
+      "cname": "內特-威廉姆斯",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Sharpshooting Crasher",
@@ -3727,7 +3727,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "LJ Cryer",
-      "cname": "LJ-克赖尔",
+      "cname": "LJ-克賴爾",
       "pos": "PG",
       "height": "6'1'",
       "type": "Iso Sniper",
@@ -3749,7 +3749,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Charles Bassey",
-      "cname": "查尔斯-巴塞",
+      "cname": "查爾斯-巴塞",
       "pos": "C",
       "height": "6'10'",
       "type": "Glass Guardian",
@@ -3771,7 +3771,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Malevy Leons",
-      "cname": "马莱维-莱昂斯",
+      "cname": "馬萊維-萊昂斯",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Disruptive Stretch Crasher",
@@ -3796,7 +3796,7 @@ export const NBA2K_DATA = {
   "HOU": [
     {
       "name": "Kevin Durant",
-      "cname": "凯文-杜兰特",
+      "cname": "凱文-杜蘭特",
       "pos": "SF / SG",
       "height": "6'11'",
       "type": "Crafty Walking Bucket",
@@ -3818,7 +3818,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alperen Sengun",
-      "cname": "阿尔佩伦-申京",
+      "cname": "阿爾佩倫-申京",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Dime-Dropping Post Bully",
@@ -3840,7 +3840,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Amen Thompson",
-      "cname": "阿门-汤普森",
+      "cname": "阿門-湯普森",
       "pos": "SG / PG",
       "height": "6'7'",
       "type": "2-Way Blow-By High Flyer",
@@ -3862,7 +3862,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jabari Smith Jr.",
-      "cname": "小贾巴里-史密斯",
+      "cname": "小賈巴里-史密斯",
       "pos": "PF / SF",
       "height": "6'10'",
       "type": "Crafty Rim-Rocking Stretch",
@@ -3884,7 +3884,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Reed Sheppard",
-      "cname": "里德-谢泼德",
+      "cname": "裡德-謝潑德",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Ball-Hawking 3PT Shot Hunter",
@@ -3906,7 +3906,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Fred VanVleet",
-      "cname": "弗雷德-范弗利特",
+      "cname": "弗雷德-範弗利特",
       "pos": "PG",
       "height": "6'0'",
       "type": "2-Way Blow-By Ace",
@@ -3928,7 +3928,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Marcus Smart",
-      "cname": "马库斯-斯马特",
+      "cname": "馬庫斯-斯馬特",
       "pos": "SF / SG",
       "height": "6'3'",
       "type": "2-Way Mid-Range Bully",
@@ -3950,7 +3950,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tari Eason",
-      "cname": "塔里-伊森",
+      "cname": "塔裡-伊森",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "Physical Perimeter Lock",
@@ -3994,7 +3994,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Steven Adams",
-      "cname": "史蒂文-亚当斯",
+      "cname": "史蒂文-亞當斯",
       "pos": "C",
       "height": "6'11'",
       "type": "Paint Crasher",
@@ -4016,7 +4016,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Aaron Holiday",
-      "cname": "阿龙-霍勒迪",
+      "cname": "阿龍-霍勒迪",
       "pos": "SG / PG",
       "height": "6'0'",
       "type": "Shot-Creating Combo Guard",
@@ -4038,7 +4038,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bogdan Bogdanovic",
-      "cname": "波格丹-波格丹诺维奇",
+      "cname": "波格丹-波格丹諾維奇",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "3PT Shot Hunter",
@@ -4060,7 +4060,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jae’Sean Tate",
-      "cname": "杰肖恩-泰特",
+      "cname": "傑肖恩-泰特",
       "pos": "SF / PF",
       "height": "6'4'",
       "type": "Crafty Laymaker",
@@ -4082,7 +4082,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jeff Green",
-      "cname": "杰夫-格林",
+      "cname": "傑夫-格林",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Skilled Stretch Four",
@@ -4104,7 +4104,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "JD Davison",
-      "cname": "JD-戴维森",
+      "cname": "JD-戴維森",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "Blow-By High Flyer",
@@ -4126,7 +4126,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tristen Newton",
-      "cname": "特里斯坦-牛顿",
+      "cname": "特里斯坦-牛頓",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Combo Guard",
@@ -4148,7 +4148,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Crawford",
-      "cname": "以赛亚-克劳福德",
+      "cname": "以賽亞-克勞福德",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3-Level Scorer",
@@ -4173,7 +4173,7 @@ export const NBA2K_DATA = {
   "IND": [
     {
       "name": "Tyrese Haliburton",
-      "cname": "泰雷塞-哈利伯顿",
+      "cname": "泰雷塞-哈利伯頓",
       "pos": "PG / SG",
       "height": "6'5'",
       "type": "Crafty Offensive Engine",
@@ -4195,7 +4195,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Pascal Siakam",
-      "cname": "帕斯卡尔-西亚卡姆",
+      "cname": "帕斯卡爾-西亞卡姆",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "2-Way Inside-Out Creator",
@@ -4217,7 +4217,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ivica Zubac",
-      "cname": "伊维察-祖巴茨",
+      "cname": "伊維察-祖巴茨",
       "pos": "C",
       "height": "7'0'",
       "type": "2-Way Post Bully Cleaner",
@@ -4239,7 +4239,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Andrew Nembhard",
-      "cname": "安德鲁-内姆哈德",
+      "cname": "安德魯-內姆哈德",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "2-Way Finisher",
@@ -4261,7 +4261,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "T.J. McConnell",
-      "cname": "TJ-麦康奈尔",
+      "cname": "TJ-麥康奈爾",
       "pos": "PG",
       "height": "6'1'",
       "type": "2-Way Crafty Mid-Paint Maestro",
@@ -4283,7 +4283,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jarace Walker",
-      "cname": "贾拉斯-沃克",
+      "cname": "賈拉斯-沃克",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "3PT-Sniping Posterizer",
@@ -4305,7 +4305,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Obi Toppin",
-      "cname": "奥比-托平",
+      "cname": "奧比-託平",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Paint-Finishing Cleaner",
@@ -4327,7 +4327,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Aaron Nesmith",
-      "cname": "阿龙-内史密斯",
+      "cname": "阿龍-內史密斯",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3 & D Wing",
@@ -4349,7 +4349,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kelly Oubre Jr.",
-      "cname": "小凯利-乌布雷",
+      "cname": "小凱利-烏佈雷",
       "pos": "SF / PF",
       "height": "6'8'",
       "type": "Mid-Range High Flyer",
@@ -4371,7 +4371,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jay Huff",
-      "cname": "杰伊-赫夫",
+      "cname": "傑伊-赫夫",
       "pos": "C",
       "height": "7'1'",
       "type": "Shot-Erasing Mid-Range Scorer",
@@ -4393,7 +4393,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Quenton Jackson",
-      "cname": "昆顿-杰克逊",
+      "cname": "昆頓-傑克遜",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Dime-Dropping 3PT Gunner",
@@ -4437,7 +4437,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ben Sheppard",
-      "cname": "本-谢泼德",
+      "cname": "本-謝潑德",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "2-Way Sharpshooter",
@@ -4459,7 +4459,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Johnny Furphy",
-      "cname": "约翰尼-弗菲",
+      "cname": "約翰尼-弗菲",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "Crafty 3PT-Sniping Cleaner",
@@ -4503,7 +4503,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Slawson",
-      "cname": "杰伦-斯劳森",
+      "cname": "杰倫-斯勞森",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Disruptive High Flyer",
@@ -4525,7 +4525,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ethan Thompson",
-      "cname": "伊桑-汤普森",
+      "cname": "伊桑-湯普森",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Crafty Sharpshooter",
@@ -4572,7 +4572,7 @@ export const NBA2K_DATA = {
   "LAC": [
     {
       "name": "Brandon Ingram",
-      "cname": "布兰登-英格拉姆",
+      "cname": "布蘭登-英格拉姆",
       "pos": "SF / PF",
       "height": "6'8'",
       "type": "Crafty Mid-Range Menace",
@@ -4594,7 +4594,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Darius Garland",
-      "cname": "达里厄斯-加兰",
+      "cname": "達裡厄斯-加蘭",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "Iso Sniper",
@@ -4616,7 +4616,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bennedict Mathurin",
-      "cname": "本内迪克特-马图林",
+      "cname": "本內迪克特-馬圖林",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Slashing Combo Guard",
@@ -4638,7 +4638,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rui Hachimura",
-      "cname": "八村垒",
+      "cname": "八村壘",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Stretch Lob Threat",
@@ -4660,7 +4660,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Derrick Jones Jr.",
-      "cname": "小德里克-琼斯",
+      "cname": "小德里克-瓊斯",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "2-Way Mid-Paint Scorer",
@@ -4682,7 +4682,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Brook Lopez",
-      "cname": "布鲁克-洛佩斯",
+      "cname": "布魯克-洛佩斯",
       "pos": "C",
       "height": "7'1'",
       "type": "Shot-Erasing Pick & Popper",
@@ -4704,7 +4704,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kris Dunn",
-      "cname": "克里斯-邓恩",
+      "cname": "克里斯-鄧恩",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Clamp Thief",
@@ -4726,7 +4726,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Miller",
-      "cname": "乔丹-米勒",
+      "cname": "喬丹-米勒",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Mid-Paint Scorer",
@@ -4748,7 +4748,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Jackson",
-      "cname": "以赛亚-杰克逊",
+      "cname": "以賽亞-傑克遜",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Putback Pro",
@@ -4770,7 +4770,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bradley Beal",
-      "cname": "布拉德利-比尔",
+      "cname": "布拉德利-比爾",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Laymaking Two Guard",
@@ -4836,7 +4836,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Yanic Konan Niederhauser",
-      "cname": "亚尼克-科南-尼德豪泽",
+      "cname": "亞尼克-科南-尼德豪澤",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Shot-Erasing Masher",
@@ -4858,7 +4858,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nicolas Batum",
-      "cname": "尼古拉-巴图姆",
+      "cname": "尼古拉-巴圖姆",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "2-Way Stretch Dime-Dropper",
@@ -4880,7 +4880,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "TyTy Washington Jr.",
-      "cname": "小泰泰-华盛顿",
+      "cname": "小泰泰-華盛頓",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Blow-By High Flyer",
@@ -4924,7 +4924,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Norchad Omier",
-      "cname": "诺查德-奥米尔",
+      "cname": "諾查德-奧米爾",
       "pos": "PF / C",
       "height": "6'7'",
       "type": "Board-Hunting Rim Rocker",
@@ -4971,7 +4971,7 @@ export const NBA2K_DATA = {
   "LAL": [
     {
       "name": "Luka Doncic",
-      "cname": "卢卡-东契奇",
+      "cname": "盧卡-東契奇",
       "pos": "PG / SG",
       "height": "6'8'",
       "type": "Crafty Offensive Engine",
@@ -4993,7 +4993,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Austin Reaves",
-      "cname": "奥斯汀-里夫斯",
+      "cname": "奧斯汀-裡夫斯",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Crafty Iniside-Out Combo Guard",
@@ -5015,7 +5015,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Walker Kessler",
-      "cname": "沃克-凯斯勒",
+      "cname": "沃克-凱斯勒",
       "pos": "C",
       "height": "7'2'",
       "type": "Crafty Mashing Board Enforcer",
@@ -5037,7 +5037,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Collin Sexton",
-      "cname": "科林-塞克斯顿",
+      "cname": "科林-塞克斯頓",
       "pos": "SG / PG",
       "height": "6'3'",
       "type": "3PT Creator",
@@ -5059,7 +5059,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Quentin Grimes",
-      "cname": "昆廷-格兰姆斯",
+      "cname": "昆廷-格蘭姆斯",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Physical Perimeter Lock",
@@ -5081,7 +5081,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Sandro Mamukelashvili",
-      "cname": "桑德罗-马穆凯拉什维利",
+      "cname": "桑德羅-馬穆凱拉什維利",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Crafty Stretch Four Cleaner",
@@ -5103,7 +5103,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jarred Vanderbilt",
-      "cname": "贾里德-范德比尔特",
+      "cname": "賈裡德-範德比爾特",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Lockdown Defender",
@@ -5125,7 +5125,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaden Hardy",
-      "cname": "杰登-哈迪",
+      "cname": "傑登-哈迪",
       "pos": "SG / PG",
       "height": "6'3'",
       "type": "Iso Sniper",
@@ -5147,7 +5147,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jake LaRavia",
-      "cname": "杰克-拉雷维亚",
+      "cname": "傑克-拉雷維亞",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "2-Way Crafty Finisher",
@@ -5169,7 +5169,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Maxi Kleber",
-      "cname": "马克西-克勒贝尔",
+      "cname": "馬克西-克勒貝爾",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "2-Way Table Setter",
@@ -5191,7 +5191,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dalton Knecht",
-      "cname": "多尔顿-克内克特",
+      "cname": "多爾頓-克內克特",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Mid-Paint Scorer",
@@ -5213,7 +5213,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kevon Looney",
-      "cname": "凯文-卢尼",
+      "cname": "凱文-盧尼",
       "pos": "C",
       "height": "6'9'",
       "type": "Board-Hunting Stretch Five",
@@ -5257,7 +5257,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Drew Timme",
-      "cname": "德鲁-蒂米",
+      "cname": "德魯-蒂米",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Crafty Stretch Five",
@@ -5301,7 +5301,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Adou Thiero",
-      "cname": "阿杜-蒂耶罗",
+      "cname": "阿杜-蒂耶羅",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "High-Flying Wing Runner",
@@ -5323,7 +5323,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Chris Manon",
-      "cname": "克里斯-马农",
+      "cname": "克里斯-馬農",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Ball-Hawking High Flyer",
@@ -5348,7 +5348,7 @@ export const NBA2K_DATA = {
   "MEM": [
     {
       "name": "Ty Jerome",
-      "cname": "泰-杰罗姆",
+      "cname": "泰-傑羅姆",
       "pos": "PG / SG",
       "height": "6'5'",
       "type": "Crafty Iso Savant",
@@ -5392,7 +5392,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jerami Grant",
-      "cname": "杰拉米-格兰特",
+      "cname": "傑拉米-格蘭特",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty Inside-Out Creator",
@@ -5436,7 +5436,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "GG Jackson",
-      "cname": "GG-杰克逊",
+      "cname": "GG-傑克遜",
       "pos": "PF / SF",
       "height": "6'9'",
       "type": "Rim-Rocking Mid-Range Slasher",
@@ -5458,7 +5458,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaylen Wells",
-      "cname": "杰伦-威尔斯",
+      "cname": "杰倫-威爾斯",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "Mid-Paint Scorer",
@@ -5502,7 +5502,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Stewart",
-      "cname": "以赛亚-斯图尔特",
+      "cname": "以賽亞-斯圖爾特",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "2-Way Pick & Popper",
@@ -5524,7 +5524,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Olivier-Maxence Prosper",
-      "cname": "奥利维耶-马克桑斯-普罗斯珀",
+      "cname": "奧利維耶-馬克桑斯-普羅斯珀",
       "pos": "C / PF",
       "height": "6'7'",
       "type": "Rim-Rocking Stretch Five",
@@ -5546,7 +5546,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Javon Small",
-      "cname": "贾冯-斯莫尔",
+      "cname": "賈馮-斯莫爾",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "Inside-Out High-Flying Slasher",
@@ -5590,7 +5590,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "D’Angelo Russell",
-      "cname": "丹吉洛-拉塞尔",
+      "cname": "丹吉洛-拉塞爾",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Crafty Mid-Range Menace",
@@ -5656,7 +5656,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Walter Clayton Jr.",
-      "cname": "小沃尔特-克莱顿",
+      "cname": "小沃爾特-克萊頓",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Crafty Mid-Range Menace",
@@ -5678,7 +5678,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kentavious Caldwell-Pope",
-      "cname": "肯塔维奥斯-考德威尔-波普",
+      "cname": "肯塔維奧斯-考德威爾-波普",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "2-Way Iso Sniper",
@@ -5700,7 +5700,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kris Murray",
-      "cname": "克里斯-默里",
+      "cname": "克里斯-默裡",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Crafty Mid-Paint Scorer",
@@ -5722,7 +5722,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jahmai Mashack",
-      "cname": "贾迈-马沙克",
+      "cname": "賈邁-馬沙克",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Clamp Thief",
@@ -5744,7 +5744,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "AJ Johnson",
-      "cname": "AJ-约翰逊",
+      "cname": "AJ-約翰遜",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Blow-By High Flyer",
@@ -5766,7 +5766,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dariq Whitehead",
-      "cname": "达里克-怀特黑德",
+      "cname": "達裡克-懷特黑德",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Inside-Out High-Flying Slasher",
@@ -5810,7 +5810,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Adama Bal",
-      "cname": "阿达马-巴尔",
+      "cname": "阿達馬-巴爾",
       "pos": "SG / PG",
       "height": "6'7'",
       "type": "3PT Shot Hunter",
@@ -5835,7 +5835,7 @@ export const NBA2K_DATA = {
   "MIA": [
     {
       "name": "Giannis Antetokounmpo",
-      "cname": "扬尼斯-阿德托昆博",
+      "cname": "揚尼斯-阿德託昆博",
       "pos": "PF / C",
       "height": "6'11'",
       "type": "2-Way Crafty PlaySlash Cleaner",
@@ -5857,7 +5857,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bam Adebayo",
-      "cname": "巴姆-阿德巴约",
+      "cname": "巴姆-阿德巴約",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "2-Way Paint-Finishing Cleaner",
@@ -5879,7 +5879,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Andrew Wiggins",
-      "cname": "安德鲁-威金斯",
+      "cname": "安德魯-威金斯",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Inside-Out Rim-Rocking Slasher",
@@ -5923,7 +5923,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Pelle Larsson",
-      "cname": "佩莱-拉松",
+      "cname": "佩萊-拉松",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Mid-Paint Scorer",
@@ -5945,7 +5945,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Davion Mitchell",
-      "cname": "戴维恩-米切尔",
+      "cname": "戴維恩-米切爾",
       "pos": "PG / SG",
       "height": "6'0'",
       "type": "3 & D Creator",
@@ -5967,7 +5967,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Simone Fontecchio",
-      "cname": "西莫内-丰泰基奥",
+      "cname": "西莫內-豐泰基奧",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty 3-Level Scorer",
@@ -5989,7 +5989,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dru Smith",
-      "cname": "德鲁-史密斯",
+      "cname": "德魯-史密斯",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "2-Way Crafty Finisher",
@@ -6011,7 +6011,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Myron Gardner",
-      "cname": "迈伦-加德纳",
+      "cname": "邁倫-加德納",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Board-Hunting 3PT Sniper",
@@ -6033,7 +6033,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nikola Jovic",
-      "cname": "尼古拉-约维奇",
+      "cname": "尼古拉-約維奇",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Crafty Inside-Out Point Center",
@@ -6055,7 +6055,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keshad Johnson",
-      "cname": "凯沙德-约翰逊",
+      "cname": "凱沙德-約翰遜",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "Rim-Running Rim Rocker",
@@ -6077,7 +6077,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trevor Keels",
-      "cname": "特雷弗-基尔斯",
+      "cname": "特雷弗-基爾斯",
       "pos": "SG",
       "height": "6'4'",
       "type": "Physical Combo Guard",
@@ -6099,7 +6099,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Vladislav Goldin",
-      "cname": "弗拉季斯拉夫-戈尔丁",
+      "cname": "弗拉季斯拉夫-戈爾丁",
       "pos": "C",
       "height": "7'0'",
       "type": "Stretch Lob Threat",
@@ -6121,7 +6121,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jahmir Young",
-      "cname": "贾米尔-扬",
+      "cname": "賈米爾-揚",
       "pos": "PG",
       "height": "6'2'",
       "type": "Mid-Range Menace",
@@ -6146,7 +6146,7 @@ export const NBA2K_DATA = {
   "MIL": [
     {
       "name": "Tyler Herro",
-      "cname": "泰勒-希罗",
+      "cname": "泰勒-希羅",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Crafty Offensive Engine",
@@ -6168,7 +6168,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kevin Porter Jr.",
-      "cname": "小凯文-波特",
+      "cname": "小凱文-波特",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Ball-Hawking Mid-Paint Scorer",
@@ -6190,7 +6190,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ryan Rollins",
-      "cname": "瑞安-罗林斯",
+      "cname": "瑞安-羅林斯",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Crafty 3PT-Sniping Creator",
@@ -6212,7 +6212,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kyle Kuzma",
-      "cname": "凯尔-库兹马",
+      "cname": "凱爾-庫茲馬",
       "pos": "SF / PF",
       "height": "6'9'",
       "type": "Drive & Rise Bully",
@@ -6256,7 +6256,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kel’el Ware",
-      "cname": "凯尔-韦尔",
+      "cname": "凱爾-韋爾",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Board-Hunting Stretch Dunker",
@@ -6278,7 +6278,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Caris LeVert",
-      "cname": "卡里斯-勒韦尔",
+      "cname": "卡里斯-勒韋爾",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Shot-Erasing Mid-Range Menace",
@@ -6300,7 +6300,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Myles Turner",
-      "cname": "迈尔斯-特纳",
+      "cname": "邁爾斯-特納",
       "pos": "C",
       "height": "6'11'",
       "type": "2-Way Stretch Five",
@@ -6322,7 +6322,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ousmane Dieng",
-      "cname": "乌斯曼-迪昂",
+      "cname": "烏斯曼-迪昂",
       "pos": "SF / PF",
       "height": "6'9'",
       "type": "Iso Sniper",
@@ -6366,7 +6366,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kasparas Jakucionis",
-      "cname": "卡斯帕拉斯-雅库西奥尼斯",
+      "cname": "卡斯帕拉斯-雅庫西奧尼斯",
       "pos": "PG / SG",
       "height": "6'6'",
       "type": "3PT Shot Hunter",
@@ -6388,7 +6388,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Gary Trent Jr.",
-      "cname": "小加里-特伦特",
+      "cname": "小加里-特倫特",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Sharpshooter",
@@ -6410,7 +6410,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jericho Sims",
-      "cname": "杰里科-西姆斯",
+      "cname": "傑里科-西姆斯",
       "pos": "C",
       "height": "6'10'",
       "type": "Rim-Running Rim Rocker",
@@ -6432,7 +6432,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kam Jones",
-      "cname": "卡姆-琼斯",
+      "cname": "卡姆-瓊斯",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Crafty Laymaking Combo Guard",
@@ -6454,7 +6454,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Andre Jackson Jr.",
-      "cname": "小安德烈-杰克逊",
+      "cname": "小安德烈-傑克遜",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "High-Flying Wing Runner",
@@ -6476,7 +6476,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Cormac Ryan",
-      "cname": "科马克-瑞安",
+      "cname": "科馬克-瑞安",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Diming Sharpshooter",
@@ -6498,7 +6498,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Thanasis Antetokounmpo",
-      "cname": "萨纳西斯-阿德托昆博",
+      "cname": "薩納西斯-阿德託昆博",
       "pos": "PF / C",
       "height": "6'7'",
       "type": "Crafty Blow-By Dual Finisher",
@@ -6520,7 +6520,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alex Antetokounmpo",
-      "cname": "亚历克斯-阿德托昆博",
+      "cname": "亞歷克斯-阿德託昆博",
       "pos": "SF / PF",
       "height": "6'8'",
       "type": "Slashing Point Forward",
@@ -6545,7 +6545,7 @@ export const NBA2K_DATA = {
   "MIN": [
     {
       "name": "Anthony Edwards",
-      "cname": "安东尼-爱德华兹",
+      "cname": "安東尼-愛德華茲",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "2-Way Inside-Out Creator",
@@ -6567,7 +6567,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "LaMelo Ball",
-      "cname": "拉梅洛-鲍尔",
+      "cname": "拉梅洛-鮑爾",
       "pos": "PG / SG",
       "height": "6'7'",
       "type": "Playmaking 3PT Creator",
@@ -6589,7 +6589,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rudy Gobert",
-      "cname": "鲁迪-戈贝尔",
+      "cname": "魯迪-戈貝爾",
       "pos": "C",
       "height": "7'1'",
       "type": "Lob Threat Board Enforcer",
@@ -6611,7 +6611,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaden McDaniels",
-      "cname": "贾登-麦克丹尼尔斯",
+      "cname": "賈登-麥克丹尼爾斯",
       "pos": "SF / PF",
       "height": "6'9'",
       "type": "2-Way Off-Screen Shooter",
@@ -6633,7 +6633,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ayo Dosunmu",
-      "cname": "阿约-多孙穆",
+      "cname": "阿約-多孫穆",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Crafty 3-Level Scorer",
@@ -6655,7 +6655,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Donte DiVincenzo",
-      "cname": "唐特-迪温琴佐",
+      "cname": "唐特-迪溫琴佐",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "2-Way Off-Screen Shooter",
@@ -6677,7 +6677,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Terrence Shannon Jr.",
-      "cname": "小特伦斯-香农",
+      "cname": "小特倫斯-夏農",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "Inside-Out Slasher",
@@ -6699,7 +6699,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bones Hyland",
-      "cname": "伯恩斯-海兰",
+      "cname": "伯恩斯-海蘭",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Iso Sniper",
@@ -6721,7 +6721,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Green",
-      "cname": "乔什-格林",
+      "cname": "喬什-格林",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "3PT Sniper",
@@ -6765,7 +6765,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaylen Clark",
-      "cname": "杰伦-克拉克",
+      "cname": "杰倫-克拉克",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Clamp Thief",
@@ -6787,7 +6787,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Joe Ingles",
-      "cname": "乔-英格尔斯",
+      "cname": "喬-英格爾斯",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "2-Way Stretch Four",
@@ -6831,7 +6831,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Joan Beringer",
-      "cname": "若昂-贝林格",
+      "cname": "若昂-貝林格",
       "pos": "C",
       "height": "6'11'",
       "type": "Rim-Wrecking Putback Pro",
@@ -6853,7 +6853,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Enrique Freeman",
-      "cname": "恩里克-弗里曼",
+      "cname": "恩裡克-弗里曼",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Bouncy Dual Finisher",
@@ -6875,7 +6875,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rocco Zikarsky",
-      "cname": "罗科-齐卡尔斯基",
+      "cname": "羅科-齊卡爾斯基",
       "pos": "C",
       "height": "7'3'",
       "type": "Shot-Erasing Putback Pro",
@@ -6919,7 +6919,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Zyon Pullin",
-      "cname": "齐昂-普林",
+      "cname": "齊昂-普林",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "3PT Shot Hunter",
@@ -6944,7 +6944,7 @@ export const NBA2K_DATA = {
   "NOP": [
     {
       "name": "Zion Williamson",
-      "cname": "锡安-威廉姆森",
+      "cname": "錫安-威廉姆森",
       "pos": "PF / PG",
       "height": "6'6'",
       "type": "Versatile Paint Bully",
@@ -6988,7 +6988,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dejounte Murray",
-      "cname": "德章泰-默里",
+      "cname": "德章泰-默裡",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "2-Way Mid-Range Menace",
@@ -7010,7 +7010,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Saddiq Bey",
-      "cname": "萨迪克-贝",
+      "cname": "薩迪克-貝",
       "pos": "SF / PF",
       "height": "6'8'",
       "type": "3PT-Sniping Layup Bully",
@@ -7032,7 +7032,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jeremiah Fears",
-      "cname": "杰里迈亚-费尔斯",
+      "cname": "傑裡邁亞-費爾斯",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Speedy Blow-By Ace",
@@ -7076,7 +7076,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Herbert Jones",
-      "cname": "赫伯特-琼斯",
+      "cname": "赫伯特-瓊斯",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Lockdown Defender",
@@ -7120,7 +7120,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "DeAndre Jordan",
-      "cname": "德安德烈-乔丹",
+      "cname": "德安德烈-喬丹",
       "pos": "C",
       "height": "6'11'",
       "type": "Physical Glass Guardian",
@@ -7142,7 +7142,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Poole",
-      "cname": "乔丹-普尔",
+      "cname": "喬丹-普爾",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Combo Guard",
@@ -7164,7 +7164,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Karlo Matkovic",
-      "cname": "卡洛-马特科维奇",
+      "cname": "卡洛-馬特科維奇",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Shot-Erasing Stretch Riser",
@@ -7186,7 +7186,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bryce McGowens",
-      "cname": "布赖斯-麦高恩斯",
+      "cname": "布賴斯-麥高恩斯",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "3-Level Scorer",
@@ -7208,7 +7208,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Hawkins",
-      "cname": "乔丹-霍金斯",
+      "cname": "喬丹-霍金斯",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "3PT-Creating Combo Guard",
@@ -7230,7 +7230,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Micah Peavy",
-      "cname": "迈卡-皮维",
+      "cname": "邁卡-皮維",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Slashing Point Forward",
@@ -7274,7 +7274,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Oduro",
-      "cname": "乔什-奥杜罗",
+      "cname": "喬什-奧杜羅",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Board-Hunting Middy Scorer",
@@ -7299,7 +7299,7 @@ export const NBA2K_DATA = {
   "NYK": [
     {
       "name": "Jalen Brunson",
-      "cname": "杰伦-布伦森",
+      "cname": "杰倫-布倫森",
       "pos": "PG",
       "height": "6'2'",
       "type": "Crafty Offensive Engine",
@@ -7321,7 +7321,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Karl-Anthony Towns",
-      "cname": "卡尔-安东尼-唐斯",
+      "cname": "卡爾-安東尼-唐斯",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Inside-Out Break Starter",
@@ -7343,7 +7343,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "OG Anunoby",
-      "cname": "OG-阿奴诺比",
+      "cname": "OG-阿奴諾比",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "2-Way 3PT-Sniping High Flyer",
@@ -7365,7 +7365,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mikal Bridges",
-      "cname": "米卡尔-布里奇斯",
+      "cname": "米卡爾-布里奇斯",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "2-Way Combo Guard Creator",
@@ -7387,7 +7387,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Hart",
-      "cname": "约什-哈特",
+      "cname": "約什-哈特",
       "pos": "PF / SF",
       "height": "6'5'",
       "type": "2-Way Skilled Stretch Cleaner",
@@ -7409,7 +7409,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Miles McBride",
-      "cname": "迈尔斯-麦克布莱德",
+      "cname": "邁爾斯-麥克布萊德",
       "pos": "SG / PG",
       "height": "6'2'",
       "type": "2-Way Iso Sniper",
@@ -7431,7 +7431,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jose Alvarado",
-      "cname": "何塞-阿尔瓦拉多",
+      "cname": "何塞-阿爾瓦拉多",
       "pos": "PG / SG",
       "height": "6'0'",
       "type": "2-Way Crafty Finisher",
@@ -7453,7 +7453,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Landry Shamet",
-      "cname": "兰德里-沙梅特",
+      "cname": "蘭德里-沙梅特",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Shot-Creating Combo Guard",
@@ -7475,7 +7475,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Clarkson",
-      "cname": "乔丹-克拉克森",
+      "cname": "喬丹-克拉克森",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Laymaking Two Guard",
@@ -7519,7 +7519,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jeremy Sochan",
-      "cname": "杰里米-索汉",
+      "cname": "傑里米-索漢",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Crafty Laymaking Point Four",
@@ -7541,7 +7541,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tyler Kolek",
-      "cname": "泰勒-科莱克",
+      "cname": "泰勒-科萊克",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Crafty 3-Level Scorer",
@@ -7563,7 +7563,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mohamed Diawara",
-      "cname": "穆罕默德-迪亚瓦拉",
+      "cname": "穆罕默德-迪亞瓦拉",
       "pos": "PF / SF",
       "height": "6'9'",
       "type": "Rim-Rocking Stretch Four",
@@ -7585,7 +7585,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trey Jemison III",
-      "cname": "特雷-杰米森三世",
+      "cname": "特雷-傑米森三世",
       "pos": "C",
       "height": "6'10'",
       "type": "Ball-Snatching Rim Rocker",
@@ -7607,7 +7607,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kevin McCullar Jr.",
-      "cname": "小凯文-麦卡拉",
+      "cname": "小凱文-麥卡拉",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "3-Level-Diming Crasher",
@@ -7629,7 +7629,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Pacome Dadiet",
-      "cname": "帕科姆-达迪耶",
+      "cname": "帕科姆-達迪耶",
       "pos": "SF / PF",
       "height": "6'9'",
       "type": "Iso Sniper",
@@ -7651,7 +7651,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dillon Jones",
-      "cname": "狄龙-琼斯",
+      "cname": "狄龍-瓊斯",
       "pos": "PF / C",
       "height": "6'5'",
       "type": "Speedy Point Four",
@@ -7676,7 +7676,7 @@ export const NBA2K_DATA = {
   "OKC": [
     {
       "name": "Shai Gilgeous-Alexander",
-      "cname": "谢伊-吉尔杰斯-亚历山大",
+      "cname": "謝伊-吉爾傑斯-亞歷山大",
       "pos": "PG / SG",
       "height": "6'6'",
       "type": "2-Way Mid-Paint Playmaker",
@@ -7698,7 +7698,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Chet Holmgren",
-      "cname": "切特-霍姆格伦",
+      "cname": "切特-霍姆格倫",
       "pos": "PF / C",
       "height": "7'1'",
       "type": "Backline Crafty 3-Level Scorer",
@@ -7720,7 +7720,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Williams",
-      "cname": "杰伦-威廉姆斯",
+      "cname": "杰倫-威廉姆斯",
       "pos": "SF / PF",
       "height": "6'5'",
       "type": "2-Way Point Forward",
@@ -7742,7 +7742,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Hartenstein",
-      "cname": "以赛亚-哈尔滕施泰因",
+      "cname": "以賽亞-哈爾滕施泰因",
       "pos": "C",
       "height": "7'0'",
       "type": "Crafty Mashing Board Enforcer",
@@ -7764,7 +7764,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ajay Mitchell",
-      "cname": "阿贾伊-米切尔",
+      "cname": "阿賈伊-米切爾",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Crafty 3PT Sniper",
@@ -7786,7 +7786,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Cason Wallace",
-      "cname": "卡森-华莱士",
+      "cname": "卡森-華萊士",
       "pos": "SG / PG",
       "height": "6'3'",
       "type": "2-Way 3PT-Sniping Layup Artist",
@@ -7808,7 +7808,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alex Caruso",
-      "cname": "亚历克斯-卡鲁索",
+      "cname": "亞歷克斯-卡魯索",
       "pos": "SF / PG",
       "height": "6'5'",
       "type": "2-Way Iso Sniper",
@@ -7830,7 +7830,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Luguentz Dort",
-      "cname": "吕冈茨-多尔特",
+      "cname": "呂岡茨-多爾特",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "2-Way Mid-Paint Bully",
@@ -7852,7 +7852,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jared McCain",
-      "cname": "贾里德-麦凯恩",
+      "cname": "賈裡德-麥凱恩",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Iso Sniper",
@@ -7874,7 +7874,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaylin Williams",
-      "cname": "杰林-威廉姆斯",
+      "cname": "傑林-威廉姆斯",
       "pos": "C",
       "height": "6'9'",
       "type": "Stretch Five Cleaner",
@@ -7896,7 +7896,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kenrich Williams",
-      "cname": "肯里奇-威廉姆斯",
+      "cname": "肯裡奇-威廉姆斯",
       "pos": "PF / C",
       "height": "6'7'",
       "type": "2-Way Stretch Four",
@@ -7918,7 +7918,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Aaron Wiggins",
-      "cname": "阿龙-威金斯",
+      "cname": "阿龍-威金斯",
       "pos": "SF / PF",
       "height": "6'5'",
       "type": "Iso Sniper",
@@ -7940,7 +7940,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nikola Topic",
-      "cname": "尼古拉-托皮奇",
+      "cname": "尼古拉-託皮奇",
       "pos": "PG / SG",
       "height": "6'6'",
       "type": "Table Setter",
@@ -7962,7 +7962,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Thomas Sorber",
-      "cname": "托马斯-索伯",
+      "cname": "托馬斯-索伯",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Slashing Point Center",
@@ -7984,7 +7984,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Brooks Barnhizer",
-      "cname": "布鲁克斯-巴恩希泽",
+      "cname": "布魯克斯-巴恩希澤",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Physical Middy Maestro",
@@ -8009,7 +8009,7 @@ export const NBA2K_DATA = {
   "ORL": [
     {
       "name": "Paolo Banchero",
-      "cname": "保罗-班凯罗",
+      "cname": "保羅-班凱羅",
       "pos": "PF / SF",
       "height": "6'10'",
       "type": "Glass-Cleaning Rim Runner",
@@ -8031,7 +8031,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Franz Wagner",
-      "cname": "弗朗茨-瓦格纳",
+      "cname": "弗朗茨-瓦格納",
       "pos": "SF / PF",
       "height": "6'10'",
       "type": "Crafty Mid-Paint Point Forward",
@@ -8053,7 +8053,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Desmond Bane",
-      "cname": "德斯蒙德-贝恩",
+      "cname": "德斯蒙德-貝恩",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Crafty 3PT Sniper",
@@ -8075,7 +8075,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Anthony Black",
-      "cname": "安东尼-布莱克",
+      "cname": "安東尼-布萊克",
       "pos": "PG / SG",
       "height": "6'7'",
       "type": "2-Way Crafty Laymaker",
@@ -8097,7 +8097,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Suggs",
-      "cname": "杰伦-萨格斯",
+      "cname": "杰倫-薩格斯",
       "pos": "PG / SG",
       "height": "6'5'",
       "type": "2-Way Mid-Range Slasher",
@@ -8119,7 +8119,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Wendell Carter Jr.",
-      "cname": "小温德尔-卡特",
+      "cname": "小溫德爾-卡特",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Post-Scoring Stretch",
@@ -8141,7 +8141,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Nikola Vucevic",
-      "cname": "尼古拉-武切维奇",
+      "cname": "尼古拉-武切維奇",
       "pos": "C",
       "height": "6'9'",
       "type": "Triple-Double Threat",
@@ -8163,7 +8163,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tristan da Silva",
-      "cname": "特里斯坦-达席尔瓦",
+      "cname": "特里斯坦-達席爾瓦",
       "pos": "SF / PF",
       "height": "6'8'",
       "type": "3PT Sniper",
@@ -8185,7 +8185,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Goga Bitadze",
-      "cname": "戈加-比塔泽",
+      "cname": "戈加-比塔澤",
       "pos": "C",
       "height": "6'11'",
       "type": "Putback Power-Finishing Eraser",
@@ -8207,7 +8207,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jevon Carter",
-      "cname": "杰文-卡特",
+      "cname": "傑文-卡特",
       "pos": "PG / SG",
       "height": "6'0'",
       "type": "2-Way Sharpshooter",
@@ -8229,7 +8229,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Noah Penda",
-      "cname": "诺亚-彭达",
+      "cname": "諾亞-彭達",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Stretch Four Crasher",
@@ -8251,7 +8251,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamal Cain",
-      "cname": "贾马尔-凯恩",
+      "cname": "賈馬爾-凱恩",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty 3PT Sniper",
@@ -8273,7 +8273,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jett Howard",
-      "cname": "杰特-霍华德",
+      "cname": "杰特-霍華德",
       "pos": "SG / SF",
       "height": "6'8'",
       "type": "3PT-Creating Combo Guard",
@@ -8295,7 +8295,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jonathan Isaac",
-      "cname": "乔纳森-艾萨克",
+      "cname": "喬納森-艾薩克",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Lockdown Defender",
@@ -8317,7 +8317,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jase Richardson",
-      "cname": "杰斯-理查德森",
+      "cname": "傑斯-理查德森",
       "pos": "SG / PG",
       "height": "6'1'",
       "type": "Crafty 3-Level Scorer",
@@ -8339,7 +8339,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Colin Castleton",
-      "cname": "科林-卡斯尔顿",
+      "cname": "科林-卡斯爾頓",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Stretch Four Crasher",
@@ -8361,7 +8361,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alex Morales",
-      "cname": "亚历克斯-莫拉莱斯",
+      "cname": "亞歷克斯-莫拉萊斯",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "3PT High-Flying Ball Hawk",
@@ -8386,7 +8386,7 @@ export const NBA2K_DATA = {
   "PHI": [
     {
       "name": "Jaylen Brown",
-      "cname": "杰伦-布朗",
+      "cname": "杰倫-布朗",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Physical 2-Way Middy Slasher",
@@ -8408,7 +8408,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tyrese Maxey",
-      "cname": "泰雷塞-马克西",
+      "cname": "泰雷塞-馬克西",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Ankle Taker",
@@ -8430,7 +8430,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Joel Embiid",
-      "cname": "乔尔-恩比德",
+      "cname": "喬爾-恩比德",
       "pos": "C",
       "height": "7'0'",
       "type": "Physical 2-Way 3-Level Cleaner",
@@ -8452,7 +8452,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "VJ Edgecombe",
-      "cname": "VJ-埃奇库姆",
+      "cname": "VJ-埃奇庫姆",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Mid-Range High Flyer",
@@ -8496,7 +8496,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dean Wade",
-      "cname": "迪恩-韦德",
+      "cname": "迪恩-韋德",
       "pos": "PF / SF",
       "height": "6'9'",
       "type": "2-Way Masher",
@@ -8518,7 +8518,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trendon Watford",
-      "cname": "特伦登-沃特福德",
+      "cname": "特倫登-沃特福德",
       "pos": "PF / PG",
       "height": "6'8'",
       "type": "Versatile Paint Finisher",
@@ -8540,7 +8540,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Justin Edwards",
-      "cname": "贾斯汀-爱德华兹",
+      "cname": "賈斯汀-愛德華茲",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Ball-Hawking 3PT Shot Hunter",
@@ -8584,7 +8584,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Caleb Love",
-      "cname": "凯莱布-乐福",
+      "cname": "凱萊布-樂福",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Iso Sniper",
@@ -8606,7 +8606,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Adem Bona",
-      "cname": "阿代姆-博纳",
+      "cname": "阿代姆-博納",
       "pos": "C",
       "height": "6'10'",
       "type": "Shot Eraser",
@@ -8628,7 +8628,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rayan Rupert",
-      "cname": "拉扬-吕佩尔",
+      "cname": "拉揚-呂佩爾",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3PT-Sniping Creator",
@@ -8650,7 +8650,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ariel Hukporti",
-      "cname": "阿里埃尔-胡克波尔蒂",
+      "cname": "阿里埃爾-胡克波爾蒂",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Putback Rim-Rocking Eraser",
@@ -8672,7 +8672,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tyrese Martin",
-      "cname": "泰雷斯-马丁",
+      "cname": "泰雷斯-馬丁",
       "pos": "SG / PG",
       "height": "6'6'",
       "type": "3PT-Creating Combo Guard",
@@ -8694,7 +8694,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dalen Terry",
-      "cname": "达伦-特里",
+      "cname": "達倫-特里",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Ball-Hawking PlaySlash",
@@ -8716,7 +8716,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jabari Walker",
-      "cname": "贾巴里-沃克",
+      "cname": "賈巴里-沃克",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Skilled Stretch Crasher",
@@ -8738,7 +8738,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Johni Broome",
-      "cname": "约翰尼-布鲁姆",
+      "cname": "約翰尼-布魯姆",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Shot-Erasing Middy Crasher",
@@ -8760,7 +8760,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "MarJon Beauchamp",
-      "cname": "马乔恩-博尚",
+      "cname": "馬喬恩-博尚",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Crafty 3-Level Scorer",
@@ -8807,7 +8807,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dillon Brooks",
-      "cname": "狄龙-布鲁克斯",
+      "cname": "狄龍-布魯克斯",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "2-Way Finisher",
@@ -8829,7 +8829,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jalen Green",
-      "cname": "杰伦-格林",
+      "cname": "杰倫-格林",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Mid-Range High Flyer",
@@ -8851,7 +8851,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Mark Williams",
-      "cname": "马克-威廉姆斯",
+      "cname": "馬克-威廉姆斯",
       "pos": "C",
       "height": "7'1'",
       "type": "Bullmashing Putback Pro",
@@ -8873,7 +8873,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Miles Bridges",
-      "cname": "迈尔斯-布里奇斯",
+      "cname": "邁爾斯-布里奇斯",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Versatile Post Bully",
@@ -8895,7 +8895,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Collin Gillespie",
-      "cname": "科林-吉莱斯皮",
+      "cname": "科林-吉萊斯皮",
       "pos": "PG",
       "height": "6'1'",
       "type": "3PT-Sniping Creator",
@@ -8917,7 +8917,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Luke Kennard",
-      "cname": "卢克-肯纳德",
+      "cname": "盧克-肯納德",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Crafty Sharpshooter",
@@ -8939,7 +8939,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan Goodwin",
-      "cname": "乔丹-古德温",
+      "cname": "喬丹-古德溫",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "3 & D Crasher",
@@ -8961,7 +8961,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Oso Ighodaro",
-      "cname": "奥索-伊戈达罗",
+      "cname": "奧索-伊戈達羅",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Rim-Running Finisher",
@@ -9005,7 +9005,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Rasheer Fleming",
-      "cname": "拉希尔-弗莱明",
+      "cname": "拉希爾-弗萊明",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Skilled Stretch Crasher",
@@ -9027,7 +9027,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ryan Dunn",
-      "cname": "瑞安-邓恩",
+      "cname": "瑞安-鄧恩",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "Perimeter Lock",
@@ -9049,7 +9049,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Khaman Maluach",
-      "cname": "卡曼-马卢阿奇",
+      "cname": "卡曼-馬盧阿奇",
       "pos": "C",
       "height": "7'1'",
       "type": "Shot-Erasing Rim Wrecker",
@@ -9071,7 +9071,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamaree Bouyea",
-      "cname": "贾马里-布耶",
+      "cname": "賈馬裡-布耶",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Disruptive Blow-By Ace",
@@ -9093,7 +9093,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Amir Coffey",
-      "cname": "阿米尔-科菲",
+      "cname": "阿米爾-科菲",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "Crafty Mid-Range Menace",
@@ -9137,7 +9137,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Livers",
-      "cname": "以赛亚-利弗斯",
+      "cname": "以賽亞-利弗斯",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "Iso Sniper",
@@ -9159,7 +9159,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Koby Brea",
-      "cname": "科比-布雷亚",
+      "cname": "科比-佈雷亞",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Diming Sharpshooter",
@@ -9206,7 +9206,7 @@ export const NBA2K_DATA = {
   "POR": [
     {
       "name": "Deni Avdija",
-      "cname": "德尼-阿夫迪亚",
+      "cname": "德尼-阿夫迪亞",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "Crafty Mid-Paint Maestro",
@@ -9228,7 +9228,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Damian Lillard",
-      "cname": "达米安-利拉德",
+      "cname": "達米安-利拉德",
       "pos": "PG",
       "height": "6'2'",
       "type": "Versatile Paint Bully",
@@ -9250,7 +9250,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ja Morant",
-      "cname": "贾-莫兰特",
+      "cname": "賈-莫蘭特",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Blow-By Dual Finisher",
@@ -9272,7 +9272,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Shaedon Sharpe",
-      "cname": "谢登-夏普",
+      "cname": "謝登-夏普",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Blow-By Dual Finisher",
@@ -9294,7 +9294,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Donovan Clingan",
-      "cname": "多诺万-克林根",
+      "cname": "多諾萬-克林根",
       "pos": "C",
       "height": "7'2'",
       "type": "Glass Guardian Lob Threat",
@@ -9338,7 +9338,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Scoot Henderson",
-      "cname": "斯库特-亨德森",
+      "cname": "斯庫特-亨德森",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "Mid-Range High Flyer",
@@ -9360,7 +9360,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Toumani Camara",
-      "cname": "图马尼-卡马拉",
+      "cname": "圖馬尼-卡馬拉",
       "pos": "PF / SF",
       "height": "6'7'",
       "type": "2-Way Stretch Four",
@@ -9382,7 +9382,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Robert Williams III",
-      "cname": "罗伯特-威廉姆斯三世",
+      "cname": "羅伯特-威廉姆斯三世",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Paint-Finishing Board Enforcer",
@@ -9404,7 +9404,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Matisse Thybulle",
-      "cname": "马蒂斯-赛布尔",
+      "cname": "馬蒂斯-賽布林",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "Ball-Hawking 3 & D Two Guard",
@@ -9426,7 +9426,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Vit Krejci",
-      "cname": "维特-克雷伊奇",
+      "cname": "維特-克雷伊奇",
       "pos": "SF / PG",
       "height": "6'8'",
       "type": "3PT-Sniping Creator",
@@ -9470,7 +9470,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Blake Wesley",
-      "cname": "布莱克-韦斯利",
+      "cname": "布萊克-韋斯利",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Ball-Hawking High Flyer",
@@ -9492,7 +9492,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Branden Carlson",
-      "cname": "布兰登-卡尔森",
+      "cname": "布蘭登-卡爾森",
       "pos": "C",
       "height": "7'0'",
       "type": "Shot-Erasing Stretch Five",
@@ -9514,7 +9514,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Yang Hansen",
-      "cname": "杨瀚森",
+      "cname": "楊瀚森",
       "pos": "C",
       "height": "7'1'",
       "type": "Rim-Wrecking Distributor",
@@ -9536,7 +9536,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Chris Youngblood",
-      "cname": "克里斯-扬布拉德",
+      "cname": "克里斯-揚布拉德",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Sharpshooting Cleaner",
@@ -9558,7 +9558,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jayson Kent",
-      "cname": "杰森-肯特",
+      "cname": "傑森-肯特",
       "pos": "SF / SG",
       "height": "6'8'",
       "type": "High-Flying 3PT Sniper",
@@ -9583,7 +9583,7 @@ export const NBA2K_DATA = {
   "SAC": [
     {
       "name": "Domantas Sabonis",
-      "cname": "多曼塔斯-萨博尼斯",
+      "cname": "多曼塔斯-薩博尼斯",
       "pos": "C",
       "height": "6'10'",
       "type": "Crafty Mid-Post Break Starter",
@@ -9627,7 +9627,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Russell Westbrook",
-      "cname": "拉塞尔-威斯布鲁克",
+      "cname": "拉塞爾-威斯布魯克",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Explosive Blow-By High Flyer",
@@ -9649,7 +9649,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Maxime Raynaud",
-      "cname": "马克西姆-雷诺",
+      "cname": "馬克西姆-雷諾",
       "pos": "C",
       "height": "7'1'",
       "type": "Mid-Range Scoring Cleaner",
@@ -9671,7 +9671,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Malik Monk",
-      "cname": "马利克-蒙克",
+      "cname": "馬利克-蒙克",
       "pos": "SG / PG",
       "height": "6'3'",
       "type": "Inside-Out Combo Guard",
@@ -9693,7 +9693,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keegan Murray",
-      "cname": "基根-默里",
+      "cname": "基根-默裡",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "2-Way Crafty Finisher",
@@ -9781,7 +9781,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dylan Cardwell",
-      "cname": "迪伦-卡德韦尔",
+      "cname": "迪倫-卡德韋爾",
       "pos": "C / PF",
       "height": "6'10'",
       "type": "Glass Guardian Lob Threat",
@@ -9803,7 +9803,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Drew Eubanks",
-      "cname": "德鲁-尤班克斯",
+      "cname": "德魯-尤班克斯",
       "pos": "C",
       "height": "6'10'",
       "type": "Shot-Erasing Crafty Stretch",
@@ -9825,7 +9825,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jonathan Mogbo",
-      "cname": "乔纳森-莫格博",
+      "cname": "喬納森-莫格博",
       "pos": "PF / C",
       "height": "6'9'",
       "type": "Board-Hunting Rim Runner",
@@ -9847,7 +9847,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Daeqwon Plowden",
-      "cname": "戴克万-普洛登",
+      "cname": "戴克萬-普洛登",
       "pos": "SF / SG",
       "height": "6'4'",
       "type": "Blow-By High Flyer",
@@ -9891,7 +9891,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Patrick Baldwin Jr.",
-      "cname": "小帕特里克-鲍德温",
+      "cname": "小帕特里克-鮑德溫",
       "pos": "PF / SF",
       "height": "6'9'",
       "type": "Stretch Four Cleaner",
@@ -9913,7 +9913,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Doug McDermott",
-      "cname": "道格-麦克德莫特",
+      "cname": "道格-麥克德莫特",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty 3-Level Scorer",
@@ -9935,7 +9935,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Stevens",
-      "cname": "以赛亚-史蒂文斯",
+      "cname": "以賽亞-史蒂文斯",
       "pos": "PG / SG",
       "height": "5'11'",
       "type": "Speedy Blow-By Ace",
@@ -9982,7 +9982,7 @@ export const NBA2K_DATA = {
   "SAS": [
     {
       "name": "Victor Wembanyama",
-      "cname": "维克托-文班亚马",
+      "cname": "維克托-文班亞馬",
       "pos": "C / PF",
       "height": "7'4'",
       "type": "Backline Stretch Post Scorer",
@@ -10004,7 +10004,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Stephon Castle",
-      "cname": "斯蒂芬-卡斯尔",
+      "cname": "斯蒂芬-卡斯爾",
       "pos": "SG / PG",
       "height": "6'6'",
       "type": "2-Way Slashing Combo Guard",
@@ -10026,7 +10026,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "De’Aaron Fox",
-      "cname": "达龙-福克斯",
+      "cname": "達龍-福克斯",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "2-Way Mid-Range Menace",
@@ -10048,7 +10048,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Dylan Harper",
-      "cname": "迪伦-哈珀",
+      "cname": "迪倫-哈珀",
       "pos": "PG / SG",
       "height": "6'5'",
       "type": "Mid-Range Slasher",
@@ -10070,7 +10070,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tobias Harris",
-      "cname": "托拜厄斯-哈里斯",
+      "cname": "託拜厄斯-哈里斯",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Crafty Mid-Post Point Four",
@@ -10114,7 +10114,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Devin Vassell",
-      "cname": "德文-瓦塞尔",
+      "cname": "德文-瓦塞爾",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "Shot-Creating Point Forward",
@@ -10136,7 +10136,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keldon Johnson",
-      "cname": "凯尔登-约翰逊",
+      "cname": "凱爾登-約翰遜",
       "pos": "SG / SF",
       "height": "6'6'",
       "type": "Power Finisher",
@@ -10158,7 +10158,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Luke Kornet",
-      "cname": "卢克-科内特",
+      "cname": "盧克-科內特",
       "pos": "C",
       "height": "7'1'",
       "type": "Shot-Erasing Post Crasher",
@@ -10202,7 +10202,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Carter Bryant",
-      "cname": "卡特-布赖恩特",
+      "cname": "卡特-布賴恩特",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "High-Flying Wing Runner",
@@ -10246,7 +10246,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kelly Olynyk",
-      "cname": "凯利-奥利尼克",
+      "cname": "凱利-奧利尼克",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Crafty Stretch Five Dimer",
@@ -10290,7 +10290,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jordan McLaughlin",
-      "cname": "乔丹-麦克劳克林",
+      "cname": "喬丹-麥克勞克林",
       "pos": "PG",
       "height": "5'11'",
       "type": "Ball-Hawking 3PT Shot Hunter",
@@ -10312,7 +10312,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "David Jones Garcia",
-      "cname": "戴维-琼斯-加西亚",
+      "cname": "戴維-瓊斯-加西亞",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "Diming Inside-Out Scorer",
@@ -10334,7 +10334,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bismack Biyombo",
-      "cname": "俾斯麦-比永博",
+      "cname": "俾斯麥-比永博",
       "pos": "C",
       "height": "6'8'",
       "type": "2-Way Crafty Finisher",
@@ -10378,7 +10378,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Emanuel Miller",
-      "cname": "伊曼纽尔-米勒",
+      "cname": "伊曼紐爾-米勒",
       "pos": "SF / SG",
       "height": "6'5'",
       "type": "High-Flying Wing Runner",
@@ -10403,7 +10403,7 @@ export const NBA2K_DATA = {
   "TOR": [
     {
       "name": "Kawhi Leonard",
-      "cname": "科怀-伦纳德",
+      "cname": "科懷-倫納德",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "2-Way Mid-Range Menace",
@@ -10447,7 +10447,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Immanuel Quickley",
-      "cname": "伊曼纽尔-奎克利",
+      "cname": "伊曼紐爾-奎克利",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "2-Way Mid-Range Menace",
@@ -10491,7 +10491,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Collin Murray-Boyles",
-      "cname": "科林-默里-博伊尔斯",
+      "cname": "科林-默裡-博伊爾斯",
       "pos": "C / PF",
       "height": "6'7'",
       "type": "Ball-Hawking Blow-By Laymaker",
@@ -10513,7 +10513,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jakob Poeltl",
-      "cname": "雅各布-珀尔特尔",
+      "cname": "雅各布-珀爾特爾",
       "pos": "C",
       "height": "7'0'",
       "type": "Crafty Mid-Post Scorer",
@@ -10535,7 +10535,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ja’Kobe Walter",
-      "cname": "贾科比-沃尔特",
+      "cname": "賈科比-沃爾特",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Ball-Hawking 3PT Sniper",
@@ -10557,7 +10557,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamal Shead",
-      "cname": "贾马尔-谢德",
+      "cname": "賈馬爾-謝德",
       "pos": "PG / SG",
       "height": "6'1'",
       "type": "Speedy Blow-By Ace",
@@ -10579,7 +10579,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamison Battle",
-      "cname": "贾米森-巴特尔",
+      "cname": "賈米森-巴特爾",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Crafty Sharpshooter",
@@ -10601,7 +10601,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kyle Anderson",
-      "cname": "凯尔-安德森",
+      "cname": "凱爾-安德森",
       "pos": "PF / C",
       "height": "6'8'",
       "type": "Defensive Playmaker",
@@ -10623,7 +10623,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "A.J. Lawson",
-      "cname": "A.J.-劳森",
+      "cname": "A.J.-勞森",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3PT-Sniping Dimer",
@@ -10645,7 +10645,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kyle Lowry",
-      "cname": "凯尔-洛瑞",
+      "cname": "凱爾-洛瑞",
       "pos": "PG / SG",
       "height": "6'0'",
       "type": "2-Way Mid-Range Menace",
@@ -10667,7 +10667,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trayce Jackson-Davis",
-      "cname": "特雷斯-杰克逊-戴维斯",
+      "cname": "特雷斯-傑克遜-戴維斯",
       "pos": "C / PF",
       "height": "6'9'",
       "type": "Rim-Running Rim Rocker",
@@ -10689,7 +10689,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alijah Martin",
-      "cname": "阿利雅-马丁",
+      "cname": "阿利雅-馬丁",
       "pos": "SG / PG",
       "height": "6'2'",
       "type": "Ball-Hawking Wing Runner",
@@ -10711,7 +10711,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Garrett Temple",
-      "cname": "加勒特-坦普尔",
+      "cname": "加勒特-坦普爾",
       "pos": "SG / SF",
       "height": "6'5'",
       "type": "2-Way Combo Guard",
@@ -10758,7 +10758,7 @@ export const NBA2K_DATA = {
   "UTA": [
     {
       "name": "Lauri Markkanen",
-      "cname": "劳里-马尔卡宁",
+      "cname": "勞裡-馬爾卡寧",
       "pos": "SF / PF",
       "height": "7'1'",
       "type": "Crafty Post-Scoring 3PT Sniper",
@@ -10780,7 +10780,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Keyonte George",
-      "cname": "基扬特-乔治",
+      "cname": "基揚特-喬治",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Crafty Laymaker",
@@ -10802,7 +10802,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaren Jackson Jr.",
-      "cname": "小贾伦-杰克逊",
+      "cname": "小賈倫-傑克遜",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "2-Way Paint Pounder",
@@ -10824,7 +10824,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Isaiah Collier",
-      "cname": "以赛亚-科利尔",
+      "cname": "以賽亞-科利爾",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Playmaker",
@@ -10846,7 +10846,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jusuf Nurkic",
-      "cname": "优素福-努尔基奇",
+      "cname": "優素福-努爾基奇",
       "pos": "C",
       "height": "6'11'",
       "type": "Ball-Snatching Popper",
@@ -10868,7 +10868,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Ace Bailey",
-      "cname": "埃斯-贝利",
+      "cname": "埃斯-貝利",
       "pos": "SG / SF",
       "height": "6'9'",
       "type": "Crafty Blow-By High Flyer",
@@ -10890,7 +10890,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Brice Sensabaugh",
-      "cname": "布赖斯-森萨博",
+      "cname": "布賴斯-森薩博",
       "pos": "SF / SG",
       "height": "6'6'",
       "type": "Crafty 3PT Sniper",
@@ -10912,7 +10912,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kyle Filipowski",
-      "cname": "凯尔-菲利波夫斯基",
+      "cname": "凱爾-菲利波夫斯基",
       "pos": "C / PF",
       "height": "6'11'",
       "type": "Glass-Cleaning Rim Runner",
@@ -10934,7 +10934,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jaxson Hayes",
-      "cname": "贾克森-海斯",
+      "cname": "賈克森-海斯",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Crafty Rim Wrecker",
@@ -10956,7 +10956,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Kevin Love",
-      "cname": "凯文-乐福",
+      "cname": "凱文-樂福",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Crafty Stretch Five Cleaner",
@@ -11000,7 +11000,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "John Konchar",
-      "cname": "约翰-康查尔",
+      "cname": "約翰-康查爾",
       "pos": "SF / PF",
       "height": "6'5'",
       "type": "Disruptive Crafty Finisher",
@@ -11022,7 +11022,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Svi Mykhailiuk",
-      "cname": "斯维亚托斯拉夫-米哈伊柳克",
+      "cname": "斯維亞託斯拉夫-米哈伊柳克",
       "pos": "SG / SF",
       "height": "6'7'",
       "type": "Crafty Sharpshooter",
@@ -11044,7 +11044,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Josh Okogie",
-      "cname": "乔什-奥科吉",
+      "cname": "喬什-奧科吉",
       "pos": "SG / SF",
       "height": "6'4'",
       "type": "Catch & Shoot 3PT Sniper",
@@ -11066,7 +11066,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Oscar Tshiebwe",
-      "cname": "奥斯卡-奇布韦",
+      "cname": "奧斯卡-奇布韋",
       "pos": "C / PF",
       "height": "6'8'",
       "type": "Rim-Running Putback Pro",
@@ -11088,7 +11088,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Blake Hinson",
-      "cname": "布莱克-欣森",
+      "cname": "布萊克-欣森",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Skilled Stretch Four",
@@ -11110,7 +11110,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Elijah Harkless",
-      "cname": "伊莱贾-哈克利斯",
+      "cname": "伊萊賈-哈克利斯",
       "pos": "PG / SG",
       "height": "6'3'",
       "type": "2-Way Blow-By Ace",
@@ -11154,7 +11154,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bez Mbeng",
-      "cname": "贝兹-姆本格",
+      "cname": "貝茲-姆本格",
       "pos": "SG / PG",
       "height": "6'4'",
       "type": "2-Way Blow-By Ace",
@@ -11176,7 +11176,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trey Alexander",
-      "cname": "特雷-亚历山大",
+      "cname": "特雷-亞歷山大",
       "pos": "PG / SG",
       "height": "6'5'",
       "type": "Iso Sniper",
@@ -11245,7 +11245,7 @@ export const NBA2K_DATA = {
   "WAS": [
     {
       "name": "Anthony Davis",
-      "cname": "安东尼-戴维斯",
+      "cname": "安東尼-戴維斯",
       "pos": "PF / C",
       "height": "6'10'",
       "type": "Backline Post Bully",
@@ -11267,7 +11267,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trae Young",
-      "cname": "特雷-杨",
+      "cname": "特雷-楊",
       "pos": "PG",
       "height": "6'2'",
       "type": "Crafty Offensive Engine",
@@ -11289,7 +11289,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Alex Sarr",
-      "cname": "亚历克斯-萨尔",
+      "cname": "亞歷克斯-薩爾",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Shot-Erasing Versatile Slasher",
@@ -11311,7 +11311,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "KyShawn George",
-      "cname": "凯肖恩-乔治",
+      "cname": "凱肖恩-喬治",
       "pos": "PF / SF",
       "height": "6'8'",
       "type": "Crafty 3-Level Scorer",
@@ -11333,7 +11333,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Will Riley",
-      "cname": "威尔-莱利",
+      "cname": "威爾-萊利",
       "pos": "PF / SF",
       "height": "6'9'",
       "type": "Blow-By Laymaking Four",
@@ -11355,7 +11355,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Deandre Ayton",
-      "cname": "德安德烈-艾顿",
+      "cname": "德安德烈-艾頓",
       "pos": "C",
       "height": "7'0'",
       "type": "Physical Mid-Range Lob Threat",
@@ -11377,7 +11377,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bilal Coulibaly",
-      "cname": "比拉勒-库利巴利",
+      "cname": "比拉勒-庫利巴利",
       "pos": "SF / SG",
       "height": "6'7'",
       "type": "High Flyer",
@@ -11399,7 +11399,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Justin Champagnie",
-      "cname": "贾斯廷-尚帕尼",
+      "cname": "賈斯廷-尚帕尼",
       "pos": "PF / SF",
       "height": "6'6'",
       "type": "Crafty 3-Level Scoring Crasher",
@@ -11421,7 +11421,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tre Johnson",
-      "cname": "特雷-约翰逊",
+      "cname": "特雷-約翰遜",
       "pos": "SG / PG",
       "height": "6'5'",
       "type": "Mid-Range Menace",
@@ -11443,7 +11443,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Bub Carrington",
-      "cname": "巴布-卡林顿",
+      "cname": "巴布-卡林頓",
       "pos": "PG / SG",
       "height": "6'4'",
       "type": "Iso Sniper",
@@ -11465,7 +11465,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tristan Vukcevic",
-      "cname": "特里斯坦-武克切维奇",
+      "cname": "特里斯坦-武克切維奇",
       "pos": "C / PF",
       "height": "7'0'",
       "type": "Crafty Stretch Five",
@@ -11509,7 +11509,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Jamir Watkins",
-      "cname": "贾米尔-沃特金斯",
+      "cname": "賈米爾-沃特金斯",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "Ball-Hawking Slasher",
@@ -11531,7 +11531,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Khris Middleton",
-      "cname": "克里斯-米德尔顿",
+      "cname": "克里斯-米德爾頓",
       "pos": "SF / PF",
       "height": "6'7'",
       "type": "Physical Middy Maestro",
@@ -11553,7 +11553,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Cam Whitmore",
-      "cname": "卡姆-惠特莫尔",
+      "cname": "卡姆-惠特莫爾",
       "pos": "SF / PF",
       "height": "6'6'",
       "type": "Athletic Blow-By Ace",
@@ -11575,7 +11575,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Sharife Cooper",
-      "cname": "谢里夫-库珀",
+      "cname": "謝里夫-庫珀",
       "pos": "PG",
       "height": "6'0'",
       "type": "Mid-Range Menace",
@@ -11597,7 +11597,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Anthony Gill",
-      "cname": "安东尼-吉尔",
+      "cname": "安東尼-吉爾",
       "pos": "PF / C",
       "height": "6'7'",
       "type": "Crafty Paint-Mashing Popper",
