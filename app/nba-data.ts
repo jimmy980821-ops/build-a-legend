@@ -6743,7 +6743,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Trey Lyles",
-      "cname": "Trey Lyles",
+      "cname": "崔-萊爾斯",
       "pos": "PF / C",
       "height": "6'9\"",
       "type": "Stretch Four Cleaner",
@@ -9959,7 +9959,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Adam Flagler",
-      "cname": "Adam Flagler",
+      "cname": "亞當-弗拉格勒",
       "pos": "PG / SG",
       "height": "6'3\"",
       "type": "Sharpshooter",
@@ -11200,7 +11200,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Tamar Bates",
-      "cname": "Tamar Bates",
+      "cname": "塔馬爾-貝茲",
       "pos": "SG / SF",
       "height": "6'5\"",
       "type": "Iso Sniper",

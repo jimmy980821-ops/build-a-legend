@@ -44,6 +44,9 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(allTimeData, /"Evan Mobley","埃文-莫布利"/);
   assert.match(nbaData, /"name": "Shai Gilgeous-Alexander"[\s\S]{0,500}"FT": 95,[\s\S]{0,30}"FOUL": 99/);
   assert.match(nbaData, /"name": "Evan Mobley"[\s\S]{0,80}"cname": "埃文-莫布利"/);
+  assert.match(nbaData, /"name": "Trey Lyles"[\s\S]{0,80}"cname": "崔-萊爾斯"/);
+  assert.match(nbaData, /"name": "Adam Flagler"[\s\S]{0,80}"cname": "亞當-弗拉格勒"/);
+  assert.match(nbaData, /"name": "Tamar Bates"[\s\S]{0,80}"cname": "塔馬爾-貝茲"/);
   assert.match(allTimeData, /史蒂芬-柯瑞/);
   assert.match(allTimeData, /Magic Johnson/);
   assert.match(page, /player\.cname\|\|player\.name/);
