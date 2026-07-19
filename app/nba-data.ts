@@ -7693,7 +7693,9 @@ export const NBA2K_DATA = {
       "REB": 54,
       "ATH": 86,
       "STR": 62,
-      "CLU": 90
+      "CLU": 90,
+      "FT": 95,
+      "FOUL": 99
     },
 
     {

@@ -40,6 +40,10 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(allTimeData, /"Kareem Abdul-Jabbar": \{[^\n]*BLK:95/);
   assert.match(allTimeData, /legendOverrides\[name\]/);
   assert.match(allTimeData, /2K校準/);
+  assert.match(allTimeData, /"Shai Gilgeous-Alexander": \{ FT:95, FOUL:99 \}/);
+  assert.match(allTimeData, /"Evan Mobley","埃文-莫布利"/);
+  assert.match(nbaData, /"name": "Shai Gilgeous-Alexander"[\s\S]{0,500}"FT": 95,[\s\S]{0,30}"FOUL": 99/);
+  assert.match(nbaData, /"name": "Evan Mobley"[\s\S]{0,80}"cname": "埃文-莫布利"/);
   assert.match(allTimeData, /史蒂芬-柯瑞/);
   assert.match(allTimeData, /Magic Johnson/);
   assert.match(page, /player\.cname\|\|player\.name/);

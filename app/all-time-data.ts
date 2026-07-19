@@ -67,6 +67,7 @@ const legendOverrides: Record<string, Partial<Ratings>> = {
   "Klay Thompson": { threePT:99, MID:94, PDEF:97, HSTL:95, CLU:98 },
   "Reggie Miller": { threePT:99, MID:96, FT:99, FOUL:95, DUR:98, CLU:99 },
   "Pete Maravich": { threePT:96, MID:98, HAN:99, PAS:97, PASSIQ:98, CLU:97 },
+  "Shai Gilgeous-Alexander": { FT:95, FOUL:99 },
 };
 
 function clamp(value: number) { return Math.max(40, Math.min(99, Math.round(value))); }
@@ -111,7 +112,7 @@ export const ALL_TIME_DATA = {
   ]),
   CLE: roster([
     ["LeBron James","雷霸龍-詹姆斯","SF / PG",99,"全能"],["Kyrie Irving","凱里-厄文","PG / SG",96,"得分手"],["Mark Price","馬克-普萊斯","PG",93,"射手"],
-    ["Brad Daugherty","布萊德-道格提","C",93,"禁區核心"],["Kevin Love","凱文-洛夫","PF / C",92,"禁區核心"],["Evan Mobley","艾文-莫布里","PF / C",91,"護框者"],
+    ["Brad Daugherty","布萊德-道格提","C",93,"禁區核心"],["Kevin Love","凱文-洛夫","PF / C",92,"禁區核心"],["Evan Mobley","埃文-莫布利","PF / C",91,"護框者"],
   ]),
   DAL: roster([
     ["Dirk Nowitzki","德克-諾威斯基","PF / C",98,"得分手"],["Luka Doncic","盧卡-東契奇","PG / SF",97,"控場者"],["Jason Kidd","傑森-基德","PG",96,"控場者"],
