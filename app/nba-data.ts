@@ -3441,7 +3441,7 @@ export const NBA2K_DATA = {
   "GSW": [
     {
       "name": "Stephen Curry",
-      "cname": "斯蒂芬-庫裡",
+      "cname": "斯蒂芬-柯瑞",
       "pos": "PG / SG",
       "height": "6'2'",
       "type": "Crafty Offensive Engine",
@@ -3683,7 +3683,7 @@ export const NBA2K_DATA = {
 
     {
       "name": "Seth Curry",
-      "cname": "塞思-庫裡",
+      "cname": "塞思-柯瑞",
       "pos": "SG / PG",
       "height": "6'1'",
       "type": "Crafty 3-Level Scorer",

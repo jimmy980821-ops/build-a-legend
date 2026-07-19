@@ -19,7 +19,9 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /setResumeScreen\(data\.screen\)/);
   assert.match(page, /NBA2K_DATA/);
   assert.match(page, /player\.cname\|\|player\.name/);
-  assert.match(nbaData, /斯蒂芬-庫裡/);
+  assert.match(nbaData, /斯蒂芬-柯瑞/);
+  assert.match(nbaData, /塞思-柯瑞/);
+  assert.doesNotMatch(nbaData, /庫裡/);
   assert.match(nbaData, /盧卡-東契奇/);
   assert.match(nbaData, /維克托-文班亞馬/);
   assert.doesNotMatch(nbaData, /斯蒂芬-库里|卢卡-东契奇|维克托-文班亚马/);
