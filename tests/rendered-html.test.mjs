@@ -14,7 +14,15 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /BUILD-A-LEGEND/);
   assert.match(page, /localStorage/);
   assert.match(page, /navigator\.share/);
-  assert.match(page, /13 項能力/);
+  assert.match(page, /20 項能力/);
+  assert.match(page, /label: "造犯規"/);
+  assert.match(page, /label: "罰球"/);
+  assert.match(page, /label: "抄截"/);
+  assert.match(page, /label: "進攻籃板"/);
+  assert.match(page, /label: "傳球判斷"/);
+  assert.match(page, /label: "積極性"/);
+  assert.match(page, /label: "耐久度"/);
+  assert.match(page, /playerRating/);
   assert.match(page, /隨機抽取球隊/);
   assert.match(page, /繼續上次進度/);
   assert.match(page, /setResumeScreen\(data\.screen\)/);
