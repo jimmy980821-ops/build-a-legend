@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { NBA2K_DATA } from "./nba-data";
+import { ALL_TIME_DATA } from "./all-time-data";
 
 type Position = "控球後衛" | "得分後衛" | "小前鋒" | "大前鋒" | "中鋒";
+type LeagueMode = "current" | "all-time";
 type AttributeKey = "threePT" | "MID" | "FIN" | "DNK" | "HAN" | "PAS" | "PDEF" | "IDEF" | "BLK" | "REB" | "ATH" | "STR" | "CLU";
 type Screen = "home" | "position" | "build" | "result" | "career-team" | "season" | "playoffs" | "summary";
 type RosterPlayer = { name: string; cname?: string; pos: string; height: string; type: string; ovr: number } & Record<AttributeKey, number>;
@@ -14,7 +16,8 @@ type SeasonData = { wins: number; losses: number; seed: number; starter: boolean
 type Series = { round: string; opponent: string; wins: number; losses: number; won: boolean };
 type PlayoffData = { stats: StatLine; series: Series[]; honors: string[] };
 
-const leagueData = NBA2K_DATA as unknown as Record<string, RosterPlayer[]>;
+const currentLeagueData = NBA2K_DATA as unknown as Record<string, RosterPlayer[]>;
+const allTimeLeagueData = ALL_TIME_DATA as unknown as Record<string, RosterPlayer[]>;
 const attributes: Array<{ key: AttributeKey; label: string; short: string; icon: string }> = [
   { key: "threePT", label: "三分", short: "3PT", icon: "◎" }, { key: "MID", label: "中投", short: "MID", icon: "◉" },
   { key: "FIN", label: "終結", short: "FIN", icon: "◆" }, { key: "DNK", label: "灌籃", short: "DNK", icon: "↓" },
@@ -35,10 +38,10 @@ const teamIds: Record<string, number> = {
   PHI:1610612755,PHX:1610612756,POR:1610612757,SAC:1610612758,SAS:1610612759,OKC:1610612760,TOR:1610612761,UTA:1610612762,MEM:1610612763,
   WAS:1610612764,DET:1610612765,CHA:1610612766,
 };
-const teamCodes = Object.keys(leagueData);
 const positions: Position[] = ["控球後衛", "得分後衛", "小前鋒", "大前鋒", "中鋒"];
 const positionCode: Record<Position, string> = { 控球後衛:"PG", 得分後衛:"SG", 小前鋒:"SF", 大前鋒:"PF", 中鋒:"C" };
-const SAVE_KEY = "build-a-legend-save-v3";
+const SAVE_PREFIX = "build-a-legend-save-v4";
+const STARTER_OVR = 85;
 
 function shuffled<T>(items: T[]) { return [...items].sort(() => Math.random() - .5); }
 function clamp(value: number, min: number, max: number) { return Math.max(min, Math.min(max, value)); }
@@ -49,6 +52,7 @@ function teamLogo(code: string) { return teamIds[code] ? `https://cdn.nba.com/lo
 
 export default function Home() {
   const [screen,setScreen]=useState<Screen>("home");
+  const [leagueMode,setLeagueMode]=useState<LeagueMode>("current");
   const [position,setPosition]=useState<Position>("控球後衛");
   const [name,setName]=useState("我的傳奇");
   const [picked,setPicked]=useState<Partial<Record<AttributeKey,PickedAttribute>>>({});
@@ -67,6 +71,9 @@ export default function Home() {
   const [toast,setToast]=useState("");
   const [resumeScreen,setResumeScreen]=useState<Exclude<Screen,"home">|null>(null);
 
+  const leagueData=leagueMode==="all-time"?allTimeLeagueData:currentLeagueData;
+  const teamCodes=Object.keys(leagueData);
+
   const lockedCount=Object.keys(picked).length;
   const overall=useMemo(()=>{ const values=attributes.map(a=>picked[a.key]?.value).filter((v):v is number=>typeof v==="number"); return values.length?Math.round(values.reduce((a,b)=>a+b,0)/values.length):0; },[picked]);
   const similarPlayers=useMemo(()=>{
@@ -76,17 +83,19 @@ export default function Home() {
       const distance=Math.sqrt(attributes.reduce((sum,a)=>sum+Math.pow((picked[a.key]?.value??75)-player[a.key],2),0)/attributes.length);
       return {player,team,distance,match:clamp(Math.round(100-distance*2.25),55,99)};
     })).sort((a,b)=>a.distance-b.distance).slice(0,3);
-  },[lockedCount,picked,position]);
+  },[lockedCount,picked,position,leagueMode]);
 
   useEffect(()=>{
-    const saved=localStorage.getItem(SAVE_KEY); if(!saved)return;
-    try { const data=JSON.parse(saved); const timer=window.setTimeout(()=>{ if(data.screen&&data.screen!=="home") { setResumeScreen(data.screen);setPosition(data.position||"控球後衛");setName(data.name||"我的傳奇");setPicked(data.picked||{});setRerolls(data.rerolls??3);setUsedPlayers(data.usedPlayers||[]);setCareerTeam(data.careerTeam||null);setSeason(data.season||null);setPlayoffs(data.playoffs||null); } },0); return ()=>window.clearTimeout(timer); }
-    catch { localStorage.removeItem(SAVE_KEY); }
+    const lastMode=(localStorage.getItem(`${SAVE_PREFIX}-last`) as LeagueMode)||"current";
+    const saved=localStorage.getItem(`${SAVE_PREFIX}-${lastMode}`); if(!saved)return;
+    try { const data=JSON.parse(saved); const timer=window.setTimeout(()=>{ if(data.screen&&data.screen!=="home") { setLeagueMode(lastMode);setResumeScreen(data.screen);setPosition(data.position||"控球後衛");setName(data.name||"我的傳奇");setPicked(data.picked||{});setRerolls(data.rerolls??3);setUsedPlayers(data.usedPlayers||[]);setCareerTeam(data.careerTeam||null);setSeason(data.season||null);setPlayoffs(data.playoffs||null); } },0); return ()=>window.clearTimeout(timer); }
+    catch { localStorage.removeItem(`${SAVE_PREFIX}-${lastMode}`); }
   },[]);
-  useEffect(()=>{ if(screen!=="home") localStorage.setItem(SAVE_KEY,JSON.stringify({screen,position,name,picked,rerolls,usedPlayers,careerTeam,season,playoffs})); },[screen,position,name,picked,rerolls,usedPlayers,careerTeam,season,playoffs]);
+  useEffect(()=>{ if(screen!=="home") {localStorage.setItem(`${SAVE_PREFIX}-${leagueMode}`,JSON.stringify({screen,position,name,picked,rerolls,usedPlayers,careerTeam,season,playoffs}));localStorage.setItem(`${SAVE_PREFIX}-last`,leagueMode);} },[screen,leagueMode,position,name,picked,rerolls,usedPlayers,careerTeam,season,playoffs]);
   useEffect(()=>{ window.scrollTo({top:0,left:0,behavior:"auto"}); },[screen,lockedCount]);
 
-  function resetGame(){ setScreen("position");setPicked({});setTeamCode(null);setReelCode("NBA");setRoster([]);setSelectedPlayer(null);setRerolls(3);setUsedPlayers([]);setCareerTeam(null);setCareerReel("NBA");setSeason(null);setPlayoffs(null);setResumeScreen(null);localStorage.removeItem(SAVE_KEY); }
+  function resetGame(){ setScreen("position");setPicked({});setTeamCode(null);setReelCode("NBA");setRoster([]);setSelectedPlayer(null);setRerolls(3);setUsedPlayers([]);setCareerTeam(null);setCareerReel("NBA");setSeason(null);setPlayoffs(null);setResumeScreen(null);localStorage.removeItem(`${SAVE_PREFIX}-${leagueMode}`); }
+  function chooseLeague(mode:LeagueMode){ if(mode!==leagueMode)setResumeScreen(null);setLeagueMode(mode); }
   function goHome(){ if(screen!=="home")setResumeScreen(screen);setScreen("home"); }
   function getRoster(code:string,omit:string[]=[]){ const available=(leagueData[code]||[]).filter(p=>!usedPlayers.includes(p.name)&&!omit.includes(p.name));const source=available.length>=5?available:(leagueData[code]||[]).filter(p=>!usedPlayers.includes(p.name));return shuffled(source.length?source:leagueData[code]||[]).slice(0,5); }
   function spinTeam(){ if(teamRolling)return;setTeamRolling(true);setSelectedPlayer(null);setRoster([]);setTeamCode(null);let ticks=0;const timer=window.setInterval(()=>{setReelCode(teamCodes[Math.floor(Math.random()*teamCodes.length)]);if(++ticks>24){window.clearInterval(timer);const chosen=teamCodes[Math.floor(Math.random()*teamCodes.length)];setReelCode(chosen);setTeamCode(chosen);setRoster(getRoster(chosen));setTeamRolling(false);}},70); }
@@ -98,7 +107,7 @@ export default function Home() {
   function simulateSeason(){
     const attack=(value("threePT")+value("MID")+value("FIN")+value("DNK")+value("HAN"))/5;
     const defense=(value("PDEF")+value("IDEF")+value("BLK")+value("REB"))/4;
-    const starter=overall>=82||Math.random()>.35;
+    const starter=overall>=STARTER_OVR;
     const games=Math.round(clamp(76+(overall-82)*.2+Math.random()*6,68,82));
     const stats:StatLine={games,pts:one(clamp(13+(attack-75)*.55+(starter?3:0)+Math.random()*3,8,36)),reb:one(clamp(3+(value("REB")-70)*.16+(value("STR")-75)*.05,2,14)),ast:one(clamp(2.5+(value("PAS")-70)*.18+(value("HAN")-75)*.08,1.5,12)),stl:one(clamp(.6+(value("PDEF")-70)*.035,0.5,2.5)),blk:one(clamp(.3+(value("BLK")-65)*.045,0.2,3.5)),fg:one(clamp(42+(attack-70)*.25,39,58)),three:one(clamp(30+(value("threePT")-65)*.3,25,46))};
     const impact=stats.pts*.78+stats.reb*.42+stats.ast*.55+stats.stl*2+stats.blk*1.7+(overall-80)*.6;
@@ -138,12 +147,12 @@ export default function Home() {
 
   return <main className="app-shell">
     <header className="topbar"><button className="wordmark" onClick={goHome} aria-label="回到首頁">BUILD-A-<i>LEGEND</i></button>{screen!=="home"&&<button className="icon-button" onClick={resetGame} aria-label="重新開始">↻</button>}</header>
-    {screen==="home"&&<section className="home-screen screen-enter"><div className="eyebrow">SPIN A TEAM · STEAL A SKILL</div><h1>打造你的<br/><em>夢幻球星</em></h1><p className="lead">先抽球隊、再選球員，從他的 13 項能力中奪取一項。完成後展開從新秀賽季到季後賽的傳奇旅程。</p><div className="hero-card" aria-hidden="true"><div className="hero-no">99</div><div className="hero-pos">?</div><div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/><div className="hero-ball">🏀</div><div className="hero-name">YOUR<br/>LEGEND</div><div className="scanline"/></div><button className="primary-button" onClick={resetGame}><span>開始全新建模</span><b>→</b></button>{resumeScreen&&<button className="secondary-button wide resume-button" onClick={()=>setScreen(resumeScreen)}><span>繼續上次進度</span><b>{lockedCount}/13 →</b></button>}<div className="feature-row"><span>30 支球隊</span><span>13 項能力</span><span>完整生涯</span></div></section>}
-    {screen==="position"&&<section className="content-screen screen-enter"><Progress current={0}/><div className="step-kicker">STEP 01</div><h2>先決定你的場上位置</h2><p className="muted">跨位置奪取能力也沒問題，建立你心中最理想的模板。</p><div className="position-court">{positions.map((p,i)=><button key={p} className={position===p?"position active":"position"} onClick={()=>setPosition(p)} style={{"--delay":`${i*40}ms`} as React.CSSProperties}><b>{positionCode[p]}</b><span>{p}</span></button>)}</div><label className="name-field"><span>球員名稱</span><input maxLength={12} value={name} onChange={e=>setName(e.target.value)} placeholder="輸入你的球員名稱"/></label><button className="primary-button" onClick={()=>setScreen("build")}><span>進入選隊抽籤</span><b>→</b></button></section>}
+    {screen==="home"&&<section className="home-screen screen-enter"><div className="eyebrow">SPIN A TEAM · STEAL A SKILL</div><h1>打造你的<br/><em>夢幻球星</em></h1><p className="lead">先選聯盟、再抽球隊與球員，從他的 13 項能力中奪取一項，展開完整傳奇賽季。</p><div className="league-picker" aria-label="選擇聯盟模式"><button className={leagueMode==="current"?"league-option active":"league-option"} onClick={()=>chooseLeague("current")}><span>CURRENT</span><b>現役聯盟</b><i>524 位現役球員</i></button><button className={leagueMode==="all-time"?"league-option active all-time":"league-option all-time"} onClick={()=>chooseLeague("all-time")}><span>ALL-TIME</span><b>傳奇聯盟</b><i>30 隊隊史球星</i></button></div><div className={leagueMode==="all-time"?"hero-card all-time-hero":"hero-card"} aria-hidden="true"><div className="hero-no">99</div><div className="hero-pos">{leagueMode==="all-time"?"∞":"?"}</div><div className="hero-orbit orbit-one"/><div className="hero-orbit orbit-two"/><div className="hero-ball">🏀</div><div className="hero-name">{leagueMode==="all-time"?<>ALL-TIME<br/>LEGENDS</>:<>YOUR<br/>LEGEND</>}</div><div className="scanline"/></div><button className="primary-button" onClick={resetGame}><span>開始{leagueMode==="all-time"?"傳奇聯盟":"現役聯盟"}建模</span><b>→</b></button>{resumeScreen&&<button className="secondary-button wide resume-button" onClick={()=>setScreen(resumeScreen)}><span>繼續上次進度</span><b>{lockedCount}/13 →</b></button>}<div className="feature-row"><span>30 支球隊</span><span>13 項能力</span><span>{leagueMode==="all-time"?"隊史傳奇":"現役名單"}</span></div></section>}
+    {screen==="position"&&<section className="content-screen screen-enter"><Progress current={0}/><div className="step-kicker">STEP 01 · {leagueMode==="all-time"?"ALL-TIME LEAGUE":"CURRENT LEAGUE"}</div><h2>先決定你的場上位置</h2><p className="muted">跨位置奪取能力也沒問題，建立你心中最理想的模板。</p><div className="position-court">{positions.map((p,i)=><button key={p} className={position===p?"position active":"position"} onClick={()=>setPosition(p)} style={{"--delay":`${i*40}ms`} as React.CSSProperties}><b>{positionCode[p]}</b><span>{p}</span></button>)}</div><label className="name-field"><span>球員名稱</span><input maxLength={12} value={name} onChange={e=>setName(e.target.value)} placeholder="輸入你的球員名稱"/></label><button className="primary-button" onClick={()=>setScreen("build")}><span>進入選隊抽籤</span><b>→</b></button></section>}
     {screen==="build"&&<section className="content-screen build-screen screen-enter"><Progress current={lockedCount}/><div className="round-meta"><span>第 {lockedCount+1} / 13 輪</span><span>{positionCode[position]} · {name}</span></div><div className="build-title"><div><div className="step-kicker">ROUND {String(lockedCount+1).padStart(2,"0")}</div><h2>{teamCode?"從名單選一位球員":"抽出你的下一支球隊"}</h2></div><div className="reroll-token">換人 <b>{rerolls}</b></div></div><TeamSlot code={reelCode} rolling={teamRolling}/>{!teamCode&&<button className="primary-button" onClick={spinTeam} disabled={teamRolling}><span>{teamRolling?"選隊轉盤運轉中…":"隨機抽取球隊"}</span><b>{teamRolling?"◌":"↻"}</b></button>}{teamCode&&<><div className="team-result"><div><span>本輪球隊</span><b>{teamNames[teamCode]} <i>{teamCode}</i></b></div><button onClick={spinTeam} disabled={teamRolling}>重抽球隊</button></div><div className="roster-list">{roster.map(player=><button key={player.name} className={selectedPlayer?.name===player.name?"roster-player selected":"roster-player"} onClick={()=>setSelectedPlayer(player)}><span className="roster-ovr">{player.ovr}</span><div><b>{player.cname||player.name}</b><span>{player.name} · {player.pos} · {player.type}</span></div><i>{selectedPlayer?.name===player.name?"✓":"+"}</i></button>)}</div><button className="secondary-button reroll-button" onClick={rerollRoster} disabled={rerolls===0}>更換這批球員（剩餘 {rerolls} 次）</button></>}<div className="attribute-section"><div className="section-heading"><b>{selectedPlayer?`選擇 ${selectedPlayer.cname||selectedPlayer.name} 的一項能力`:"13 項能力槽"}</b><span>{lockedCount}/13</span></div><div className="attribute-grid">{attributes.map(a=>{const locked=picked[a.key],v=selectedPlayer?.[a.key];return <button key={a.key} className={locked?"attribute-slot locked":selectedPlayer?"attribute-slot available":"attribute-slot"} disabled={!!locked||!selectedPlayer} onClick={()=>lockAttribute(a.key)}><span className="attr-icon">{a.icon}</span><span className="attr-label">{a.label}</span><b>{locked?.value??v??"+"}</b><i>{locked?locked.player:v?grade(v):a.short}</i></button>;})}</div></div><p className="microcopy">選定球員後，點擊尚未鎖定的能力即可奪取；同一位球員每局只能使用一次。</p></section>}
     {screen==="result"&&<section className="result-screen screen-enter"><Progress current={13}/><div className="result-heading"><div className="step-kicker">ALL 13 ATTRIBUTES COMPLETE</div><h2>你的傳奇，正式誕生</h2></div><PlayerCard name={name} overall={overall} position={positionCode[position]} picked={picked}/><section className="similar-section"><div className="section-title"><span>PLAYER TEMPLATE · {positionCode[position]}</span><h3>同位置最相似的 3 位球員</h3></div><div className="similar-list">{similarPlayers.map(({player,team,match},i)=><div className="similar-player" key={`${team}-${player.name}`}><b className="similar-rank">0{i+1}</b><div><strong>{player.cname||player.name}</strong><span>{teamNames[team]} · {player.pos} · {player.ovr} OVR</span></div><i>{match}%</i></div>)}</div></section><div className="result-actions"><button className="primary-button" onClick={()=>setScreen("career-team")}><span>抽取生涯球隊</span><b>→</b></button><button className="secondary-button wide" onClick={shareResult}>分享球員卡</button></div><button className="text-button" onClick={resetGame}>重新打造另一位球星</button></section>}
     {screen==="career-team"&&<section className="content-screen career-screen screen-enter"><div className="step-kicker">ROOKIE DESTINATION</div><h2>抽出你的第一支 NBA 球隊</h2><p className="muted">命運將決定你的新秀賽季從哪座城市開始。</p><div className="career-draw"><TeamSlot code={careerReel} rolling={careerRolling}/></div>{!careerTeam?<button className="primary-button" onClick={drawCareerTeam} disabled={careerRolling}><span>{careerRolling?"球隊抽籤中…":"隨機抽取生涯球隊"}</span><b>↻</b></button>:<><div className="destination-card"><img src={teamLogo(careerTeam)} alt={`${teamNames[careerTeam]}標誌`}/><span>你將加入</span><h3>{teamNames[careerTeam]} <i>{careerTeam}</i></h3><p>以 {positionCode[position]} 身分展開新秀賽季</p></div><button className="primary-button" onClick={simulateSeason}><span>加入球隊並模擬 82 場</span><b>▶</b></button><button className="secondary-button wide small-gap" onClick={drawCareerTeam}>重新抽取</button></>}</section>}
-    {screen==="season"&&season&&<section className="content-screen career-screen screen-enter"><CareerHeader kicker="REGULAR SEASON COMPLETE" title="82 場常規賽結束" team={careerTeam}/><div className="record-card"><div><span>球隊戰績</span><b>{season.wins}–{season.losses}</b></div><div><span>分區種子</span><b>第 {season.seed} 名</b></div><div><span>角色</span><b>{season.starter?"先發":"第六人"}</b></div></div><StatPanel title="常規賽數據" stats={season.stats}/><Awards teams={season.teams} ballots={season.ballots}/><button className="primary-button" onClick={simulatePlayoffs}><span>進入 PLAYOFFS</span><b>→</b></button></section>}
+    {screen==="season"&&season&&<section className="content-screen career-screen screen-enter"><CareerHeader kicker={leagueMode==="all-time"?"ALL-TIME REGULAR SEASON":"REGULAR SEASON COMPLETE"} title="82 場常規賽結束" team={careerTeam}/><div className="record-card"><div><span>球隊戰績</span><b>{season.wins}–{season.losses}</b></div><div><span>分區種子</span><b>第 {season.seed} 名</b></div><div><span>球隊角色</span><b>{season.starter?"先發":"替補"}</b></div></div><div className="role-rule"><b>{season.starter?"先發資格達成":"最佳第六人資格啟用"}</b><span>85 OVR 以上為先發；低於 85 OVR 固定從替補出發</span></div><StatPanel title="常規賽數據" stats={season.stats}/><Awards teams={season.teams} ballots={season.ballots}/><button className="primary-button" onClick={simulatePlayoffs}><span>進入 PLAYOFFS</span><b>→</b></button></section>}
     {screen==="playoffs"&&playoffs&&<section className="content-screen career-screen screen-enter"><CareerHeader kicker="PLAYOFF RUN COMPLETE" title="季後賽征途完成" team={careerTeam}/><div className="series-list">{playoffs.series.map(s=><div className="series-row" key={s.round}><div><span>{s.round}</span><b>vs {teamNames[s.opponent]} {s.opponent}</b></div><strong className={s.won?"won":"lost"}>{s.wins}–{s.losses} · {s.won?"晉級":"淘汰"}</strong></div>)}</div><StatPanel title="季後賽數據" stats={playoffs.stats}/>{playoffs.honors.length>0&&<div className="honor-wall">{playoffs.honors.map(h=><span key={h}>🏆 {h}</span>)}</div>}<button className="primary-button" onClick={()=>setScreen("summary")}><span>查看賽季最終結算</span><b>→</b></button></section>}
     {screen==="summary"&&season&&playoffs&&<section className="content-screen career-screen summary-screen screen-enter"><CareerHeader kicker="SEASON LEGACY" title={`${name} 的新秀賽季`} team={careerTeam}/><StatPanel title="常規賽數據" stats={season.stats}/><StatPanel title="PLAYOFFS 數據" stats={playoffs.stats}/><div className="award-panel final-honors"><div className="section-title"><span>HONORS</span><h3>本季所有榮譽</h3></div>{allHonors.length?<div className="honor-wall">{allHonors.map((h,i)=><span key={`${h}-${i}`}>🏆 {h}</span>)}</div>:<p className="empty-copy">本季沒有獲得獎項，但傳奇才剛開始。</p>}</div><button className="primary-button" onClick={shareResult}><span>分享我的傳奇賽季</span><b>↗</b></button><button className="text-button" onClick={resetGame}>打造下一位球星</button></section>}
     {toast&&<div className="toast">✓ {toast}</div>}<footer>球迷創作遊戲 · 非 NBA 官方產品</footer>

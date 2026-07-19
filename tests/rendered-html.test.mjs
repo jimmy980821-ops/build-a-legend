@@ -3,11 +3,12 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("ships the complete mobile game and removes starter metadata", async () => {
-  const [page, layout, css, nbaData] = await Promise.all([
+  const [page, layout, css, nbaData, allTimeData] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/nba-data.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/all-time-data.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
@@ -18,6 +19,15 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /繼續上次進度/);
   assert.match(page, /setResumeScreen\(data\.screen\)/);
   assert.match(page, /NBA2K_DATA/);
+  assert.match(page, /ALL_TIME_DATA/);
+  assert.match(page, /傳奇聯盟/);
+  assert.match(page, /leagueMode==="all-time"/);
+  assert.match(page, /const STARTER_OVR = 85/);
+  assert.match(page, /const starter=overall>=STARTER_OVR/);
+  assert.match(page, /85 OVR 以上為先發/);
+  assert.match(allTimeData, /Michael Jordan/);
+  assert.match(allTimeData, /史蒂芬-柯瑞/);
+  assert.match(allTimeData, /Magic Johnson/);
   assert.match(page, /player\.cname\|\|player\.name/);
   assert.match(nbaData, /斯蒂芬-柯瑞/);
   assert.match(nbaData, /塞思-柯瑞/);
