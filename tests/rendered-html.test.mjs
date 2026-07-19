@@ -24,6 +24,10 @@ test("ships the complete mobile game and removes starter metadata", async () => 
   assert.match(page, /MVP/);
   assert.match(page, /DPOY/);
   assert.match(page, /最佳第六人/);
+  assert.match(page, /非替補球員，無參選資格/);
+  assert.match(page, /已當選 MVP，無參選資格/);
+  assert.match(page, /label: "控球"/);
+  assert.doesNotMatch(page, /label: "護球"/);
   assert.match(page, /年度關鍵球員/);
   assert.match(page, /分區冠軍賽 MVP/);
   assert.match(page, /FMVP/);

@@ -18,7 +18,7 @@ const leagueData = NBA2K_DATA as unknown as Record<string, RosterPlayer[]>;
 const attributes: Array<{ key: AttributeKey; label: string; short: string; icon: string }> = [
   { key: "threePT", label: "三分", short: "3PT", icon: "◎" }, { key: "MID", label: "中投", short: "MID", icon: "◉" },
   { key: "FIN", label: "終結", short: "FIN", icon: "◆" }, { key: "DNK", label: "灌籃", short: "DNK", icon: "↓" },
-  { key: "HAN", label: "護球", short: "HAN", icon: "∞" }, { key: "PAS", label: "傳球", short: "PAS", icon: "↗" },
+  { key: "HAN", label: "控球", short: "HAN", icon: "∞" }, { key: "PAS", label: "傳球", short: "PAS", icon: "↗" },
   { key: "PDEF", label: "外防", short: "PDEF", icon: "◇" }, { key: "IDEF", label: "內防", short: "IDEF", icon: "▣" },
   { key: "BLK", label: "阻攻", short: "BLK", icon: "╳" }, { key: "REB", label: "籃板", short: "REB", icon: "⇡" },
   { key: "ATH", label: "運動", short: "ATH", icon: "ϟ" }, { key: "STR", label: "力量", short: "STR", icon: "▲" },
@@ -107,7 +107,14 @@ export default function Home() {
     if(impact>=31)teams.push("年度第一隊");else if(impact>=26)teams.push("年度第二隊");else if(impact>=21)teams.push("年度第三隊");
     if(defense>=89)teams.push("年度防守第一隊");else if(defense>=82)teams.push("年度防守第二隊");
     const ballot=(award:string,score:number,winAt:number):Ballot=>{const won=score>=winAt;const rank=won?1:clamp(Math.round(18-(score-winAt+12)*.75),2,18);return {name:award,won,result:won?"當選":score>=winAt-14?`票選第 ${rank} 名`:"未入選"};};
-    const ballots=[ballot("MVP",impact,36),ballot("DPOY",defense,94),ballot("最佳新秀",impact+5,27),ballot("最佳第六人",starter?impact-14:impact+5,26),ballot("年度關鍵球員",value("CLU")+(stats.pts-20)*.8,94)];
+    const mvp=ballot("MVP",impact,36);
+    const sixthManScore=impact+(wins-41)*.18;
+    const sixthMan:Ballot=starter
+      ? {name:"最佳第六人",won:false,result:"非替補球員，無參選資格"}
+      : mvp.won
+        ? {name:"最佳第六人",won:false,result:"已當選 MVP，無參選資格"}
+        : ballot("最佳第六人",sixthManScore,28);
+    const ballots=[mvp,ballot("DPOY",defense,94),ballot("最佳新秀",impact+5,27),sixthMan,ballot("年度關鍵球員",value("CLU")+(stats.pts-20)*.8,94)];
     setSeason({wins,losses:82-wins,seed,starter,stats,teams,ballots});setScreen("season");
   }
 
