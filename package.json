@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "build:github": "next build",
+    "build:github": "next build && node scripts/create-stable-css.mjs",
     "start": "vinext start",
     "test": "node tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",

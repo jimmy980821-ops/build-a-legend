@@ -35,5 +35,5 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-Hant"><body>{children}</body></html>;
+  return <html lang="zh-Hant"><head><link rel="stylesheet" href={`${githubBasePath}/site-stable.css`}/></head><body>{children}</body></html>;
 }

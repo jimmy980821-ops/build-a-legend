@@ -66,6 +66,7 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(perfectData, /Victor Wembanyama/);
   assert.match(layout, /FULL COURT LAB/);
   assert.match(layout, /og-full-court-lab\.png/);
+  assert.match(layout, /site-stable\.css/);
   assert.match(page, /localStorage/);
   assert.match(page, /navigator\.share/);
   assert.match(page, /20 項能力：/);
