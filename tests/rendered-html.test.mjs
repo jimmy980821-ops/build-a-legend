@@ -26,6 +26,8 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(perfect, /換候選球員/);
   assert.match(perfect, /換年代/);
   assert.match(perfect, /projectWins/);
+  assert.match(perfect, /!excludeNames\.includes\(p\.name\)/);
+  assert.match(perfect, /roster\.some\(p=>p\.name===player\.name\)/);
   assert.match(perfect, /team-totals/);
   assert.match(perfectData, /Wilt Chamberlain/);
   assert.match(perfectData, /Victor Wembanyama/);

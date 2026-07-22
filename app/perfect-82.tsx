@@ -11,17 +11,17 @@ const statKeys=["PTS","REB","AST","STL","BLK"] as const;
 const shuffle=<T,>(items:T[])=>[...items].sort(()=>Math.random()-.5);
 const teamLogo=(team:string)=>TEAM_IDS[team]?`https://cdn.nba.com/logos/nba/${TEAM_IDS[team]}/primary/L/logo.svg`:"";
 
-function candidatesFor(decade:Decade,exclude:string[]=[]){const pool=PERFECT_PLAYERS.filter(p=>p.decade===decade&&!exclude.includes(`${p.name}-${p.decade}`));return shuffle(pool).slice(0,3);}
+function candidatesFor(decade:Decade,excludeNames:string[]=[]){const pool=PERFECT_PLAYERS.filter(p=>p.decade===decade&&!excludeNames.includes(p.name));return shuffle(pool).slice(0,3);}
 function totals(roster:PerfectPlayer[]){return {pts:roster.reduce((s,p)=>s+p.pts,0),reb:roster.reduce((s,p)=>s+p.reb,0),ast:roster.reduce((s,p)=>s+p.ast,0),stl:roster.reduce((s,p)=>s+p.stl,0),blk:roster.reduce((s,p)=>s+p.blk,0)};}
 function projectWins(roster:PerfectPlayer[]){const t=totals(roster);const clamp=(n:number)=>Math.max(0,Math.min(100,n));const ratings=[clamp((t.pts-105)/.58),clamp((t.reb-34)/.39),clamp((t.ast-18)/.32),clamp((t.stl-3)/.065),clamp((t.blk-2)/.105)];const average=ratings.reduce((a,b)=>a+b,0)/5;const balance=Math.min(...ratings);const strength=average*.68+balance*.32;return {wins:strength>=96&&balance>=90?82:Math.max(28,Math.min(81,Math.round(30+51*Math.pow(strength/100,1.65)))),ratings:ratings.map(Math.round),strength:Math.round(strength),totals:t};}
 
 export default function Perfect82({onExit}:{onExit:()=>void}){
   const [view,setView]=useState<View>("home");const [mode,setMode]=useState<Mode>("classic");const [roster,setRoster]=useState<PerfectPlayer[]>([]);const [decade,setDecade]=useState<Decade>("1990s");const [candidates,setCandidates]=useState<PerfectPlayer[]>([]);const [teamSkip,setTeamSkip]=useState(true);const [decadeSkip,setDecadeSkip]=useState(true);
   const result=useMemo(()=>projectWins(roster),[roster]);
-  const beginRound=(nextRoster:PerfectPlayer[],forced?:Decade)=>{const used=new Set(nextRoster.map(p=>p.decade));const open=DECADES.filter(d=>!used.has(d));const next=forced||shuffle(open)[0];setDecade(next);setCandidates(candidatesFor(next,nextRoster.map(p=>`${p.name}-${p.decade}`)));};
+  const beginRound=(nextRoster:PerfectPlayer[],forced?:Decade)=>{const used=new Set(nextRoster.map(p=>p.decade));const open=DECADES.filter(d=>!used.has(d));const next=forced||shuffle(open)[0];setDecade(next);setCandidates(candidatesFor(next,nextRoster.map(p=>p.name)));};
   const start=(chosen:Mode)=>{setMode(chosen);setRoster([]);setTeamSkip(true);setDecadeSkip(true);setView("draft");beginRound([]);};
-  const pick=(player:PerfectPlayer)=>{const next=[...roster,player];setRoster(next);if(next.length===5)setView("result");else beginRound(next);};
-  const skipTeam=()=>{if(!teamSkip)return;setCandidates(candidatesFor(decade,candidates.map(p=>`${p.name}-${p.decade}`)));setTeamSkip(false);};
+  const pick=(player:PerfectPlayer)=>{if(roster.some(p=>p.name===player.name))return;const next=[...roster,player];setRoster(next);if(next.length===5)setView("result");else beginRound(next);};
+  const skipTeam=()=>{if(!teamSkip)return;setCandidates(candidatesFor(decade,[...roster.map(p=>p.name),...candidates.map(p=>p.name)]));setTeamSkip(false);};
   const skipDecade=()=>{if(!decadeSkip)return;const used=new Set(roster.map(p=>p.decade));const open=DECADES.filter(d=>!used.has(d)&&d!==decade);beginRound(roster,shuffle(open)[0]);setDecadeSkip(false);};
   const reset=()=>{setView("home");setRoster([]);setCandidates([]);};
   return <main className="app-shell perfect-game">
