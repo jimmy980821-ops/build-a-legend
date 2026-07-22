@@ -1,0 +1,7 @@
+.team-totals{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:-5px 0 12px}
+.team-totals div{background:#0e110e;border-radius:9px;padding:7px 2px}
+.team-totals b{display:block;font-size:11px;color:var(--lime)}
+.team-totals span{display:block;color:#646b61;font-size:6px;margin-top:2px}
+.final-roster>div{grid-template-columns:39px 1fr}
+.final-roster img{grid-row:1/3}
+.final-roster>div>strong{grid-column:2;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

@@ -2,16 +2,35 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("ships the complete mobile game and removes starter metadata", async () => {
-  const [page, layout, css, nbaData, allTimeData] = await Promise.all([
+test("ships the complete mobile basketball arcade", async () => {
+  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/nba-data.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/all-time-data.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/game-hub.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/perfect-82.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/perfect-data.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
+  assert.match(page, /GameHub/);
+  assert.match(page, /Perfect82/);
+  assert.match(hub, /GAME 01 · LIVE/);
+  assert.match(hub, /GAME 02 · NEW/);
+  assert.match(hub, /未上線・敬請期待/);
+  assert.match(hub, /他是誰？/);
+  assert.match(perfect, /CLASSIC/);
+  assert.match(perfect, /HOOP IQ/);
+  assert.match(perfect, /換候選球員/);
+  assert.match(perfect, /換年代/);
+  assert.match(perfect, /projectWins/);
+  assert.match(perfect, /team-totals/);
+  assert.match(perfectData, /Wilt Chamberlain/);
+  assert.match(perfectData, /Victor Wembanyama/);
+  assert.match(layout, /FULL COURT LAB/);
+  assert.match(layout, /og-full-court-lab\.png/);
   assert.match(page, /localStorage/);
   assert.match(page, /navigator\.share/);
   assert.match(page, /20 項能力：/);

@@ -5,24 +5,24 @@ const githubBasePath = process.env.GITHUB_PAGES === "true" ? "/build-a-legend" :
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-  description: "先抽球隊、再選球員，奪取 20 項 2K 風格能力，打造專屬夢幻球星。手機瀏覽器直接開玩。",
-  applicationName: "BUILD-A-LEGEND",
+  title: "FULL COURT LAB｜籃球遊戲系列",
+  description: "手機籃球遊戲館：打造夢幻球星、挑戰82勝完美賽季，更多籃球知識遊戲即將上線。",
+  applicationName: "FULL COURT LAB",
   icons: {
     icon: [{ url: `${githubBasePath}/favicon-basketball.png`, type: "image/png" }],
     apple: [{ url: `${githubBasePath}/favicon-basketball.png`, type: "image/png" }],
   },
   openGraph: {
-    title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-    description: "抽球隊、選球員、奪取 20 項能力，完成你的傳奇球員卡。",
+    title: "FULL COURT LAB｜籃球遊戲系列",
+    description: "打造球星、組建跨年代夢幻隊，挑戰你的籃球知識。",
     type: "website",
-    images: [{ url: "/og-13-attributes.png", width: 1672, height: 941, alt: "BUILD-A-LEGEND 遊戲預覽" }],
+    images: [{ url: "/og-full-court-lab.png", width: 1672, height: 941, alt: "FULL COURT LAB 籃球遊戲系列" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BUILD-A-LEGEND｜打造你的夢幻球星",
-    description: "30 支球隊、20 項能力，打造球星並模擬新秀賽季。",
-    images: ["/og-13-attributes.png"],
+    title: "FULL COURT LAB｜籃球遊戲系列",
+    description: "兩款手機籃球遊戲立即開玩，更多玩法即將上線。",
+    images: ["/og-full-court-lab.png"],
   },
 };
 
