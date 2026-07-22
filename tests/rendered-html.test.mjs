@@ -36,7 +36,10 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(arcadeCss, /cubic-bezier\(\.34,1\.56,\.64,1\)/);
   assert.doesNotMatch(hub, /hub-metrics/);
   assert.match(hub, /GlowCard/);
-  assert.match(hub, /pointer · spotlight\(240\)/);
+  assert.doesNotMatch(hub, /pointer · spotlight\(240\)/);
+  assert.doesNotMatch(hub, /BASKETBALL GAME SERIES/);
+  assert.match(admin, /admin-login-card/);
+  assert.match(admin, /GlowCard glowColor="orange"/);
   assert.match(spotlight, /pointermove/);
   assert.match(spotlight, /data-glow/);
   assert.match(hub, /GAME 01 · LIVE/);
