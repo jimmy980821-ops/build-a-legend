@@ -1,33 +1,102 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { DECADES, PERFECT_PLAYERS, type Decade, type PerfectPlayer } from "./perfect-data";
+import { COURT_POSITIONS, TEAM_ERAS, TEAM_NAMES, type CourtPosition, type TeamEra, type TeamEraPlayer } from "./perfect-team-data";
 
-type Mode="classic"|"iq";
-type View="home"|"draft"|"result";
-const TEAM_IDS:Record<string,number>={ATL:1610612737,BOS:1610612738,CLE:1610612739,NOP:1610612740,CHI:1610612741,DAL:1610612742,DEN:1610612743,GSW:1610612744,HOU:1610612745,LAC:1610612746,LAL:1610612747,MIA:1610612748,MIL:1610612749,MIN:1610612750,NYK:1610612752,ORL:1610612753,PHI:1610612755,PHX:1610612756,POR:1610612757,SAC:1610612758,SAS:1610612759,OKC:1610612760,TOR:1610612761,UTA:1610612762,WAS:1610612764,DET:1610612765};
-const TEAM_NAMES:Record<string,string>={ATL:"老鷹",BOS:"塞爾提克",CLE:"騎士",NOP:"鵜鶘",CHI:"公牛",DAL:"獨行俠",DEN:"金塊",GSW:"勇士",HOU:"火箭",LAC:"快艇",LAL:"湖人",MIA:"熱火",MIL:"公鹿",MIN:"灰狼",NYK:"尼克",ORL:"魔術",PHI:"76人",PHX:"太陽",POR:"拓荒者",SAC:"國王",SAS:"馬刺",OKC:"雷霆",TOR:"暴龍",UTA:"爵士",WAS:"巫師",DET:"活塞"};
+type BattleMode = "solo" | "cpu" | "local";
+type View = "home" | "draft" | "result";
+type Lineup = Record<CourtPosition, TeamEraPlayer | null>;
+
+const TEAM_IDS:Record<string,number>={BOS:1610612738,CHI:1610612741,GSW:1610612744,LAL:1610612747,MIA:1610612748,MIL:1610612749,PHI:1610612755,PHX:1610612756,SAS:1610612759,OKC:1610612760};
 const statKeys=["PTS","REB","AST","STL","BLK"] as const;
+const emptyLineup=():Lineup=>({PG:null,SG:null,SF:null,PF:null,C:null});
 const shuffle=<T,>(items:T[])=>[...items].sort(()=>Math.random()-.5);
-const teamLogo=(team:string)=>TEAM_IDS[team]?`https://cdn.nba.com/logos/nba/${TEAM_IDS[team]}/primary/L/logo.svg`:"";
+const teamLogo=(team:string)=>`https://cdn.nba.com/logos/nba/${TEAM_IDS[team]}/primary/L/logo.svg`;
+const lineupPlayers=(lineup:Lineup)=>COURT_POSITIONS.map(p=>lineup[p]).filter(Boolean) as TeamEraPlayer[];
+const openPositions=(lineup:Lineup)=>COURT_POSITIONS.filter(p=>!lineup[p]);
+const canUse=(player:TeamEraPlayer,lineup:Lineup)=>player.positions.some(p=>!lineup[p]);
 
-function candidatesFor(decade:Decade,excludeNames:string[]=[]){const pool=PERFECT_PLAYERS.filter(p=>p.decade===decade&&!excludeNames.includes(p.name));return shuffle(pool).slice(0,3);}
-function totals(roster:PerfectPlayer[]){return {pts:roster.reduce((s,p)=>s+p.pts,0),reb:roster.reduce((s,p)=>s+p.reb,0),ast:roster.reduce((s,p)=>s+p.ast,0),stl:roster.reduce((s,p)=>s+p.stl,0),blk:roster.reduce((s,p)=>s+p.blk,0)};}
-function projectWins(roster:PerfectPlayer[]){const t=totals(roster);const clamp=(n:number)=>Math.max(0,Math.min(100,n));const ratings=[clamp((t.pts-105)/.58),clamp((t.reb-34)/.39),clamp((t.ast-18)/.32),clamp((t.stl-3)/.065),clamp((t.blk-2)/.105)];const average=ratings.reduce((a,b)=>a+b,0)/5;const balance=Math.min(...ratings);const strength=average*.68+balance*.32;return {wins:strength>=96&&balance>=90?82:Math.max(28,Math.min(81,Math.round(30+51*Math.pow(strength/100,1.65)))),ratings:ratings.map(Math.round),strength:Math.round(strength),totals:t};}
+function totals(players:TeamEraPlayer[]){return {pts:players.reduce((s,p)=>s+p.pts,0),reb:players.reduce((s,p)=>s+p.reb,0),ast:players.reduce((s,p)=>s+p.ast,0),stl:players.reduce((s,p)=>s+p.stl,0),blk:players.reduce((s,p)=>s+p.blk,0)};}
+function rate(lineup:Lineup){const players=lineupPlayers(lineup);const t=totals(players);const raw=t.pts*.42+t.reb*.32+t.ast*.48+t.stl*1.7+t.blk*1.55;return Math.max(60,Math.min(99,Math.round(raw/1.18)));}
+function projectWins(lineup:Lineup){const strength=rate(lineup);return Math.max(28,Math.min(82,Math.round(29+53*Math.pow(strength/99,2.3))));}
+function stableNoise(players:TeamEraPlayer[]){return players.reduce((sum,p)=>sum+[...p.name].reduce((s,c)=>s+c.charCodeAt(0),0),0)%9-4;}
+function gameScore(a:Lineup,b:Lineup){const ap=lineupPlayers(a),bp=lineupPlayers(b);const aScore=Math.round(100+(rate(a)-rate(b))*.55+stableNoise(ap));const bScore=Math.round(100+(rate(b)-rate(a))*.55+stableNoise(bp));return aScore===bScore?[aScore+1,bScore]:[aScore,bScore];}
+
+function buildCpuLineup(excluded:Set<string>){
+  const lineup=emptyLineup();
+  for(const slot of COURT_POSITIONS){
+    const pool=TEAM_ERAS.flatMap(t=>t.players).filter(p=>p.positions.includes(slot)&&!excluded.has(p.name));
+    const ranked=[...pool].sort((a,b)=>(b.pts+b.reb*.7+b.ast*.8+b.stl*2+b.blk*2)-(a.pts+a.reb*.7+a.ast*.8+a.stl*2+a.blk*2));
+    const pick=ranked[Math.floor(Math.random()*Math.min(7,ranked.length))];
+    if(pick){lineup[slot]=pick;excluded.add(pick.name);}
+  }
+  return lineup;
+}
+
+function Court({lineup,pending,onPlace}:{lineup:Lineup;pending:TeamEraPlayer|null;onPlace:(pos:CourtPosition)=>void}){
+  return <div className="lineup-court" aria-label="先發五人球場配置">
+    <div className="court-key"/><div className="court-circle"/><div className="court-arc"/>
+    {COURT_POSITIONS.map(pos=>{const player=lineup[pos];const valid=!!pending&&pending.positions.includes(pos)&&!player;return <button key={pos} className={`court-slot slot-${pos.toLowerCase()} ${player?"occupied":""} ${valid?"valid":""}`} onClick={()=>valid&&onPlace(pos)} disabled={!valid} aria-label={`${pos}${player?`：${player.cname}`:valid?"，可以放置":"，尚未選人"}`}><b>{pos}</b>{player&&<><span>{player.cname}</span><small>{player.era}</small></>}</button>})}
+  </div>;
+}
 
 export default function Perfect82({onExit}:{onExit:()=>void}){
-  const [view,setView]=useState<View>("home");const [mode,setMode]=useState<Mode>("classic");const [roster,setRoster]=useState<PerfectPlayer[]>([]);const [decade,setDecade]=useState<Decade>("1990s");const [candidates,setCandidates]=useState<PerfectPlayer[]>([]);const [teamSkip,setTeamSkip]=useState(true);const [decadeSkip,setDecadeSkip]=useState(true);
-  const result=useMemo(()=>projectWins(roster),[roster]);
-  const beginRound=(nextRoster:PerfectPlayer[],forced?:Decade)=>{const used=new Set(nextRoster.map(p=>p.decade));const open=DECADES.filter(d=>!used.has(d));const next=forced||shuffle(open)[0];setDecade(next);setCandidates(candidatesFor(next,nextRoster.map(p=>p.name)));};
-  const start=(chosen:Mode)=>{setMode(chosen);setRoster([]);setTeamSkip(true);setDecadeSkip(true);setView("draft");beginRound([]);};
-  const pick=(player:PerfectPlayer)=>{if(roster.some(p=>p.name===player.name))return;const next=[...roster,player];setRoster(next);if(next.length===5)setView("result");else beginRound(next);};
-  const skipTeam=()=>{if(!teamSkip)return;setCandidates(candidatesFor(decade,[...roster.map(p=>p.name),...candidates.map(p=>p.name)]));setTeamSkip(false);};
-  const skipDecade=()=>{if(!decadeSkip)return;const used=new Set(roster.map(p=>p.decade));const open=DECADES.filter(d=>!used.has(d)&&d!==decade);beginRound(roster,shuffle(open)[0]);setDecadeSkip(false);};
-  const reset=()=>{setView("home");setRoster([]);setCandidates([]);};
-  return <main className="app-shell perfect-game">
-    <header className="topbar"><button className="wordmark perfect-wordmark" onClick={reset}>PERFECT <i>82</i></button><div className="top-actions"><button className="hub-button" onClick={onExit} aria-label="回到遊戲大廳">⌂</button>{view!=="home"&&<button className="icon-button" onClick={()=>start(mode)} aria-label="重新開始">↻</button>}</div></header>
-    {view==="home"&&<section className="perfect-home screen-enter"><div className="eyebrow">ALL-TIME ROSTER CHALLENGE</div><h1>你的夢幻隊<br/>能夠 <em>82–0</em> 嗎？</h1><p className="lead">每輪抽出一個年代，從三位傳奇中選一人。完成五人名單後，模擬整個82場賽季。</p><div className="perfect-hero"><div className="record-zero"><b>82</b><span>–0</span></div><div className="perfect-court"><i/><i/><i/></div><small>THE PERFECT SEASON</small></div><div className="mode-stack"><button onClick={()=>start("classic")}><span>數據模式</span><b>CLASSIC</b><i>完整顯示球員五項巔峰數據 →</i></button><button onClick={()=>start("iq")}><span>記憶模式</span><b>HOOP IQ</b><i>選人時隱藏數據，考驗你的籃球知識 →</i></button></div><div className="rules-mini"><span>5 位傳奇</span><span>7 個年代</span><span>82 場模擬</span></div></section>}
-    {view==="draft"&&<section className="perfect-draft screen-enter"><div className="draft-progress"><span>ROSTER {roster.length}/5</span><div>{[0,1,2,3,4].map(i=><i key={i} className={i<roster.length?"filled":i===roster.length?"current":""}/>)}</div></div><div className="era-banner"><div><small>ROUND {roster.length+1}</small><b>{decade}</b><span>從這個年代選出一位傳奇</span></div><strong>{mode==="classic"?"數據公開":"數據隱藏"}</strong></div><div className="perfect-candidates">{candidates.map(player=><button key={`${player.name}-${player.decade}`} onClick={()=>pick(player)}><img src={teamLogo(player.team)} alt={`${TEAM_NAMES[player.team]}標誌`}/><div className="candidate-name"><small>{TEAM_NAMES[player.team]} · {player.pos}</small><b>{player.cname}</b><span>{player.name}</span></div>{mode==="classic"?<div className="candidate-stats">{statKeys.map(key=><div key={key}><b>{player[key.toLowerCase() as "pts"].toFixed(1)}</b><span>{key}</span></div>)}</div>:<div className="stats-hidden"><span>?</span><b>數據將在選擇後揭曉</b></div>}<strong className="pick-player">選擇球員 →</strong></button>)}</div><div className="skip-actions"><button onClick={skipTeam} disabled={!teamSkip}><b>換候選球員</b><span>{teamSkip?"剩餘 1 次":"已使用"}</span></button><button onClick={skipDecade} disabled={!decadeSkip}><b>換年代</b><span>{decadeSkip?"剩餘 1 次":"已使用"}</span></button></div>{roster.length>0&&<div className="drafted-strip">{roster.map(p=><div key={`${p.name}-${p.decade}`}><img src={teamLogo(p.team)} alt=""/><span>{p.cname}</span><b>{p.decade}</b></div>)}</div>}</section>}
-    {view==="result"&&<section className="perfect-result screen-enter"><div className="eyebrow">SEASON SIMULATION COMPLETE</div><div className={result.wins===82?"season-record perfect":"season-record"}><small>FINAL RECORD</small><div><b>{result.wins}</b><span>–{82-result.wins}</span></div><strong>{result.wins===82?"PERFECT SEASON":"挑戰完成"}</strong></div><div className="strength-row"><div><span>球隊強度</span><b>{result.strength}</b></div>{statKeys.map((k,i)=><div key={k}><span>{k} 評分</span><b>{result.ratings[i]}</b></div>)}</div><div className="team-totals">{statKeys.map(k=><div key={k}><b>{result.totals[k.toLowerCase() as "pts"].toFixed(1)}</b><span>{k} 總和</span></div>)}</div><div className="final-roster">{roster.map(p=><div key={`${p.name}-${p.decade}`}><img src={teamLogo(p.team)} alt=""/><div><b>{p.cname}</b><span>{p.decade} · {TEAM_NAMES[p.team]} · {p.pos}</span></div><strong>{p.pts.toFixed(1)} PTS · {p.reb.toFixed(1)} REB · {p.ast.toFixed(1)} AST · {p.stl.toFixed(1)} STL · {p.blk.toFixed(1)} BLK</strong></div>)}</div><div className="result-actions"><button className="primary-button" onClick={()=>start(mode)}><span>再挑戰一次</span><b>↻</b></button><button className="secondary-button wide" onClick={onExit}>回到遊戲大廳</button></div></section>}
+  const [view,setView]=useState<View>("home");
+  const [battle,setBattle]=useState<BattleMode>("solo");
+  const [lineups,setLineups]=useState<[Lineup,Lineup]>([emptyLineup(),emptyLineup()]);
+  const [side,setSide]=useState<0|1>(0);
+  const [teamEra,setTeamEra]=useState<TeamEra>(TEAM_ERAS[0]);
+  const [pending,setPending]=useState<TeamEraPlayer|null>(null);
+  const [search,setSearch]=useState("");
+  const [filter,setFilter]=useState<"ALL"|CourtPosition>("ALL");
+  const [teamShuffle,setTeamShuffle]=useState(true);
+  const [eraShuffle,setEraShuffle]=useState(true);
+
+  const active=lineups[side];
+  const usedNames=useMemo(()=>new Set(lineups.flatMap(lineupPlayers).map(p=>p.name)),[lineups]);
+  const available=useMemo(()=>teamEra.players.filter(p=>!usedNames.has(p.name)).filter(p=>filter==="ALL"||p.positions.includes(filter)).filter(p=>`${p.name}${p.cname}`.toLowerCase().includes(search.toLowerCase())),[teamEra,usedNames,filter,search]);
+  const count=lineupPlayers(active).length;
+
+  const eligibleTeamEras=(lineup:Lineup,extraExcluded=new Set<string>())=>TEAM_ERAS.filter(t=>t.players.some(p=>!extraExcluded.has(p.name)&&!usedNames.has(p.name)&&canUse(p,lineup)));
+  const drawNext=(lineup:Lineup)=>{const excluded=new Set([...usedNames,...lineupPlayers(lineup).map(p=>p.name)]);const pool=eligibleTeamEras(lineup,excluded);setTeamEra(shuffle(pool)[0]||TEAM_ERAS[0]);setPending(null);setSearch("");setFilter("ALL");};
+  const start=(mode:BattleMode)=>{const next:[Lineup,Lineup]=[emptyLineup(),emptyLineup()];setBattle(mode);setLineups(next);setSide(0);setTeamShuffle(true);setEraShuffle(true);setPending(null);setView("draft");setTeamEra(shuffle(TEAM_ERAS)[0]);};
+  const reset=()=>{setView("home");setLineups([emptyLineup(),emptyLineup()]);setPending(null);};
+  const place=(pos:CourtPosition)=>{
+    if(!pending||active[pos]||!pending.positions.includes(pos)||usedNames.has(pending.name))return;
+    const nextLineup={...active,[pos]:pending};
+    const nextLineups:[Lineup,Lineup]=[lineups[0],lineups[1]];nextLineups[side]=nextLineup;setLineups(nextLineups);setPending(null);
+    if(lineupPlayers(nextLineup).length<5){drawNext(nextLineup);return;}
+    if(battle==="solo"){setView("result");return;}
+    if(battle==="cpu"){nextLineups[1]=buildCpuLineup(new Set(lineupPlayers(nextLineup).map(p=>p.name)));setLineups([...nextLineups] as [Lineup,Lineup]);setView("result");return;}
+    if(side===0){setSide(1);setTeamShuffle(true);setEraShuffle(true);setTeamEra(shuffle(TEAM_ERAS)[0]);setSearch("");setFilter("ALL");return;}
+    setView("result");
+  };
+  const changeTeam=()=>{if(!teamShuffle)return;const sameEra=eligibleTeamEras(active).filter(t=>t.era===teamEra.era&&t.team!==teamEra.team);setTeamEra(shuffle(sameEra.length?sameEra:eligibleTeamEras(active).filter(t=>t.team!==teamEra.team))[0]||teamEra);setPending(null);setTeamShuffle(false);};
+  const changeEra=()=>{if(!eraShuffle)return;const sameTeam=eligibleTeamEras(active).filter(t=>t.team===teamEra.team&&t.era!==teamEra.era);setTeamEra(shuffle(sameTeam.length?sameTeam:eligibleTeamEras(active).filter(t=>t.era!==teamEra.era))[0]||teamEra);setPending(null);setEraShuffle(false);};
+  const scores=battle==="solo"?null:gameScore(lineups[0],lineups[1]);
+
+  return <main className="perfect-game-v2">
+    <header className="perfect-nav"><button className="perfect-logo" onClick={reset}>PERFECT <i>82</i></button><div><button onClick={onExit} aria-label="回到遊戲大廳">⌂</button>{view!=="home"&&<button onClick={()=>start(battle)} aria-label="重新開始">↻</button>}</div></header>
+
+    {view==="home"&&<section className="perfect-home-v2 screen-enter">
+      <div className="eyebrow">BUILD FIVE · OWN EVERY POSITION</div><h1>組出你的<br/><em>完美先發</em></h1><p>每輪抽出一支球隊與年代，從該隊完整候選名單挑一位球員，再把他放進合法位置。雙位置球員可以自由換位。</p>
+      <div className="home-court"><Court lineup={emptyLineup()} pending={null} onPlace={()=>{}}/><strong>PG · SG · SF · PF · C</strong></div>
+      <div className="battle-modes"><button onClick={()=>start("solo")}><span>82–0 CHALLENGE</span><b>單人完美賽季</b><i>組隊後模擬 82 場戰績 →</i></button><button onClick={()=>start("cpu")}><span>1 VS CPU</span><b>挑戰電腦</b><i>完成陣容後立即對決 →</i></button><button onClick={()=>start("local")}><span>LOCAL 1 VS 1</span><b>同機雙人對戰</b><i>兩位玩家輪流組隊 →</i></button></div>
+    </section>}
+
+    {view==="draft"&&<section className="roster-builder screen-enter">
+      <div className="draft-status"><div><small>{battle==="local"?`玩家 ${side+1}`:side===0?"你的球隊":"電腦"}</small><b>Round {count+1}/5</b></div><div>{COURT_POSITIONS.map(p=><i key={p} className={active[p]?"filled":""}/>)}</div></div>
+      <div className="drawn-team"><img src={teamLogo(teamEra.team)} alt={`${TEAM_NAMES[teamEra.team]}標誌`}/><div><small>本輪球隊</small><b>{teamEra.label}</b><span>{teamEra.team} · {teamEra.era}</span></div><div className="redraws"><button onClick={changeTeam} disabled={!teamShuffle}>↻ Team</button><button onClick={changeEra} disabled={!eraShuffle}>↻ Era</button></div></div>
+      <div className="builder-grid">
+        <div className="player-browser"><div className="player-tools"><div>{["ALL",...COURT_POSITIONS].map(p=><button key={p} className={filter===p?"active":""} onClick={()=>setFilter(p as "ALL"|CourtPosition)}>{p}</button>)}</div><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="搜尋球員…" aria-label="搜尋球員"/></div><p><b>{available.length}</b> 位球員可選 <span>{pending?`已選 ${pending.cname}，請點球場位置`:`先選球員，再點球場位置`}</span></p><div className="team-player-list">{available.map(player=>{const usable=canUse(player,active);return <button key={player.name} className={pending?.name===player.name?"selected":""} disabled={!usable} onClick={()=>setPending(player)}><div><b>{player.cname}</b><span>{player.name} · {player.pos}</span></div><div className="mini-stats">{statKeys.map(k=><span key={k}><b>{player[k.toLowerCase() as "pts"].toFixed(1)}</b><small>{k}</small></span>)}</div>{!usable&&<i>無可用位置</i>}</button>})}</div></div>
+        <div className="court-column"><Court lineup={active} pending={pending} onPlace={place}/><div className={pending?"placement-tip active":"placement-tip"}>{pending?`正在放置：${pending.cname}（${pending.pos}）— 點選發亮位置`:`從左側選擇球員，再點球場位置`}</div></div>
+      </div>
+    </section>}
+
+    {view==="result"&&<section className="battle-result screen-enter">
+      <div className="eyebrow">SIMULATION COMPLETE</div>{battle==="solo"?<><div className={projectWins(lineups[0])===82?"solo-record perfect":"solo-record"}><small>FINAL RECORD</small><div><b>{projectWins(lineups[0])}</b><span>–{82-projectWins(lineups[0])}</span></div><strong>{projectWins(lineups[0])===82?"PERFECT SEASON":"賽季挑戰完成"}</strong></div></>:<div className="versus-score"><small>{scores![0]>scores![1]?"玩家 1 獲勝":"對手獲勝"}</small><div><b>{scores![0]}</b><i>:</i><b>{scores![1]}</b></div><span>FINAL · 1 VS 1</span></div>}
+      <div className="result-lineups">{lineups.slice(0,battle==="solo"?1:2).map((lineup,index)=><div key={index}><header><span>{index===0?"玩家 1":battle==="cpu"?"CPU":"玩家 2"}</span><b>{rate(lineup)} OVR</b></header>{COURT_POSITIONS.map(pos=>{const p=lineup[pos]!;return <div className="result-player" key={pos}><strong>{pos}</strong><div><b>{p.cname}</b><span>{p.era} · {TEAM_NAMES[p.team]} · {p.pos}</span></div><i>{p.pts.toFixed(1)} PTS</i></div>})}</div>)}</div>
+      <div className="result-actions"><button className="primary-button" onClick={()=>start(battle)}><span>再玩一次</span><b>↻</b></button><button className="secondary-button wide" onClick={onExit}>回到遊戲大廳</button></div>
+    </section>}
   </main>;
 }

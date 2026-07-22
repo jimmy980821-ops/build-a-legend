@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("ships the complete mobile basketball arcade", async () => {
-  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData] = await Promise.all([
+  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -12,6 +12,8 @@ test("ships the complete mobile basketball arcade", async () => {
     readFile(new URL("../app/game-hub.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/perfect-82.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/perfect-data.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/perfect-team-data.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/arcade.css", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
@@ -21,14 +23,20 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(hub, /GAME 02 · NEW/);
   assert.match(hub, /未上線・敬請期待/);
   assert.match(hub, /他是誰？/);
-  assert.match(perfect, /CLASSIC/);
-  assert.match(perfect, /HOOP IQ/);
-  assert.match(perfect, /換候選球員/);
-  assert.match(perfect, /換年代/);
-  assert.match(perfect, /projectWins/);
-  assert.match(perfect, /!excludeNames\.includes\(p\.name\)/);
-  assert.match(perfect, /roster\.some\(p=>p\.name===player\.name\)/);
-  assert.match(perfect, /team-totals/);
+  assert.match(perfect, /單人完美賽季/);
+  assert.match(perfect, /挑戰電腦/);
+  assert.match(perfect, /同機雙人對戰/);
+  assert.match(perfect, /Court lineup=/);
+  assert.match(perfect, /pending\.positions\.includes\(pos\)/);
+  assert.match(perfect, /usedNames\.has\(pending\.name\)/);
+  assert.match(perfect, /buildCpuLineup/);
+  assert.match(perfect, /本輪球隊/);
+  assert.match(perfect, /搜尋球員/);
+  assert.match(perfectTeamData, /PG \/ PF/);
+  assert.match(perfectTeamData, /TEAM_ERAS/);
+  assert.match(perfectTeamData, /Stephen Curry","史蒂芬・柯瑞/);
+  assert.match(arcadeCss, /lineup-court/);
+  assert.match(arcadeCss, /court-slot\.valid/);
   assert.match(perfectData, /Wilt Chamberlain/);
   assert.match(perfectData, /Victor Wembanyama/);
   assert.match(layout, /FULL COURT LAB/);
