@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("ships the complete mobile basketball arcade", async () => {
-  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss] = await Promise.all([
+  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss, admin, settings] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -14,11 +14,25 @@ test("ships the complete mobile basketball arcade", async () => {
     readFile(new URL("../app/perfect-data.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/perfect-team-data.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/arcade.css", import.meta.url), "utf8"),
+    readFile(new URL("../app/admin-panel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/site-settings.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
   assert.match(page, /GameHub/);
   assert.match(page, /Perfect82/);
+  assert.match(hub, /管理員登入/);
+  assert.match(page, /AdminPanel/);
+  assert.match(page, /allowUnlimitedTeamSpins/);
+  assert.match(page, /管理員已關閉重抽/);
+  assert.match(admin, /ADMIN_PASSWORD = "980821"/);
+  assert.match(admin, /<em>控制台<\/em>/);
+  assert.match(admin, /無限重抽球隊/);
+  assert.match(settings, /legendEnabled: true/);
+  assert.match(settings, /perfectEnabled: true/);
+  assert.match(settings, /unlimitedTeamSpins: true/);
+  assert.match(arcadeCss, /\.switch\.on \.switch-knob/);
+  assert.match(arcadeCss, /cubic-bezier\(\.34,1\.56,\.64,1\)/);
   assert.match(hub, /GAME 01 · LIVE/);
   assert.match(hub, /GAME 02 · NEW/);
   assert.match(hub, /未上線・敬請期待/);
