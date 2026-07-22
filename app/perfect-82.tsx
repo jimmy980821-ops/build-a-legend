@@ -58,7 +58,7 @@ export default function Perfect82({onExit}:{onExit:()=>void}){
   const count=lineupPlayers(active).length;
 
   const eligibleTeamEras=(lineup:Lineup,extraExcluded=new Set<string>())=>TEAM_ERAS.filter(t=>t.players.some(p=>!extraExcluded.has(p.name)&&!usedNames.has(p.name)&&canUse(p,lineup)));
-  const drawNext=(lineup:Lineup)=>{const excluded=new Set([...usedNames,...lineupPlayers(lineup).map(p=>p.name)]);const pool=eligibleTeamEras(lineup,excluded);setTeamEra(shuffle(pool)[0]||TEAM_ERAS[0]);setPending(null);setSearch("");setFilter("ALL");};
+  const drawNext=(lineup:Lineup)=>{const excluded=new Set([...usedNames,...lineupPlayers(lineup).map(p=>p.name)]);const pool=eligibleTeamEras(lineup,excluded);const different=pool.filter(t=>t.team!==teamEra.team||t.era!==teamEra.era);setTeamEra(shuffle(different.length?different:pool)[0]||TEAM_ERAS[0]);setPending(null);setSearch("");setFilter("ALL");setTeamShuffle(true);setEraShuffle(true);};
   const start=(mode:BattleMode)=>{const next:[Lineup,Lineup]=[emptyLineup(),emptyLineup()];setBattle(mode);setLineups(next);setSide(0);setTeamShuffle(true);setEraShuffle(true);setPending(null);setView("draft");setTeamEra(shuffle(TEAM_ERAS)[0]);};
   const reset=()=>{setView("home");setLineups([emptyLineup(),emptyLineup()]);setPending(null);};
   const place=(pos:CourtPosition)=>{
