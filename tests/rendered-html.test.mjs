@@ -34,6 +34,9 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(perfect, /搜尋球員/);
   assert.match(perfect, /t\.team!==teamEra\.team\|\|t\.era!==teamEra\.era/);
   assert.match(perfect, /setTeamShuffle\(true\);setEraShuffle\(true\)/);
+  assert.match(perfect, /抽選中…/);
+  assert.match(perfect, /setInterval/);
+  assert.match(perfect, /draw-reel/);
   assert.match(perfectTeamData, /PG \/ PF/);
   assert.match(perfectTeamData, /TEAM_ERAS/);
   assert.match(perfectTeamData, /Stephen Curry","史蒂芬・柯瑞/);

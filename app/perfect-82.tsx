@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { COURT_POSITIONS, TEAM_ERAS, TEAM_NAMES, type CourtPosition, type TeamEra, type TeamEraPlayer } from "./perfect-team-data";
 
 type BattleMode = "solo" | "cpu" | "local";
@@ -51,15 +51,21 @@ export default function Perfect82({onExit}:{onExit:()=>void}){
   const [filter,setFilter]=useState<"ALL"|CourtPosition>("ALL");
   const [teamShuffle,setTeamShuffle]=useState(true);
   const [eraShuffle,setEraShuffle]=useState(true);
+  const [drawing,setDrawing]=useState(false);
+  const [drawPreview,setDrawPreview]=useState<TeamEra|null>(null);
+
+  useEffect(()=>{if(!drawing)return;let tick=0;const reel=setInterval(()=>{setDrawPreview(TEAM_ERAS[tick%TEAM_ERAS.length]);tick+=1;},75);const finish=setTimeout(()=>{clearInterval(reel);setDrawPreview(null);setDrawing(false);},1050);return()=>{clearInterval(reel);clearTimeout(finish);};},[drawing]);
 
   const active=lineups[side];
   const usedNames=useMemo(()=>new Set(lineups.flatMap(lineupPlayers).map(p=>p.name)),[lineups]);
   const available=useMemo(()=>teamEra.players.filter(p=>!usedNames.has(p.name)).filter(p=>filter==="ALL"||p.positions.includes(filter)).filter(p=>`${p.name}${p.cname}`.toLowerCase().includes(search.toLowerCase())),[teamEra,usedNames,filter,search]);
   const count=lineupPlayers(active).length;
+  const shownTeamEra=drawing&&drawPreview?drawPreview:teamEra;
 
   const eligibleTeamEras=(lineup:Lineup,extraExcluded=new Set<string>())=>TEAM_ERAS.filter(t=>t.players.some(p=>!extraExcluded.has(p.name)&&!usedNames.has(p.name)&&canUse(p,lineup)));
-  const drawNext=(lineup:Lineup)=>{const excluded=new Set([...usedNames,...lineupPlayers(lineup).map(p=>p.name)]);const pool=eligibleTeamEras(lineup,excluded);const different=pool.filter(t=>t.team!==teamEra.team||t.era!==teamEra.era);setTeamEra(shuffle(different.length?different:pool)[0]||TEAM_ERAS[0]);setPending(null);setSearch("");setFilter("ALL");setTeamShuffle(true);setEraShuffle(true);};
-  const start=(mode:BattleMode)=>{const next:[Lineup,Lineup]=[emptyLineup(),emptyLineup()];setBattle(mode);setLineups(next);setSide(0);setTeamShuffle(true);setEraShuffle(true);setPending(null);setView("draft");setTeamEra(shuffle(TEAM_ERAS)[0]);};
+  const beginDraw=(target:TeamEra)=>{setTeamEra(target);setDrawPreview(shuffle(TEAM_ERAS)[0]);setDrawing(false);requestAnimationFrame(()=>setDrawing(true));};
+  const drawNext=(lineup:Lineup)=>{const excluded=new Set([...usedNames,...lineupPlayers(lineup).map(p=>p.name)]);const pool=eligibleTeamEras(lineup,excluded);const different=pool.filter(t=>t.team!==teamEra.team||t.era!==teamEra.era);beginDraw(shuffle(different.length?different:pool)[0]||TEAM_ERAS[0]);setPending(null);setSearch("");setFilter("ALL");setTeamShuffle(true);setEraShuffle(true);};
+  const start=(mode:BattleMode)=>{const next:[Lineup,Lineup]=[emptyLineup(),emptyLineup()];setBattle(mode);setLineups(next);setSide(0);setTeamShuffle(true);setEraShuffle(true);setPending(null);setView("draft");beginDraw(shuffle(TEAM_ERAS)[0]);};
   const reset=()=>{setView("home");setLineups([emptyLineup(),emptyLineup()]);setPending(null);};
   const place=(pos:CourtPosition)=>{
     if(!pending||active[pos]||!pending.positions.includes(pos)||usedNames.has(pending.name))return;
@@ -68,11 +74,11 @@ export default function Perfect82({onExit}:{onExit:()=>void}){
     if(lineupPlayers(nextLineup).length<5){drawNext(nextLineup);return;}
     if(battle==="solo"){setView("result");return;}
     if(battle==="cpu"){nextLineups[1]=buildCpuLineup(new Set(lineupPlayers(nextLineup).map(p=>p.name)));setLineups([...nextLineups] as [Lineup,Lineup]);setView("result");return;}
-    if(side===0){setSide(1);setTeamShuffle(true);setEraShuffle(true);setTeamEra(shuffle(TEAM_ERAS)[0]);setSearch("");setFilter("ALL");return;}
+    if(side===0){setSide(1);setTeamShuffle(true);setEraShuffle(true);beginDraw(shuffle(TEAM_ERAS)[0]);setSearch("");setFilter("ALL");return;}
     setView("result");
   };
-  const changeTeam=()=>{if(!teamShuffle)return;const sameEra=eligibleTeamEras(active).filter(t=>t.era===teamEra.era&&t.team!==teamEra.team);setTeamEra(shuffle(sameEra.length?sameEra:eligibleTeamEras(active).filter(t=>t.team!==teamEra.team))[0]||teamEra);setPending(null);setTeamShuffle(false);};
-  const changeEra=()=>{if(!eraShuffle)return;const sameTeam=eligibleTeamEras(active).filter(t=>t.team===teamEra.team&&t.era!==teamEra.era);setTeamEra(shuffle(sameTeam.length?sameTeam:eligibleTeamEras(active).filter(t=>t.era!==teamEra.era))[0]||teamEra);setPending(null);setEraShuffle(false);};
+  const changeTeam=()=>{if(!teamShuffle||drawing)return;const sameEra=eligibleTeamEras(active).filter(t=>t.era===teamEra.era&&t.team!==teamEra.team);beginDraw(shuffle(sameEra.length?sameEra:eligibleTeamEras(active).filter(t=>t.team!==teamEra.team))[0]||teamEra);setPending(null);setTeamShuffle(false);};
+  const changeEra=()=>{if(!eraShuffle||drawing)return;const sameTeam=eligibleTeamEras(active).filter(t=>t.team===teamEra.team&&t.era!==teamEra.era);beginDraw(shuffle(sameTeam.length?sameTeam:eligibleTeamEras(active).filter(t=>t.era!==teamEra.era))[0]||teamEra);setPending(null);setEraShuffle(false);};
   const scores=battle==="solo"?null:gameScore(lineups[0],lineups[1]);
 
   return <main className="perfect-game-v2">
@@ -86,9 +92,9 @@ export default function Perfect82({onExit}:{onExit:()=>void}){
 
     {view==="draft"&&<section className="roster-builder screen-enter">
       <div className="draft-status"><div><small>{battle==="local"?`玩家 ${side+1}`:side===0?"你的球隊":"電腦"}</small><b>Round {count+1}/5</b></div><div>{COURT_POSITIONS.map(p=><i key={p} className={active[p]?"filled":""}/>)}</div></div>
-      <div className="drawn-team"><img src={teamLogo(teamEra.team)} alt={`${TEAM_NAMES[teamEra.team]}標誌`}/><div><small>本輪球隊</small><b>{teamEra.label}</b><span>{teamEra.team} · {teamEra.era}</span></div><div className="redraws"><button onClick={changeTeam} disabled={!teamShuffle}>↻ Team</button><button onClick={changeEra} disabled={!eraShuffle}>↻ Era</button></div></div>
-      <div className="builder-grid">
-        <div className="player-browser"><div className="player-tools"><div>{["ALL",...COURT_POSITIONS].map(p=><button key={p} className={filter===p?"active":""} onClick={()=>setFilter(p as "ALL"|CourtPosition)}>{p}</button>)}</div><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="搜尋球員…" aria-label="搜尋球員"/></div><p><b>{available.length}</b> 位球員可選 <span>{pending?`已選 ${pending.cname}，請點球場位置`:`先選球員，再點球場位置`}</span></p><div className="team-player-list">{available.map(player=>{const usable=canUse(player,active);return <button key={player.name} className={pending?.name===player.name?"selected":""} disabled={!usable} onClick={()=>setPending(player)}><div><b>{player.cname}</b><span>{player.name} · {player.pos}</span></div><div className="mini-stats">{statKeys.map(k=><span key={k}><b>{player[k.toLowerCase() as "pts"].toFixed(1)}</b><small>{k}</small></span>)}</div>{!usable&&<i>無可用位置</i>}</button>})}</div></div>
+      <div className={drawing?"drawn-team is-drawing":"drawn-team"}><img src={teamLogo(shownTeamEra.team)} alt={`${TEAM_NAMES[shownTeamEra.team]}標誌`}/><div><small>{drawing?"抽選中…":"本輪球隊"}</small><b>{shownTeamEra.label}</b><span>{shownTeamEra.team} · {shownTeamEra.era}</span></div><div className="redraws"><button onClick={changeTeam} disabled={!teamShuffle||drawing}>↻ Team</button><button onClick={changeEra} disabled={!eraShuffle||drawing}>↻ Era</button></div>{drawing&&<div className="draw-reel" aria-live="polite"><span>TEAM</span><i>×</i><span>ERA</span></div>}</div>
+      <div className={drawing?"builder-grid drawing-locked":"builder-grid"}>
+        <div className="player-browser"><div className="player-tools"><div>{["ALL",...COURT_POSITIONS].map(p=><button key={p} className={filter===p?"active":""} onClick={()=>setFilter(p as "ALL"|CourtPosition)}>{p}</button>)}</div><input value={search} onChange={e=>setSearch(e.target.value)} placeholder="搜尋球員…" aria-label="搜尋球員"/></div><p><b>{available.length}</b> 位球員可選 <span>{pending?`已選 ${pending.cname}，請點球場位置`:`先選球員，再點球場位置`}</span></p><div className="team-player-list">{available.map(player=>{const usable=canUse(player,active);return <button key={player.name} className={pending?.name===player.name?"selected":""} disabled={drawing||!usable} onClick={()=>setPending(player)}><div><b>{player.cname}</b><span>{player.name} · {player.pos}</span></div><div className="mini-stats">{statKeys.map(k=><span key={k}><b>{player[k.toLowerCase() as "pts"].toFixed(1)}</b><small>{k}</small></span>)}</div>{!usable&&<i>無可用位置</i>}</button>})}</div></div>
         <div className="court-column"><Court lineup={active} pending={pending} onPlace={place}/><div className={pending?"placement-tip active":"placement-tip"}>{pending?`正在放置：${pending.cname}（${pending.pos}）— 點選發亮位置`:`從左側選擇球員，再點球場位置`}</div></div>
       </div>
     </section>}
