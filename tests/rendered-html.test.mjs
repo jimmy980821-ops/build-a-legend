@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("ships the complete mobile basketball arcade", async () => {
-  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss, admin, settings] = await Promise.all([
+  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss, admin, settings, spotlight] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -16,6 +16,7 @@ test("ships the complete mobile basketball arcade", async () => {
     readFile(new URL("../app/arcade.css", import.meta.url), "utf8"),
     readFile(new URL("../app/admin-panel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/site-settings.ts", import.meta.url), "utf8"),
+    readFile(new URL("../components/ui/spotlight-card.tsx", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
@@ -33,6 +34,11 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(settings, /unlimitedTeamSpins: true/);
   assert.match(arcadeCss, /\.switch\.on \.switch-knob/);
   assert.match(arcadeCss, /cubic-bezier\(\.34,1\.56,\.64,1\)/);
+  assert.doesNotMatch(hub, /hub-metrics/);
+  assert.match(hub, /GlowCard/);
+  assert.match(hub, /pointer · spotlight\(240\)/);
+  assert.match(spotlight, /pointermove/);
+  assert.match(spotlight, /data-glow/);
   assert.match(hub, /GAME 01 · LIVE/);
   assert.match(hub, /GAME 02 · NEW/);
   assert.match(hub, /未上線・敬請期待/);
