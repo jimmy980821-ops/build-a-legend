@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("ships the complete mobile basketball arcade", async () => {
-  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss, admin, settings, spotlight] = await Promise.all([
+  const [page, layout, css, nbaData, allTimeData, hub, perfect, perfectData, perfectTeamData, arcadeCss, admin, settings, spotlight, nextConfig] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
@@ -17,6 +17,7 @@ test("ships the complete mobile basketball arcade", async () => {
     readFile(new URL("../app/admin-panel.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/site-settings.ts", import.meta.url), "utf8"),
     readFile(new URL("../components/ui/spotlight-card.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../next.config.ts", import.meta.url), "utf8"),
   ]);
 
   assert.match(page, /BUILD-A-LEGEND/);
@@ -40,6 +41,7 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(page, /setInterval/);
   assert.match(page, /visibilitychange/);
   assert.match(page, /Bearer/);
+  assert.match(nextConfig, /full-court-lab-jimmy\.fumin081\.chatgpt\.site/);
   assert.match(settings, /legendEnabled: true/);
   assert.match(settings, /perfectEnabled: true/);
   assert.match(settings, /unlimitedTeamSpins: true/);
