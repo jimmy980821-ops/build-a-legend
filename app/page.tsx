@@ -48,6 +48,9 @@ const positions: Position[] = ["控球後衛", "得分後衛", "小前鋒", "大
 const positionCode: Record<Position, string> = { 控球後衛:"PG", 得分後衛:"SG", 小前鋒:"SF", 大前鋒:"PF", 中鋒:"C" };
 const SAVE_PREFIX = "build-a-legend-save-v5";
 const STARTER_OVR = 85;
+const SETTINGS_API=`${process.env.NEXT_PUBLIC_SETTINGS_API_URL||""}/api/settings`;
+type AdminSession={token:string;expiresAt:number};
+type SaveResult="ok"|"conflict"|"unauthorized"|"error";
 
 function shuffled<T>(items: T[]) { return [...items].sort(() => Math.random() - .5); }
 function clamp(value: number, min: number, max: number) { return Math.max(min, Math.min(max, value)); }
@@ -72,31 +75,39 @@ function teamLogo(code: string) { return teamIds[code] ? `https://cdn.nba.com/lo
 export default function Home(){
   const [game,setGame]=useState<"hub"|"legend"|"perfect"|"admin">("hub");
   const [settings,setSettings]=useState<SiteSettings>(DEFAULT_SETTINGS);
-  const settingsApi=`${process.env.NEXT_PUBLIC_SETTINGS_API_URL||""}/api/settings`;
+  const [settingsRevision,setSettingsRevision]=useState(0);
+  const [lastSyncedAt,setLastSyncedAt]=useState<number|null>(null);
   useEffect(()=>{
     let active=true;
-    fetch(settingsApi,{cache:"no-store"}).then(response=>response.ok?response.json():Promise.reject()).then(data=>{
-      if(active&&data.settings){setSettings({...DEFAULT_SETTINGS,...data.settings});localStorage.setItem(SETTINGS_KEY,JSON.stringify(data.settings));}
+    const pull=()=>fetch(SETTINGS_API,{cache:"no-store"}).then(response=>response.ok?response.json():Promise.reject()).then(data=>{
+      if(active&&data.settings){const synced={...DEFAULT_SETTINGS,...data.settings};setSettings(synced);setSettingsRevision(Number(data.updatedAt||0));setLastSyncedAt(Date.now());localStorage.setItem(SETTINGS_KEY,JSON.stringify(synced));}
     }).catch(()=>{try{const stored=localStorage.getItem(SETTINGS_KEY);if(active&&stored)setSettings({...DEFAULT_SETTINGS,...JSON.parse(stored)});}catch{}});
-    return()=>{active=false;};
-  },[settingsApi]);
+    void pull();
+    const interval=window.setInterval(()=>{void pull();},15000);
+    const onVisibility=()=>{if(document.visibilityState==="visible")void pull();};
+    document.addEventListener("visibilitychange",onVisibility);
+    return()=>{active=false;window.clearInterval(interval);document.removeEventListener("visibilitychange",onVisibility);};
+  },[]);
   const authenticateAdmin=async(username:string,password:string)=>{
     try{
-      const response=await fetch(settingsApi,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password})});
-      if(!response.ok)return false;
-      const data=await response.json();if(data.settings)setSettings({...DEFAULT_SETTINGS,...data.settings});
-      return true;
-    }catch{return false;}
+      const response=await fetch(SETTINGS_API,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password})});
+      if(!response.ok)return null;
+      const data=await response.json();if(data.settings)setSettings({...DEFAULT_SETTINGS,...data.settings});setSettingsRevision(Number(data.updatedAt||0));setLastSyncedAt(Date.now());
+      return {token:String(data.token),expiresAt:Number(data.expiresAt)} as AdminSession;
+    }catch{return null;}
   };
-  const updateSettings=async(next:SiteSettings,credentials:{username:string;password:string})=>{
+  const updateSettings=async(next:SiteSettings,session:AdminSession):Promise<SaveResult>=>{
     try{
-      const response=await fetch(settingsApi,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({credentials,settings:next})});
-      if(!response.ok)return false;
-      const data=await response.json();const saved={...DEFAULT_SETTINGS,...data.settings};setSettings(saved);localStorage.setItem(SETTINGS_KEY,JSON.stringify(saved));return true;
-    }catch{return false;}
+      const response=await fetch(SETTINGS_API,{method:"PUT",headers:{"Content-Type":"application/json","Authorization":`Bearer ${session.token}`},body:JSON.stringify({settings:next,expectedUpdatedAt:settingsRevision})});
+      const data=await response.json().catch(()=>({}));
+      if(response.status===409){if(data.settings)setSettings({...DEFAULT_SETTINGS,...data.settings});setSettingsRevision(Number(data.updatedAt||0));setLastSyncedAt(Date.now());return "conflict";}
+      if(response.status===401)return "unauthorized";
+      if(!response.ok)return "error";
+      const saved={...DEFAULT_SETTINGS,...data.settings};setSettings(saved);setSettingsRevision(Number(data.updatedAt||0));setLastSyncedAt(Date.now());localStorage.setItem(SETTINGS_KEY,JSON.stringify(saved));return "ok";
+    }catch{return "error";}
   };
   if(game==="hub")return <GameHub settings={settings} onLegend={()=>settings.legendEnabled&&setGame("legend")} onPerfect={()=>settings.perfectEnabled&&setGame("perfect")} onAdmin={()=>setGame("admin")}/>;
-  if(game==="admin")return <AdminPanel settings={settings} onLogin={authenticateAdmin} onChange={updateSettings} onExit={()=>setGame("hub")}/>;
+  if(game==="admin")return <AdminPanel settings={settings} lastSyncedAt={lastSyncedAt} onLogin={authenticateAdmin} onChange={updateSettings} onExit={()=>setGame("hub")}/>;
   if(game==="perfect")return <Perfect82 onExit={()=>setGame("hub")}/>;
   return <BuildALegend onExit={()=>setGame("hub")} allowUnlimitedTeamSpins={settings.unlimitedTeamSpins}/>;
 }

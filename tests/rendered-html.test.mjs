@@ -36,6 +36,10 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(admin, /無限重抽球隊/);
   assert.match(admin, /目前限制為 3 次/);
   assert.match(admin, /全站同步/);
+  assert.match(admin, /最後同步/);
+  assert.match(page, /setInterval/);
+  assert.match(page, /visibilitychange/);
+  assert.match(page, /Bearer/);
   assert.match(settings, /legendEnabled: true/);
   assert.match(settings, /perfectEnabled: true/);
   assert.match(settings, /unlimitedTeamSpins: true/);

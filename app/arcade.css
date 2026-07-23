@@ -72,6 +72,7 @@ body{font-family:"Noto Sans TC","Microsoft JhengHei UI","Microsoft JhengHei",sys
 .admin-system-card{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:center;padding:18px}
 .admin-system-card>header{grid-column:1/-1;margin:-18px -18px 18px}
 .admin-system-copy b{font-size:12px}.admin-system-copy p{max-width:570px;margin:6px 0 0;color:#69696e;font-size:8px;line-height:1.6}
+.last-sync{display:block;margin-top:8px;color:#8aa968;font-size:7px;font-weight:900;letter-spacing:.5px}.admin-toast.failed{background:#ff746b;color:#190706}
 .reset-settings{border:1px solid #3a3a3e;border-radius:10px;background:#1b1b1e;color:#bbb9b4;padding:10px 13px;font-size:8px;font-weight:900;cursor:pointer;transition:border-color .2s,transform .35s cubic-bezier(.34,1.56,.64,1)}
 .reset-settings:hover{border-color:#77777c}.reset-settings:active{transform:scale(.95)}
 @keyframes starPulse{50%{opacity:.25;transform:scale(.45)}}

@@ -7,23 +7,33 @@ function SpringSwitch({on,onChange,label}:{on:boolean;onChange:()=>void;label:st
   return <button type="button" role="switch" aria-checked={on} aria-label={label} className={on?"switch on":"switch"} onClick={onChange}><span className="switch-knob"/></button>;
 }
 
-type Credentials={username:string;password:string};
+type AdminSession={token:string;expiresAt:number};
+type SaveResult="ok"|"conflict"|"unauthorized"|"error";
 
-export default function AdminPanel({settings,onLogin,onChange,onExit}:{settings:SiteSettings;onLogin:(username:string,password:string)=>Promise<boolean>;onChange:(next:SiteSettings,credentials:Credentials)=>Promise<boolean>;onExit:()=>void}){
+export default function AdminPanel({settings,lastSyncedAt,onLogin,onChange,onExit}:{settings:SiteSettings;lastSyncedAt:number|null;onLogin:(username:string,password:string)=>Promise<AdminSession|null>;onChange:(next:SiteSettings,session:AdminSession)=>Promise<SaveResult>;onExit:()=>void}){
   const [loggedIn,setLoggedIn]=useState(false);
+  const [session,setSession]=useState<AdminSession|null>(null);
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
   const [showPassword,setShowPassword]=useState(false);
   const [error,setError]=useState(false);
   const [busy,setBusy]=useState(false);
   const [saved,setSaved]=useState(false);
+  const [syncError,setSyncError]=useState("");
   const notifySaved=()=>{setSaved(true);window.setTimeout(()=>setSaved(false),1400);};
   const login=async(event:FormEvent)=>{
     event.preventDefault();
-    setBusy(true);const valid=await onLogin(username.trim().toLowerCase(),password);setBusy(false);
-    if(valid){setLoggedIn(true);setError(false);}else{setError(true);setPassword("");}
+    setBusy(true);const nextSession=await onLogin(username.trim().toLowerCase(),password);setBusy(false);
+    if(nextSession){setSession(nextSession);setLoggedIn(true);setError(false);setUsername("");setPassword("");}else{setError(true);setPassword("");}
   };
-  const save=async(next:SiteSettings)=>{setBusy(true);const ok=await onChange(next,{username:username.trim().toLowerCase(),password});setBusy(false);if(ok)notifySaved();else setError(true);};
+  const save=async(next:SiteSettings)=>{
+    if(!session)return;
+    setBusy(true);setSyncError("");const result=await onChange(next,session);setBusy(false);
+    if(result==="ok")notifySaved();
+    else if(result==="conflict")setSyncError("另一台裝置剛更新設定，已載入最新版本");
+    else if(result==="unauthorized"){setSession(null);setLoggedIn(false);setError(true);}
+    else setSyncError("同步失敗，原本設定未變更");
+  };
   const toggle=(key:keyof SiteSettings)=>{void save({...settings,[key]:!settings[key]});};
   const resetSettings=()=>{void save({...DEFAULT_SETTINGS});};
 
@@ -62,12 +72,13 @@ export default function AdminPanel({settings,onLogin,onChange,onExit}:{settings:
           <div className="admin-row featured"><div><b>{settings.unlimitedTeamSpins?"目前為無限次":"目前限制為 3 次"}</b><span>只影響 BUILD-A-LEGEND</span></div><SpringSwitch on={settings.unlimitedTeamSpins} onChange={()=>!busy&&toggle("unlimitedTeamSpins")} label="切換無限重抽球隊"/></div>
         </article>
         <article className="admin-card admin-system-card"><header><span>03</span><i>SYSTEM</i></header>
-          <div className="admin-system-copy"><b>全站同步</b><p>設定儲存在雲端，手機或電腦修改後會套用到所有玩家與裝置。</p></div>
+          <div className="admin-system-copy"><b>全站同步</b><p>設定儲存在雲端，手機或電腦修改後會套用到所有玩家與裝置。</p><span className="last-sync">最後同步：{lastSyncedAt?new Date(lastSyncedAt).toLocaleTimeString("zh-TW",{hour:"2-digit",minute:"2-digit",second:"2-digit"}):"等待連線"}</span></div>
           <button className="reset-settings" type="button" onClick={resetSettings} disabled={busy}>{busy?"儲存中…":"恢復預設設定"}</button>
         </article>
       </div>
       <div className={saved?"admin-toast show":"admin-toast"}>✓ 全站設定已同步</div>
-      <button className="admin-logout" onClick={()=>setLoggedIn(false)}>登出管理員</button>
+      <div className={syncError?"admin-toast failed show":"admin-toast failed"}>{syncError}</div>
+      <button className="admin-logout" onClick={()=>{setSession(null);setLoggedIn(false);}}>登出管理員</button>
     </section>
   </main>;
 }

@@ -8,3 +8,9 @@ export const siteSettings = sqliteTable("site_settings", {
   showComingSoon: integer("show_coming_soon", { mode: "boolean" }).notNull().default(true),
   updatedAt: integer("updated_at").notNull(),
 });
+
+export const adminLoginAttempts = sqliteTable("admin_login_attempts", {
+  clientId: text("client_id").primaryKey(),
+  failures: integer("failures").notNull().default(0),
+  windowStartedAt: integer("window_started_at").notNull(),
+});
