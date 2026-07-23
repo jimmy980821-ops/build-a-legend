@@ -77,9 +77,9 @@ body{font-family:"Noto Sans TC","Microsoft JhengHei UI","Microsoft JhengHei",sys
 /* Full canvas on desktop; mobile keeps the compact touch layout. */
 @media(min-width:900px){
   body{padding:0}
-  .app-shell{width:100%;max-width:none;min-height:100svh;border:0;border-radius:0;padding-inline:clamp(32px,6vw,96px)}
+  .app-shell.app-shell{width:100%!important;max-width:none!important;min-height:100svh;border:0;border-radius:0;padding-inline:clamp(32px,6vw,96px)!important}
   .app-shell>.topbar,.app-shell>section{width:min(100%,920px);margin-inline:auto}
-  .motion-refresh{width:100%;max-width:none;min-height:100svh;padding-inline:clamp(36px,6vw,100px)}
+  .motion-refresh.motion-refresh{width:100%!important;max-width:none!important;min-height:100svh;padding-inline:clamp(36px,6vw,100px)!important}
   .motion-refresh>.arcade-header,.motion-refresh>.arcade-intro,.motion-refresh>.game-library,.motion-refresh>footer{width:min(100%,1440px);margin-inline:auto}
   .motion-refresh .game-library{grid-template-columns:repeat(2,minmax(0,1fr))}
   .motion-refresh .tile-art{height:clamp(210px,25vw,340px)}
