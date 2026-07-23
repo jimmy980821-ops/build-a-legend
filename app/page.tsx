@@ -72,10 +72,31 @@ function teamLogo(code: string) { return teamIds[code] ? `https://cdn.nba.com/lo
 export default function Home(){
   const [game,setGame]=useState<"hub"|"legend"|"perfect"|"admin">("hub");
   const [settings,setSettings]=useState<SiteSettings>(DEFAULT_SETTINGS);
-  useEffect(()=>{try{const stored=localStorage.getItem(SETTINGS_KEY);if(stored)setSettings({...DEFAULT_SETTINGS,...JSON.parse(stored)});}catch{}},[]);
-  const updateSettings=(next:SiteSettings)=>{setSettings(next);localStorage.setItem(SETTINGS_KEY,JSON.stringify(next));};
+  const settingsApi=`${process.env.NEXT_PUBLIC_SETTINGS_API_URL||""}/api/settings`;
+  useEffect(()=>{
+    let active=true;
+    fetch(settingsApi,{cache:"no-store"}).then(response=>response.ok?response.json():Promise.reject()).then(data=>{
+      if(active&&data.settings){setSettings({...DEFAULT_SETTINGS,...data.settings});localStorage.setItem(SETTINGS_KEY,JSON.stringify(data.settings));}
+    }).catch(()=>{try{const stored=localStorage.getItem(SETTINGS_KEY);if(active&&stored)setSettings({...DEFAULT_SETTINGS,...JSON.parse(stored)});}catch{}});
+    return()=>{active=false;};
+  },[settingsApi]);
+  const authenticateAdmin=async(username:string,password:string)=>{
+    try{
+      const response=await fetch(settingsApi,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({username,password})});
+      if(!response.ok)return false;
+      const data=await response.json();if(data.settings)setSettings({...DEFAULT_SETTINGS,...data.settings});
+      return true;
+    }catch{return false;}
+  };
+  const updateSettings=async(next:SiteSettings,credentials:{username:string;password:string})=>{
+    try{
+      const response=await fetch(settingsApi,{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify({credentials,settings:next})});
+      if(!response.ok)return false;
+      const data=await response.json();const saved={...DEFAULT_SETTINGS,...data.settings};setSettings(saved);localStorage.setItem(SETTINGS_KEY,JSON.stringify(saved));return true;
+    }catch{return false;}
+  };
   if(game==="hub")return <GameHub settings={settings} onLegend={()=>settings.legendEnabled&&setGame("legend")} onPerfect={()=>settings.perfectEnabled&&setGame("perfect")} onAdmin={()=>setGame("admin")}/>;
-  if(game==="admin")return <AdminPanel settings={settings} onChange={updateSettings} onExit={()=>setGame("hub")}/>;
+  if(game==="admin")return <AdminPanel settings={settings} onLogin={authenticateAdmin} onChange={updateSettings} onExit={()=>setGame("hub")}/>;
   if(game==="perfect")return <Perfect82 onExit={()=>setGame("hub")}/>;
   return <BuildALegend onExit={()=>setGame("hub")} allowUnlimitedTeamSpins={settings.unlimitedTeamSpins}/>;
 }

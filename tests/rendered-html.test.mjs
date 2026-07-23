@@ -28,15 +28,14 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(page, /teamRerolls/);
   assert.match(page, /球隊重抽次數已用完/);
   assert.match(page, /換球隊/);
-  assert.match(admin, /ADMIN_PASSWORD = "980821"/);
-  assert.match(admin, /ADMIN_USERNAME = "jimmy"/);
   assert.match(admin, /aria-label="管理員帳號"/);
-  assert.match(admin, /username\.trim\(\)\.toLowerCase\(\)===ADMIN_USERNAME/);
+  assert.match(admin, /onLogin/);
   assert.match(admin, /登入控制台/);
   assert.match(admin, /showComingSoon/);
   assert.match(admin, /恢復預設設定/);
   assert.match(admin, /無限重抽球隊/);
   assert.match(admin, /目前限制為 3 次/);
+  assert.match(admin, /全站同步/);
   assert.match(settings, /legendEnabled: true/);
   assert.match(settings, /perfectEnabled: true/);
   assert.match(settings, /unlimitedTeamSpins: true/);
