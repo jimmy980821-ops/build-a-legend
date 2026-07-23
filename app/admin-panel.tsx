@@ -60,8 +60,8 @@ export default function AdminPanel({settings,onChange,onExit}:{settings:SiteSett
           <div className="admin-row"><div><b>PLAYER JOURNEY 預告</b><span>控制首頁是否顯示第三款遊戲</span></div><SpringSwitch on={settings.showComingSoon} onChange={()=>toggle("showComingSoon")} label="切換第三款遊戲預告"/></div>
         </article>
         <article className="admin-card accent-card"><header><span>02</span><i>GAME 01 PERMISSION</i></header>
-          <div className="admin-feature"><div className="feature-glyph">↻</div><div><b>無限重抽球隊</b><p>開啟後，玩家可一直重抽本輪球隊；關閉後，抽到球隊便不能再次更換。</p></div></div>
-          <div className="admin-row featured"><div><b>{settings.unlimitedTeamSpins?"目前允許重抽":"目前禁止重抽"}</b><span>只影響 BUILD-A-LEGEND</span></div><SpringSwitch on={settings.unlimitedTeamSpins} onChange={()=>toggle("unlimitedTeamSpins")} label="切換無限重抽球隊"/></div>
+          <div className="admin-feature"><div className="feature-glyph">↻</div><div><b>無限重抽球隊</b><p>開啟後可無限重抽；關閉後，每次建立球員仍保留 3 次球隊重抽機會。</p></div></div>
+          <div className="admin-row featured"><div><b>{settings.unlimitedTeamSpins?"目前為無限次":"目前限制為 3 次"}</b><span>只影響 BUILD-A-LEGEND</span></div><SpringSwitch on={settings.unlimitedTeamSpins} onChange={()=>toggle("unlimitedTeamSpins")} label="切換無限重抽球隊"/></div>
         </article>
         <article className="admin-card admin-system-card"><header><span>03</span><i>SYSTEM</i></header>
           <div className="admin-system-copy"><b>裝置設定</b><p>目前設定儲存在這台裝置的瀏覽器中，不會同步影響其他訪客。</p></div>
