@@ -30,7 +30,9 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(admin, /ADMIN_USERNAME = "jimmy"/);
   assert.match(admin, /aria-label="管理員帳號"/);
   assert.match(admin, /username\.trim\(\)\.toLowerCase\(\)===ADMIN_USERNAME/);
-  assert.match(admin, /<em>控制台<\/em>/);
+  assert.match(admin, /登入控制台/);
+  assert.match(admin, /showComingSoon/);
+  assert.match(admin, /恢復預設設定/);
   assert.match(admin, /無限重抽球隊/);
   assert.match(settings, /legendEnabled: true/);
   assert.match(settings, /perfectEnabled: true/);
@@ -42,7 +44,7 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.doesNotMatch(hub, /pointer · spotlight\(240\)/);
   assert.doesNotMatch(hub, /BASKETBALL GAME SERIES/);
   assert.match(admin, /admin-login-card/);
-  assert.match(admin, /GlowCard glowColor="orange"/);
+  assert.match(admin, /signin-stage/);
   assert.match(spotlight, /pointermove/);
   assert.match(spotlight, /data-glow/);
   assert.match(hub, /GAME 01 · LIVE/);

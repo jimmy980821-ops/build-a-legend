@@ -18,10 +18,10 @@ export default function GameHub({onLegend,onPerfect,onAdmin,settings}:{onLegend:
         <span className="game-index">{settings.perfectEnabled?"LIVE":"OFFLINE"}</span><div className="tile-art perfect-art"><b>82</b><i>–0</i><span>PERFECT?</span></div>
         <div className="tile-copy"><h2>完美賽季</h2><strong>{settings.perfectEnabled?"開始挑戰":"已關閉"} <i>→</i></strong></div>
       </button></GlowCard>
-      <GlowCard glowColor="purple" customSize className="game-glow-card"><div className="game-tile locked-tile" aria-disabled="true">
+      {settings.showComingSoon&&<GlowCard glowColor="purple" customSize className="game-glow-card"><div className="game-tile locked-tile" aria-disabled="true">
         <span className="game-index">COMING SOON</span><div className="tile-art journey-art"><span>ATL</span><span>→</span><span>LAL</span><span>→</span><span>MIA</span></div>
         <div className="tile-copy"><h2>他是誰？</h2><strong>敬請期待</strong></div>
-      </div></GlowCard>
+      </div></GlowCard>}
     </section>
     <footer><button onClick={onAdmin}>ADMIN</button><span hidden>{legacyLabels}</span></footer>
   </main>;
