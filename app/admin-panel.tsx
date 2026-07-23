@@ -52,7 +52,7 @@ export default function AdminPanel({settings,onChange,onExit}:{settings:SiteSett
   return <main className="admin-shell">
     <header className="admin-nav"><button onClick={onExit}>← 返回大廳</button><span>CONTROL ROOM</span><i className="online">ADMIN ONLINE</i></header>
     <section className="admin-dashboard screen-enter">
-      <div className="admin-heading"><div><h1>遊戲<br/><em>控制台</em></h1></div><div className="admin-count"><b>{Number(settings.legendEnabled)+Number(settings.perfectEnabled)}</b><span>GAMES LIVE</span></div></div>
+      <div className="admin-heading"><div><h1><span>遊戲</span><em>控制台</em></h1></div><div className="admin-count"><b>{Number(settings.legendEnabled)+Number(settings.perfectEnabled)}</b><span>GAMES LIVE</span></div></div>
       <div className="admin-grid">
         <article className="admin-card"><header><span>01</span><i>GAME ACCESS</i></header>
           <div className="admin-row"><div><b>BUILD-A-LEGEND</b><span>第一款球員養成遊戲</span></div><SpringSwitch on={settings.legendEnabled} onChange={()=>toggle("legendEnabled")} label="切換第一款遊戲"/></div>

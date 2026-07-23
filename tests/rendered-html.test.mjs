@@ -27,6 +27,7 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(page, /allowUnlimitedTeamSpins/);
   assert.match(page, /teamRerolls/);
   assert.match(page, /球隊重抽次數已用完/);
+  assert.match(page, /換球隊/);
   assert.match(admin, /ADMIN_PASSWORD = "980821"/);
   assert.match(admin, /ADMIN_USERNAME = "jimmy"/);
   assert.match(admin, /aria-label="管理員帳號"/);
