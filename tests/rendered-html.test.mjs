@@ -27,6 +27,9 @@ test("ships the complete mobile basketball arcade", async () => {
   assert.match(page, /allowUnlimitedTeamSpins/);
   assert.match(page, /管理員已關閉重抽/);
   assert.match(admin, /ADMIN_PASSWORD = "980821"/);
+  assert.match(admin, /ADMIN_USERNAME = "jimmy"/);
+  assert.match(admin, /aria-label="管理員帳號"/);
+  assert.match(admin, /username\.trim\(\)\.toLowerCase\(\)===ADMIN_USERNAME/);
   assert.match(admin, /<em>控制台<\/em>/);
   assert.match(admin, /無限重抽球隊/);
   assert.match(settings, /legendEnabled: true/);
